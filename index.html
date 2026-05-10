@@ -4,223 +4,295 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bima Anveshak – Har Claim Ki Sachchi Jaanch</title>
-  <meta name="description" content="Specialist insurance claims investigation agency. We uncover fraud, protect insurers, and deliver actionable reports across India." />
+  <meta name="description" content="Trusted Insurance Investigation Agency. IRDAI Compliant. Pan-India Coverage. Motor, Health, Fraud Detection." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            indigo: { DEFAULT: '#0d1628', 800: '#111f38', 700: '#172845', 600: '#1e3357' },
-            saffron: { DEFAULT: '#e8971a', light: '#f5b84a', dark: '#c47a10' }
+            primary:  { DEFAULT: '#1a3a8f', dark: '#122970', light: '#2451b3', pale: '#e8edf8' },
+            accent:   { DEFAULT: '#2ecc71', dark: '#27ae60' },
+            gold:     '#f39c12',
           },
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Playfair Display', 'Georgia', 'serif']
-          },
-          animation: {
-            'fade-up': 'fadeUp 0.6s ease forwards',
-            'fade-in': 'fadeIn 0.4s ease forwards',
-            'pulse-slow': 'pulse 3s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeUp: { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-            fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } }
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif'],
           }
         }
       }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
   <style>
-    html { font-family: 'Inter', system-ui, sans-serif; }
+    * { font-family: 'Inter', system-ui, sans-serif; }
     .font-display { font-family: 'Playfair Display', Georgia, serif; }
 
+    /* Hero background */
     .hero-bg {
-      background: linear-gradient(135deg, #0d1628 0%, #111f38 40%, #1a1045 100%);
+      background: linear-gradient(105deg, #0f2460 0%, #1a3a8f 45%, #1e4db0 100%);
+      position: relative;
+      overflow: hidden;
     }
-    .hero-glow {
-      background: radial-gradient(ellipse 70% 50% at 70% 40%, rgba(232,151,26,0.10) 0%, transparent 60%),
-                  radial-gradient(ellipse 40% 40% at 15% 80%, rgba(30,51,87,0.7) 0%, transparent 60%);
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,255,255,0.04) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='400' fill='none'/%3E%3Cg opacity='0.06'%3E%3Crect x='50' y='80' width='200' height='260' rx='4' fill='white'/%3E%3Crect x='70' y='100' width='160' height='12' rx='2' fill='white'/%3E%3Crect x='70' y='122' width='130' height='8' rx='2' fill='white'/%3E%3Crect x='70' y='140' width='145' height='8' rx='2' fill='white'/%3E%3Crect x='70' y='160' width='120' height='8' rx='2' fill='white'/%3E%3C/g%3E%3C/svg%3E") right bottom / contain no-repeat;
     }
-    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
-    .card-hover:hover { transform: translateY(-4px); }
-    .saffron-border-left { border-left: 3px solid #e8971a; }
-    .text-gradient {
-      background: linear-gradient(135deg, #e8971a, #f5b84a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .nav-blur {
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      background: rgba(13,22,40,0.88);
-    }
-    .section-fade { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .section-fade.visible { opacity: 1; transform: translateY(0); }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0d1628; }
-    ::-webkit-scrollbar-thumb { background: #e8971a; border-radius: 3px; }
 
-    /* Ashoka-wheel-inspired decorative dots */
-    .dot-grid {
-      background-image: radial-gradient(circle, rgba(232,151,26,0.08) 1px, transparent 1px);
-      background-size: 32px 32px;
+    /* Shield SVG logo */
+    .shield-wrap { filter: drop-shadow(0 8px 32px rgba(0,0,0,0.35)); }
+
+    /* Nav active */
+    .nav-link { position: relative; }
+    .nav-link.active::after, .nav-link:hover::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: #1a3a8f; border-radius: 2px;
+    }
+
+    /* Service card */
+    .svc-card {
+      transition: transform .22s ease, box-shadow .22s ease;
+      cursor: default;
+    }
+    .svc-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(26,58,143,.14); }
+
+    /* Section fade */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #1a3a8f; border-radius: 3px; }
+
+    /* Stats box */
+    .stat-box {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Underline heading */
+    .section-heading::after {
+      content: ''; display: block; width: 60px; height: 3px;
+      background: #1a3a8f; margin: 12px auto 0; border-radius: 2px;
     }
   </style>
 </head>
 <body class="bg-white text-slate-700 antialiased">
 
+  <!-- TOP BAR -->
+  <div class="bg-primary-dark text-white text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <a href="tel:+919999988888" class="flex items-center gap-2 hover:text-green-300 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          +91 99999 88888
+        </a>
+        <a href="mailto:info@bimaanveshak.com" class="flex items-center gap-2 hover:text-green-300 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          info@bimaanveshak.com
+        </a>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-white/70 text-xs">
+        <span>Mon–Sat: 9 AM – 7 PM</span>
+        <span>|</span>
+        <span>Pan-India Service</span>
+      </div>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-blur border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <div class="w-9 h-9 bg-saffron rounded-lg flex items-center justify-center flex-shrink-0">
-          <span class="text-white font-bold text-sm">BA</span>
+  <header id="navbar" class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="shield-wrap">
+          <svg width="52" height="60" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#1a3a8f"/>
+            <path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="url(#shield-grad)" opacity="0.3"/>
+            <!-- India map simplified outline -->
+            <path d="M20 18 L22 16 L26 15 L30 16 L32 19 L33 22 L31 26 L33 29 L32 33 L29 37 L26 40 L23 37 L20 33 L19 29 L21 26 L19 22 Z" fill="white" opacity="0.25"/>
+            <!-- Magnifying glass -->
+            <circle cx="30" cy="26" r="9" fill="none" stroke="#2ecc71" stroke-width="2.5"/>
+            <line x1="37" y1="33" x2="42" y2="38" stroke="#2ecc71" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Check inside glass -->
+            <path d="M26 26 L29 29 L34 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="shield-grad" x1="4" y1="2" x2="48" y2="58" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="white"/>
+                <stop offset="100%" stop-color="#1a3a8f"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
-        <div class="leading-tight">
-          <span class="font-display text-lg font-bold text-saffron block leading-none">Bima</span>
-          <span class="text-white font-medium text-sm tracking-widest uppercase leading-none">Anveshak</span>
+        <div>
+          <div class="font-bold text-primary text-xl leading-tight tracking-tight">
+            Bima <span class="text-primary">A</span>nveshak
+          </div>
+          <div class="text-xs text-slate-500 italic tracking-wide">Har Claim Ki Sachchi Jaanch</div>
         </div>
       </a>
-      <nav class="hidden md:flex items-center gap-8" id="navLinks">
-        <a href="#about" class="text-white/70 hover:text-saffron text-sm font-medium transition-colors">About</a>
-        <a href="#services" class="text-white/70 hover:text-saffron text-sm font-medium transition-colors">Services</a>
-        <a href="#locations" class="text-white/70 hover:text-saffron text-sm font-medium transition-colors">Coverage</a>
-        <a href="#why-us" class="text-white/70 hover:text-saffron text-sm font-medium transition-colors">Why Us</a>
-        <a href="#contact" class="text-white/70 hover:text-saffron text-sm font-medium transition-colors">Contact</a>
-        <a href="#contact" class="bg-saffron hover:bg-saffron-light text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">
-          Get Started
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="#home"      class="nav-link active text-primary font-semibold text-sm">Home</a>
+        <a href="#services"  class="nav-link text-slate-600 hover:text-primary font-medium text-sm transition-colors">Our Services</a>
+        <a href="#about"     class="nav-link text-slate-600 hover:text-primary font-medium text-sm transition-colors">About Us</a>
+        <a href="#casestudies" class="nav-link text-slate-600 hover:text-primary font-medium text-sm transition-colors">Case Studies</a>
+        <a href="#contact"   class="nav-link text-slate-600 hover:text-primary font-medium text-sm transition-colors">Contact Us</a>
+        <a href="#contact"   class="bg-primary hover:bg-primary-light text-white font-semibold px-5 py-2 rounded text-sm transition-all">
+          Join Us
         </a>
       </nav>
-      <button id="menuBtn" class="md:hidden text-white p-2">
+
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="lg:hidden p-2 text-primary">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden nav-blur border-t border-white/10">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="#about" class="text-white/80 hover:text-saffron text-sm font-medium">About</a>
-        <a href="#services" class="text-white/80 hover:text-saffron text-sm font-medium">Services</a>
-        <a href="#locations" class="text-white/80 hover:text-saffron text-sm font-medium">Coverage</a>
-        <a href="#why-us" class="text-white/80 hover:text-saffron text-sm font-medium">Why Us</a>
-        <a href="#contact" class="text-white/80 hover:text-saffron text-sm font-medium">Contact</a>
-        <a href="#contact" class="border border-saffron/50 text-saffron px-4 py-2 rounded-lg text-sm font-semibold w-fit">Get Started</a>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-100 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
+        <a href="#home"        class="text-primary font-semibold text-sm">Home</a>
+        <a href="#services"    class="text-slate-600 font-medium text-sm">Our Services</a>
+        <a href="#about"       class="text-slate-600 font-medium text-sm">About Us</a>
+        <a href="#casestudies" class="text-slate-600 font-medium text-sm">Case Studies</a>
+        <a href="#contact"     class="text-slate-600 font-medium text-sm">Contact Us</a>
+        <a href="#contact"     class="bg-primary text-white font-semibold px-5 py-2 rounded text-sm w-fit">Join Us</a>
       </div>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero-bg relative min-h-screen flex flex-col" id="home">
-    <div class="hero-glow absolute inset-0 pointer-events-none"></div>
-    <div class="dot-grid absolute inset-0 pointer-events-none"></div>
-
-    <div class="relative flex-1 flex items-center max-w-6xl mx-auto px-6 w-full pt-28 pb-16">
-      <div class="max-w-2xl">
-        <div class="inline-flex items-center gap-2 bg-saffron/10 border border-saffron/20 text-saffron text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-8">
-          <span class="w-1.5 h-1.5 bg-saffron rounded-full animate-pulse"></span>
-          Insurance Claims Investigation Specialists
-        </div>
-        <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.05] mb-6">
-          Har Claim Ki<br/><span class="text-gradient">Sachchi Jaanch</span>
+  <section class="hero-bg min-h-[580px] flex items-center relative" id="home">
+    <div class="max-w-7xl mx-auto px-6 w-full py-16 grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left -->
+      <div class="fade-in">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-3">
+          Har Claim Ki<br/>Sachchi Jaanch
         </h1>
-        <p class="text-white/45 text-sm uppercase tracking-[0.2em] font-medium mb-3">True Investigation of Every Claim</p>
-        <p class="text-white/60 text-lg mb-10 leading-relaxed max-w-lg">
-          We are India's specialist insurance investigation agency — uncovering fraud, protecting insurers, and delivering reports that stand up in court.
-        </p>
+        <p class="text-blue-200 text-lg font-medium mb-8">Trusted Insurance Investigation Agency</p>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap gap-4 mb-8">
+          <div class="stat-box rounded-lg px-5 py-3 text-center min-w-[110px]">
+            <div class="text-white text-2xl font-extrabold">10<span class="text-green-400">+</span></div>
+            <div class="text-blue-200 text-xs mt-0.5">Years of Experience</div>
+          </div>
+          <div class="stat-box rounded-lg px-5 py-3 text-center min-w-[110px]">
+            <div class="text-white text-2xl font-extrabold">5000<span class="text-green-400">+</span></div>
+            <div class="text-blue-200 text-xs mt-0.5">Cases Investigated</div>
+          </div>
+          <div class="stat-box rounded-lg px-5 py-3 text-center min-w-[110px]">
+            <div class="text-white text-2xl font-extrabold">12</div>
+            <div class="text-blue-200 text-xs mt-0.5">States Covered</div>
+          </div>
+        </div>
+
+        <!-- CTA buttons -->
         <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="bg-saffron hover:bg-saffron-light text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-saffron/25">
+          <a href="#contact" class="bg-primary-light hover:bg-primary text-white font-bold px-7 py-3 rounded transition-all shadow-lg">
             Request Investigation
           </a>
-          <a href="#services" class="border border-white/20 hover:border-saffron text-white hover:text-saffron font-semibold px-8 py-3.5 rounded-xl transition-all">
-            Our Services
+          <a href="#services" class="bg-white hover:bg-slate-100 text-primary font-bold px-7 py-3 rounded transition-all shadow-lg">
+            Get Started
           </a>
         </div>
       </div>
-    </div>
 
-    <!-- Stats bar -->
-    <div class="relative border-t border-white/8 bg-white/[0.03]">
-      <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="text-center">
-          <div class="font-display text-4xl font-bold text-white mb-1">10<span class="text-saffron">+</span></div>
-          <div class="text-white/40 text-xs uppercase tracking-widest">Years Experience</div>
-        </div>
-        <div class="text-center">
-          <div class="font-display text-4xl font-bold text-white mb-1">5000<span class="text-saffron">+</span></div>
-          <div class="text-white/40 text-xs uppercase tracking-widest">Cases Investigated</div>
-        </div>
-        <div class="text-center">
-          <div class="font-display text-4xl font-bold text-white mb-1">12</div>
-          <div class="text-white/40 text-xs uppercase tracking-widest">States Coverage</div>
-        </div>
-        <div class="text-center">
-          <div class="font-display text-4xl font-bold text-white mb-1">98<span class="text-saffron">%</span></div>
-          <div class="text-white/40 text-xs uppercase tracking-widest">Report Accuracy</div>
+      <!-- Right – Shield graphic -->
+      <div class="hidden lg:flex justify-center items-center fade-in">
+        <div class="shield-wrap">
+          <svg width="340" height="380" viewBox="0 0 340 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer glow -->
+            <ellipse cx="170" cy="200" rx="150" ry="160" fill="rgba(255,255,255,0.04)"/>
+            <!-- Shield body -->
+            <path d="M170 20 L50 75 L50 190 C50 280 105 345 170 370 C235 345 290 280 290 190 L290 75 Z"
+                  fill="url(#hero-shield)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <!-- Shield inner -->
+            <path d="M170 45 L75 90 L75 190 C75 265 120 320 170 342 C220 320 265 265 265 190 L265 90 Z"
+                  fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <!-- India map outline (simplified) -->
+            <path d="M155 105 L158 98 L165 95 L172 95 L180 99 L186 106 L188 115 L184 128 L188 138
+                     L186 152 L180 168 L170 182 L160 168 L154 152 L152 138 L156 128 L152 115 Z"
+                  fill="white" opacity="0.2" stroke="white" stroke-width="0.5" stroke-opacity="0.4"/>
+            <!-- Magnifying glass circle -->
+            <circle cx="190" cy="160" r="55" fill="rgba(255,255,255,0.05)" stroke="#2ecc71" stroke-width="5"/>
+            <!-- Magnifying glass handle -->
+            <line x1="233" y1="203" x2="258" y2="228" stroke="#2ecc71" stroke-width="7" stroke-linecap="round"/>
+            <!-- Checkmark inside glass -->
+            <path d="M170 158 L183 172 L210 145" stroke="white" stroke-width="6"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Text below shield -->
+            <text x="170" y="310" text-anchor="middle" fill="white" opacity="0.7"
+                  font-size="13" font-family="Inter,sans-serif" font-weight="600" letter-spacing="3">
+              BIMA ANVESHAK
+            </text>
+            <defs>
+              <linearGradient id="hero-shield" x1="50" y1="20" x2="290" y2="370" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2451b3"/>
+                <stop offset="100%" stop-color="#0f2460"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="py-24 bg-white" id="about">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="section-fade">
-          <span class="text-saffron text-xs font-bold tracking-[0.2em] uppercase">Who We Are</span>
-          <h2 class="font-display text-4xl font-bold text-indigo mt-3 mb-6">India's Trusted Insurance Investigation Partner</h2>
-          <p class="text-slate-600 leading-relaxed mb-4">
-            Bima Anveshak is a specialist insurance claims investigation agency with over a decade of experience serving India's top insurers. Our team combines legal expertise, field intelligence, and data analytics to deliver investigations that are thorough, timely, and legally admissible.
-          </p>
-          <p class="text-slate-600 leading-relaxed mb-8">
-            From motor theft and OD claims to health, fire, and liability — we investigate every type of claim with the same rigour. Headquartered in Mumbai with field teams across 12 states.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <span class="w-5 h-5 bg-saffron/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-saffron" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              LLB-qualified investigation leadership
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <span class="w-5 h-5 bg-saffron/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-saffron" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              Multilingual: Hindi, Marathi, Gujarati, Bengali, Tamil
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <span class="w-5 h-5 bg-saffron/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-saffron" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              Former senior investigators from leading PSU & private insurers
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <span class="w-5 h-5 bg-saffron/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-saffron" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              Pan-India network of 200+ trained field investigators
-            </li>
-          </ul>
+  <!-- QUICK SERVICE BAR -->
+  <section class="bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+        <div class="flex items-center gap-4 px-6 py-5 hover:bg-primary-pale transition-colors cursor-pointer group">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-2 2 2 2-2 2 2 2-2zM13 8h4l3 5v3h-7V8z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold text-primary text-sm">Motor</div>
+            <div class="text-slate-500 text-xs">Claim Investigation</div>
+          </div>
+          <div class="ml-auto w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
         </div>
-        <div class="space-y-5 section-fade">
-          <div class="saffron-border-left pl-5 py-4 bg-slate-50 rounded-r-xl card-hover hover:shadow-md">
-            <div class="text-2xl mb-3">⚖️</div>
-            <h3 class="font-semibold text-indigo mb-2">Legal-Grade Evidence</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Every report is prepared to court-admissible standards — from FIR analysis and witness statements to photographic evidence and expert opinions.</p>
+        <div class="flex items-center gap-4 px-6 py-5 hover:bg-primary-pale transition-colors cursor-pointer group">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
           </div>
-          <div class="saffron-border-left pl-5 py-4 bg-slate-50 rounded-r-xl card-hover hover:shadow-md">
-            <div class="text-2xl mb-3">⚡</div>
-            <h3 class="font-semibold text-indigo mb-2">Speed Without Compromise</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Preliminary reports within 48 hours. Final investigation reports within 7 working days. Urgent turnaround available for critical cases.</p>
+          <div>
+            <div class="font-bold text-primary text-sm">Health</div>
+            <div class="text-slate-500 text-xs">Claim Investigation</div>
           </div>
-          <div class="saffron-border-left pl-5 py-4 bg-slate-50 rounded-r-xl card-hover hover:shadow-md">
-            <div class="text-2xl mb-3">🔐</div>
-            <h3 class="font-semibold text-indigo mb-2">Confidential & Compliant</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Strict data confidentiality. Full compliance with IRDAI guidelines, IT Act, and personal data protection standards.</p>
+          <div class="ml-auto w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 px-6 py-5 hover:bg-primary-pale transition-colors cursor-pointer group">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold text-primary text-sm">Fraud</div>
+            <div class="text-slate-500 text-xs">Detection</div>
+          </div>
+          <div class="ml-auto w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
           </div>
         </div>
       </div>
@@ -228,234 +300,342 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="py-24 bg-indigo" id="services">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 section-fade">
-        <span class="text-saffron text-xs font-bold tracking-[0.2em] uppercase">What We Do</span>
-        <h2 class="font-display text-4xl font-bold text-white mt-3 mb-4">Our Services</h2>
-        <p class="text-white/40 max-w-lg mx-auto">Comprehensive investigation services across all lines of insurance business</p>
+  <section class="py-20 bg-slate-50" id="services">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14 fade-in">
+        <h2 class="text-3xl font-extrabold text-slate-800 section-heading">Court-Ready Reports for Accurate Results</h2>
+        <p class="text-slate-500 mt-6 max-w-2xl mx-auto">We provide detailed, factual and legally compliant investigation reports for your peace of mind.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-5 mb-10">
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 card-hover hover:border-saffron/40 hover:bg-saffron/5 section-fade">
-          <div class="text-3xl mb-5">🚗</div>
-          <h3 class="font-semibold text-white text-lg mb-3">Motor Claim Investigation</h3>
-          <p class="text-white/50 text-sm leading-relaxed">Own damage, theft, total loss, accidental claims — we verify at scene, check RTO records, and assess genuineness from accident to repair.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10 fade-in">
+        <!-- Motor -->
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm">
+          <div class="w-16 h-16 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-4 relative">
+            <svg class="w-9 h-9 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-2 2 2 2-2 2 2 2-2zM13 8h4l3 5v3h-7V8z"/>
+            </svg>
+            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-slate-800 text-sm leading-snug">Motor Claim<br/>Investigation</h3>
+          <div class="mt-3 h-0.5 w-10 bg-primary mx-auto rounded-full"></div>
         </div>
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 card-hover hover:border-saffron/40 hover:bg-saffron/5 section-fade">
-          <div class="text-3xl mb-5">🏥</div>
-          <h3 class="font-semibold text-white text-lg mb-3">Health Claim Investigation</h3>
-          <p class="text-white/50 text-sm leading-relaxed">Cashless and reimbursement claim verification — hospital credentialing, document authenticity checks, pre-existing condition investigation.</p>
+
+        <!-- Health -->
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm">
+          <div class="w-16 h-16 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-4 relative">
+            <svg class="w-9 h-9 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-slate-800 text-sm leading-snug">Health Claim<br/>Investigation</h3>
+          <div class="mt-3 h-0.5 w-10 bg-primary mx-auto rounded-full"></div>
         </div>
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 card-hover hover:border-saffron/40 hover:bg-saffron/5 section-fade">
-          <div class="text-3xl mb-5">🔥</div>
-          <h3 class="font-semibold text-white text-lg mb-3">Fire & Property Investigation</h3>
-          <p class="text-white/50 text-sm leading-relaxed">Origin and cause analysis, stock verification, forensic liaison, and occupancy verification for fire and burglary claims.</p>
+
+        <!-- Fraud -->
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm">
+          <div class="w-16 h-16 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-4 relative">
+            <svg class="w-9 h-9 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-slate-800 text-sm leading-snug">Fraud<br/>Detection</h3>
+          <div class="mt-3 h-0.5 w-10 bg-primary mx-auto rounded-full"></div>
         </div>
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 card-hover hover:border-saffron/40 hover:bg-saffron/5 section-fade">
-          <div class="text-3xl mb-5">🛡️</div>
-          <h3 class="font-semibold text-white text-lg mb-3">Fraud Detection & Analytics</h3>
-          <p class="text-white/50 text-sm leading-relaxed">Pattern analysis, network link mapping, and market intelligence to identify organised fraud rings before claims are settled.</p>
-        </div>
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 card-hover hover:border-saffron/40 hover:bg-saffron/5 section-fade">
-          <div class="text-3xl mb-5">📷</div>
-          <h3 class="font-semibold text-white text-lg mb-3">Surveillance</h3>
-          <p class="text-white/50 text-sm leading-relaxed">Discreet, legally compliant physical and digital surveillance with professionally recorded, time-stamped evidence reports.</p>
-        </div>
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 card-hover hover:border-saffron/40 hover:bg-saffron/5 section-fade">
-          <div class="text-3xl mb-5">📋</div>
-          <h3 class="font-semibold text-white text-lg mb-3">Background Verification</h3>
-          <p class="text-white/50 text-sm leading-relaxed">Deep-dive verification of claimants, insured entities, hospitals, garages, and third parties — including CIBIL, litigation, and criminal history checks.</p>
+
+        <!-- Background -->
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm">
+          <div class="w-16 h-16 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-4 relative">
+            <svg class="w-9 h-9 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-slate-800 text-sm leading-snug">Background<br/>Verification</h3>
+          <div class="mt-3 h-0.5 w-10 bg-primary mx-auto rounded-full"></div>
         </div>
       </div>
-      <div class="flex flex-wrap gap-3 justify-center section-fade">
-        <span class="bg-saffron/10 border border-saffron/20 text-saffron/80 px-4 py-2 rounded-full text-xs font-medium">MACT Claims</span>
-        <span class="bg-saffron/10 border border-saffron/20 text-saffron/80 px-4 py-2 rounded-full text-xs font-medium">RTI Applications</span>
-        <span class="bg-saffron/10 border border-saffron/20 text-saffron/80 px-4 py-2 rounded-full text-xs font-medium">FIR Assistance</span>
-        <span class="bg-saffron/10 border border-saffron/20 text-saffron/80 px-4 py-2 rounded-full text-xs font-medium">Liability Claims</span>
-        <span class="bg-saffron/10 border border-saffron/20 text-saffron/80 px-4 py-2 rounded-full text-xs font-medium">Marine Cargo</span>
-        <span class="bg-saffron/10 border border-saffron/20 text-saffron/80 px-4 py-2 rounded-full text-xs font-medium">Life Insurance Verification</span>
+
+      <!-- Trust badges -->
+      <div class="flex flex-wrap justify-center gap-8 fade-in">
+        <div class="flex items-center gap-2 text-slate-700 font-medium text-sm">
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          IRDAI Compliant Process
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-medium text-sm">
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          5000+ Successful Cases
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-medium text-sm">
+          <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Pan India Coverage
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- COVERAGE -->
-  <section class="py-24 bg-slate-50" id="locations">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 section-fade">
-        <span class="text-saffron text-xs font-bold tracking-[0.2em] uppercase">Where We Operate</span>
-        <h2 class="font-display text-4xl font-bold text-indigo mt-3 mb-4">Pan-India Coverage</h2>
-        <p class="text-slate-400 max-w-lg mx-auto">Field teams deployed across 12 states — rapid on-ground response wherever your claim lands</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 section-fade">
-        <div class="md:col-span-2 bg-indigo text-white rounded-2xl p-6 flex items-center gap-4 card-hover hover:shadow-xl">
-          <span class="text-saffron text-2xl">📍</span>
-          <div>
-            <div class="text-white/40 text-xs uppercase tracking-widest mb-1">Headquarters</div>
-            <div class="font-semibold text-lg">Mumbai, Maharashtra</div>
+  <!-- ABOUT / BRAND -->
+  <section class="py-20 bg-white" id="about">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Shield graphic left -->
+        <div class="flex justify-center fade-in">
+          <div class="relative">
+            <div class="shield-wrap">
+              <svg width="280" height="310" viewBox="0 0 280 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M140 15 L30 65 L30 165 C30 240 80 290 140 305 C200 290 250 240 250 165 L250 65 Z"
+                      fill="url(#about-shield)"/>
+                <path d="M140 38 L55 80 L55 165 C55 225 95 268 140 282 C185 268 225 225 225 165 L225 80 Z"
+                      fill="rgba(255,255,255,0.1)"/>
+                <!-- India -->
+                <path d="M128 90 L132 82 L140 79 L148 82 L155 90 L158 102 L154 116 L158 128 L156 143 L148 158 L140 168 L132 158 L124 143 L122 128 L126 116 L122 102 Z"
+                      fill="white" opacity="0.25"/>
+                <!-- Mag glass -->
+                <circle cx="155" cy="135" r="42" fill="none" stroke="#2ecc71" stroke-width="4"/>
+                <line x1="188" y1="168" x2="210" y2="190" stroke="#2ecc71" stroke-width="6" stroke-linecap="round"/>
+                <path d="M138 133 L149 145 L170 122" stroke="white" stroke-width="5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="about-shield" x1="30" y1="15" x2="250" y2="305" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2451b3"/>
+                    <stop offset="100%" stop-color="#0f2460"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <!-- Brand name below -->
+            <div class="text-center mt-4">
+              <div class="text-2xl font-extrabold text-primary tracking-wide">Bima <span class="font-black">A</span>nveshak</div>
+              <div class="text-slate-500 text-sm italic mt-1">Your Claim Ki Sachchi Jaanch</div>
+            </div>
           </div>
         </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Gujarat</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Delhi NCR</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Rajasthan</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Madhya Pradesh</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Karnataka</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Tamil Nadu</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">West Bengal</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Uttar Pradesh</span>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3 card-hover hover:border-saffron hover:shadow-md">
-          <span class="w-2 h-2 bg-saffron rounded-full"></span>
-          <span class="font-medium text-indigo">Punjab & Haryana</span>
+
+        <!-- Right text -->
+        <div class="fade-in">
+          <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Who We Are</span>
+          <h2 class="text-3xl font-extrabold text-slate-800 mt-3 mb-5">Your Partner in Truth and Transparency</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            Bima Anveshak is a specialist insurance investigation agency with <strong>10+ years of experience</strong> serving India's leading insurers. We combine legal expertise, field intelligence and data analytics to deliver accurate, timely and court-admissible investigation reports.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-8">
+            Headquartered in Mumbai with field teams across 12 states — we ensure rapid on-ground response wherever your claim lands.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-primary-pale rounded-lg p-4 border border-primary/10">
+              <div class="text-2xl font-extrabold text-primary">10<span class="text-accent">+</span></div>
+              <div class="text-slate-500 text-xs mt-1">Years of Experience</div>
+            </div>
+            <div class="bg-primary-pale rounded-lg p-4 border border-primary/10">
+              <div class="text-2xl font-extrabold text-primary">5000<span class="text-accent">+</span></div>
+              <div class="text-slate-500 text-xs mt-1">Cases Investigated</div>
+            </div>
+            <div class="bg-primary-pale rounded-lg p-4 border border-primary/10">
+              <div class="text-2xl font-extrabold text-primary">12</div>
+              <div class="text-slate-500 text-xs mt-1">States Coverage</div>
+            </div>
+            <div class="bg-primary-pale rounded-lg p-4 border border-primary/10">
+              <div class="text-2xl font-extrabold text-primary">98<span class="text-accent">%</span></div>
+              <div class="text-slate-500 text-xs mt-1">Report Accuracy</div>
+            </div>
+          </div>
+          <a href="#contact" class="inline-block bg-primary hover:bg-primary-light text-white font-bold px-8 py-3 rounded transition-all">
+            Know More →
+          </a>
         </div>
       </div>
-      <p class="text-center text-slate-400 text-sm mt-8 section-fade">Don't see your state? <a href="#contact" class="text-saffron hover:underline font-medium">Contact us</a> — we deploy nationally on request.</p>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="py-20 bg-primary" id="casestudies">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-green-400 text-xs font-bold tracking-[0.2em] uppercase">Our Track Record</span>
+        <h2 class="text-3xl font-extrabold text-white mt-3">Case Studies</h2>
+        <div class="w-14 h-0.5 bg-green-400 mx-auto mt-3"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 fade-in">
+        <div class="bg-white/8 border border-white/15 rounded-xl p-7 hover:bg-white/12 transition-colors">
+          <div class="w-10 h-10 bg-green-400/20 rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="text-green-400 text-xs font-bold uppercase tracking-wider mb-2">Motor Theft | Maharashtra</div>
+          <h3 class="text-white font-bold text-lg mb-3">₹18L Fraudulent Theft Claim Detected</h3>
+          <p class="text-white/55 text-sm leading-relaxed">Vehicle was not stolen — found in claimant's relative's name with altered chassis number. RTO verification and field surveillance led to FIR and claim repudiation.</p>
+        </div>
+        <div class="bg-white/8 border border-white/15 rounded-xl p-7 hover:bg-white/12 transition-colors">
+          <div class="w-10 h-10 bg-green-400/20 rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="text-green-400 text-xs font-bold uppercase tracking-wider mb-2">Health | Gujarat</div>
+          <h3 class="text-white font-bold text-lg mb-3">Fake Hospitalisation Network Busted</h3>
+          <p class="text-white/55 text-sm leading-relaxed">Identified a syndicate of 3 hospitals issuing fraudulent discharge summaries. Cross-verified patient records and doctor credentials across 47 linked claims worth ₹62L.</p>
+        </div>
+        <div class="bg-white/8 border border-white/15 rounded-xl p-7 hover:bg-white/12 transition-colors">
+          <div class="w-10 h-10 bg-green-400/20 rounded-lg flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="text-green-400 text-xs font-bold uppercase tracking-wider mb-2">Fire | Rajasthan</div>
+          <h3 class="text-white font-bold text-lg mb-3">Staged Fire Claim of ₹45L Exposed</h3>
+          <p class="text-white/55 text-sm leading-relaxed">Stock value was overstated 3x. Forensic liaison confirmed fire origin inconsistency. Business records and supplier invoices revealed pre-planned fraud before claim settlement.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHY US -->
-  <section class="py-24 bg-white" id="why-us">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 section-fade">
-        <span class="text-saffron text-xs font-bold tracking-[0.2em] uppercase">Why Choose Us</span>
-        <h2 class="font-display text-4xl font-bold text-indigo mt-3 mb-4">The Bima Anveshak Difference</h2>
-        <p class="text-slate-400 max-w-lg mx-auto">Built by former insurer investigation heads — we know what you need before you ask</p>
+  <section class="py-20 bg-slate-50" id="why-us">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Why Choose Us</span>
+        <h2 class="text-3xl font-extrabold text-slate-800 section-heading mt-2">The Bima Anveshak Advantage</h2>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 section-fade">
-        <div class="bg-slate-50 rounded-2xl p-7 card-hover hover:shadow-lg border border-transparent hover:border-saffron/20">
-          <div class="w-12 h-12 bg-saffron/10 rounded-xl flex items-center justify-center mb-5">
-            <span class="text-2xl">⏱️</span>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex gap-4">
+          <div class="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
           </div>
-          <h3 class="font-semibold text-indigo text-lg mb-3">48-Hour Prelim Reports</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Preliminary findings in 48 hours. Full investigation report within 7 working days. Tight SLAs with real accountability.</p>
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">48-Hour Prelim Reports</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Preliminary findings within 48 hours. Full report in 7 working days with tight SLAs.</p>
+          </div>
         </div>
-        <div class="bg-slate-50 rounded-2xl p-7 card-hover hover:shadow-lg border border-transparent hover:border-saffron/20">
-          <div class="w-12 h-12 bg-saffron/10 rounded-xl flex items-center justify-center mb-5">
-            <span class="text-2xl">🧠</span>
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex gap-4">
+          <div class="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
           </div>
-          <h3 class="font-semibold text-indigo text-lg mb-3">Insurer-Trained Investigators</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Our senior team comes from LIC, New India, ICICI Lombard, and Bajaj Allianz — they know exactly what underwriters and claims managers need.</p>
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">IRDAI Compliant</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">All investigations conducted within IRDAI guidelines on timelines, claimant rights and data protection.</p>
+          </div>
         </div>
-        <div class="bg-slate-50 rounded-2xl p-7 card-hover hover:shadow-lg border border-transparent hover:border-saffron/20">
-          <div class="w-12 h-12 bg-saffron/10 rounded-xl flex items-center justify-center mb-5">
-            <span class="text-2xl">📊</span>
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex gap-4">
+          <div class="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+            </svg>
           </div>
-          <h3 class="font-semibold text-indigo text-lg mb-3">Data-Driven Investigation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">We use link analysis, GIS mapping, and cross-claim data to identify patterns that field-only investigators miss.</p>
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">Court-Ready Reports</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Every report structured to survive IRDAI, civil and criminal litigation scrutiny.</p>
+          </div>
         </div>
-        <div class="bg-slate-50 rounded-2xl p-7 card-hover hover:shadow-lg border border-transparent hover:border-saffron/20">
-          <div class="w-12 h-12 bg-saffron/10 rounded-xl flex items-center justify-center mb-5">
-            <span class="text-2xl">📝</span>
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex gap-4">
+          <div class="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
           </div>
-          <h3 class="font-semibold text-indigo text-lg mb-3">Court-Ready Reports</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Every report is structured to survive scrutiny — from IRDAI grievance review to civil or criminal litigation. No shortcuts.</p>
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">Insurer-Trained Team</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Senior team from LIC, New India, ICICI Lombard and Bajaj Allianz — know what underwriters need.</p>
+          </div>
         </div>
-        <div class="bg-slate-50 rounded-2xl p-7 card-hover hover:shadow-lg border border-transparent hover:border-saffron/20">
-          <div class="w-12 h-12 bg-saffron/10 rounded-xl flex items-center justify-center mb-5">
-            <span class="text-2xl">🤝</span>
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex gap-4">
+          <div class="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+            </svg>
           </div>
-          <h3 class="font-semibold text-indigo text-lg mb-3">Single-Point Accountability</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">One dedicated case manager per insurer account. No handoffs, no information loss — complete continuity from assignment to close.</p>
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">Pan-India Coverage</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Field teams deployed across 12 states — rapid on-ground response within 24 hours.</p>
+          </div>
         </div>
-        <div class="bg-slate-50 rounded-2xl p-7 card-hover hover:shadow-lg border border-transparent hover:border-saffron/20">
-          <div class="w-12 h-12 bg-saffron/10 rounded-xl flex items-center justify-center mb-5">
-            <span class="text-2xl">🔒</span>
+        <div class="svc-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex gap-4">
+          <div class="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
           </div>
-          <h3 class="font-semibold text-indigo text-lg mb-3">IRDAI Compliant</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">All investigations conducted strictly within IRDAI guidelines on claim investigation timelines, claimant rights, and data protection norms.</p>
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">Confidential & Secure</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Strict data confidentiality. Full compliance with IT Act and personal data protection norms.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="py-24 bg-slate-50" id="contact">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-5 gap-16">
-        <div class="md:col-span-2 section-fade">
-          <span class="text-saffron text-xs font-bold tracking-[0.2em] uppercase">Get In Touch</span>
-          <h2 class="font-display text-4xl font-bold text-indigo mt-3 mb-5">Contact Us</h2>
-          <p class="text-slate-500 leading-relaxed mb-10">
-            Need an investigation? Want to discuss a panel arrangement? We respond within 24 hours on working days.
-          </p>
-          <div class="space-y-7">
+  <section class="py-20 bg-white" id="contact">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-5 gap-16">
+        <div class="lg:col-span-2 fade-in">
+          <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Reach Out</span>
+          <h2 class="text-3xl font-extrabold text-slate-800 mt-3 mb-5">Contact Us</h2>
+          <p class="text-slate-500 mb-8 leading-relaxed">Need an investigation or want to discuss a panel arrangement? We respond within 24 hours.</p>
+          <div class="space-y-6">
             <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 bg-indigo/5 rounded-xl flex items-center justify-center flex-shrink-0 text-lg">📍</div>
+              <div class="w-10 h-10 bg-primary/8 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              </div>
               <div>
                 <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Office</div>
-                <div class="text-indigo font-medium">Mumbai, Maharashtra, India</div>
+                <div class="text-slate-800 font-medium">Mumbai, Maharashtra, India</div>
               </div>
             </div>
             <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 bg-indigo/5 rounded-xl flex items-center justify-center flex-shrink-0 text-lg">✉️</div>
-              <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Email</div>
-                <a href="mailto:info@bimaanveshak.com" class="text-indigo font-medium hover:text-saffron transition-colors">info@bimaanveshak.com</a>
+              <div class="w-10 h-10 bg-primary/8 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
               </div>
-            </div>
-            <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 bg-indigo/5 rounded-xl flex items-center justify-center flex-shrink-0 text-lg">📞</div>
               <div>
                 <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Phone / WhatsApp</div>
-                <a href="tel:+919900000000" class="text-indigo font-medium hover:text-saffron transition-colors">+91 99000 00000</a>
+                <a href="tel:+919999988888" class="text-slate-800 font-medium hover:text-primary transition-colors">+91 99999 88888</a>
               </div>
             </div>
             <div class="flex gap-4 items-start">
-              <div class="w-10 h-10 bg-indigo/5 rounded-xl flex items-center justify-center flex-shrink-0 text-lg">⏱️</div>
+              <div class="w-10 h-10 bg-primary/8 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+              </div>
               <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Response Time</div>
-                <div class="text-indigo font-medium">Within 24 hours</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Email</div>
+                <a href="mailto:info@bimaanveshak.com" class="text-slate-800 font-medium hover:text-primary transition-colors">info@bimaanveshak.com</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="md:col-span-3 section-fade">
-          <form id="contactForm" class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm space-y-5">
+
+        <div class="lg:col-span-3 fade-in">
+          <form id="contactForm" class="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-5 shadow-sm">
             <div class="grid grid-cols-2 gap-5">
               <div>
                 <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Full Name</label>
-                <input type="text" required placeholder="Your name" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-indigo placeholder-slate-300 focus:outline-none focus:border-saffron transition-colors" />
+                <input type="text" required placeholder="Your name" class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
               </div>
               <div>
                 <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Organisation</label>
-                <input type="text" placeholder="Insurance company / TPA" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-indigo placeholder-slate-300 focus:outline-none focus:border-saffron transition-colors" />
+                <input type="text" placeholder="Insurance company / TPA" class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-5">
               <div>
-                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Email Address</label>
-                <input type="email" required placeholder="your@email.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-indigo placeholder-slate-300 focus:outline-none focus:border-saffron transition-colors" />
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Email</label>
+                <input type="email" required placeholder="your@email.com" class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
               </div>
               <div>
-                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Phone Number</label>
-                <input type="tel" placeholder="+91 98765 43210" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-indigo placeholder-slate-300 focus:outline-none focus:border-saffron transition-colors" />
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Phone</label>
+                <input type="tel" placeholder="+91 98765 43210" class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
               </div>
             </div>
             <div>
               <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Service Required</label>
-              <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-indigo focus:outline-none focus:border-saffron transition-colors">
+              <select class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-primary transition-colors">
                 <option value="">Select a service...</option>
                 <option>Motor Claim Investigation</option>
                 <option>Health Claim Investigation</option>
@@ -463,15 +643,15 @@
                 <option>Fraud Detection &amp; Analytics</option>
                 <option>Surveillance</option>
                 <option>Background Verification</option>
-                <option>Panel Arrangement / Empanelment</option>
+                <option>Panel Arrangement</option>
                 <option>Other</option>
               </select>
             </div>
             <div>
               <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Message</label>
-              <textarea rows="4" required placeholder="Describe your investigation requirement or case..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-indigo placeholder-slate-300 focus:outline-none focus:border-saffron transition-colors resize-none"></textarea>
+              <textarea rows="4" required placeholder="Describe your investigation requirement..." class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
             </div>
-            <button type="submit" id="submitBtn" class="w-full bg-saffron hover:bg-saffron-light text-white font-bold py-3.5 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-saffron/25">
+            <button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-primary-light text-white font-bold py-3.5 rounded-lg transition-all">
               Send Enquiry
             </button>
             <p class="text-center text-slate-400 text-xs">We respond within 24 hours on working days</p>
@@ -482,47 +662,52 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-indigo border-t border-white/8 py-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+  <footer class="bg-primary-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <svg width="36" height="42" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#2451b3"/>
+              <circle cx="30" cy="26" r="9" fill="none" stroke="#2ecc71" stroke-width="2.5"/>
+              <line x1="37" y1="33" x2="42" y2="38" stroke="#2ecc71" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M26 26 L29 29 L34 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <div class="font-bold text-white text-lg">Bima Anveshak</div>
+              <div class="text-blue-300 text-xs italic">Har Claim Ki Sachchi Jaanch</div>
+            </div>
+          </div>
+          <p class="text-white/50 text-sm leading-relaxed max-w-xs">India's trusted specialist insurance investigation agency. IRDAI compliant. Pan-India coverage.</p>
+        </div>
         <div>
-          <a href="#" class="flex items-center gap-2 mb-3">
-            <div class="w-8 h-8 bg-saffron rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-white font-bold text-xs">BA</span>
-            </div>
-            <div class="leading-tight">
-              <span class="font-display text-lg font-bold text-saffron block leading-none">Bima</span>
-              <span class="text-white/80 font-medium text-xs tracking-widest uppercase leading-none">Anveshak</span>
-            </div>
-          </a>
-          <p class="text-white/30 text-sm">Har Claim Ki Sachchi Jaanch.</p>
+          <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#home"        class="text-white/50 hover:text-white text-sm transition-colors">Home</a></li>
+            <li><a href="#services"    class="text-white/50 hover:text-white text-sm transition-colors">Our Services</a></li>
+            <li><a href="#about"       class="text-white/50 hover:text-white text-sm transition-colors">About Us</a></li>
+            <li><a href="#casestudies" class="text-white/50 hover:text-white text-sm transition-colors">Case Studies</a></li>
+            <li><a href="#contact"     class="text-white/50 hover:text-white text-sm transition-colors">Contact Us</a></li>
+          </ul>
         </div>
-        <nav class="flex flex-wrap gap-6 justify-center">
-          <a href="#about" class="text-white/40 hover:text-saffron text-sm transition-colors">About</a>
-          <a href="#services" class="text-white/40 hover:text-saffron text-sm transition-colors">Services</a>
-          <a href="#locations" class="text-white/40 hover:text-saffron text-sm transition-colors">Coverage</a>
-          <a href="#why-us" class="text-white/40 hover:text-saffron text-sm transition-colors">Why Us</a>
-          <a href="#contact" class="text-white/40 hover:text-saffron text-sm transition-colors">Contact</a>
-        </nav>
-        <div class="text-right text-sm text-white/30">
-          <p>© 2026 Bima Anveshak</p>
-          <a href="mailto:info@bimaanveshak.com" class="hover:text-saffron transition-colors">info@bimaanveshak.com</a>
+        <div>
+          <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">Contact</h4>
+          <ul class="space-y-2.5 text-sm text-white/50">
+            <li>Mumbai, Maharashtra</li>
+            <li><a href="tel:+919999988888" class="hover:text-white transition-colors">+91 99999 88888</a></li>
+            <li><a href="mailto:info@bimaanveshak.com" class="hover:text-white transition-colors">info@bimaanveshak.com</a></li>
+            <li class="text-white/30 text-xs pt-2">Mon–Sat: 9 AM – 7 PM</li>
+          </ul>
         </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/30">
+        <p>© 2026 Bima Anveshak. All rights reserved.</p>
+        <p>IRDAI Compliant · Pan-India Service</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        navbar.classList.add('shadow-2xl');
-      } else {
-        navbar.classList.remove('shadow-2xl');
-      }
-    });
-
     // Mobile menu
     document.getElementById('menuBtn').addEventListener('click', () => {
       document.getElementById('mobileMenu').classList.toggle('hidden');
@@ -534,20 +719,17 @@
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // Contact form
     document.getElementById('contactForm').addEventListener('submit', e => {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
       btn.textContent = 'Enquiry Sent ✓';
-      btn.style.background = '#22c55e';
+      btn.style.background = '#2ecc71';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = 'Send Enquiry';
@@ -555,6 +737,18 @@
         btn.disabled = false;
         e.target.reset();
       }, 4000);
+    });
+
+    // Active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+      });
     });
   </script>
 </body>
