@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Login – Bima Anveshak</title>
+  <meta name="description" content="Bima Anveshak Client Portal – login to track your case, download reports, and manage your account."/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        primary: { DEFAULT:'#1a3a8f', dark:'#0f2460', light:'#2451b3', pale:'#eef2fb' },
+        accent:  { DEFAULT:'#2ecc71', dark:'#27ae60' },
+        dark:    { DEFAULT:'#0d1b2a' }
+      }}}
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *{font-family:'Inter',system-ui,sans-serif;}
+    .hero-bg{background:linear-gradient(135deg,#0d1b2a 0%,#0f2460 50%,#1a3a8f 100%);}
+    .input-field{width:100%;border:1px solid #e2e8f0;border-radius:.75rem;padding:.85rem 1rem;font-size:.9rem;outline:none;transition:all .2s;}
+    .input-field:focus{border-color:#1a3a8f;box-shadow:0 0 0 3px rgba(26,58,143,.12);}
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col">
+
+  <!-- NAV -->
+  <nav class="bg-white border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <svg width="30" height="35" viewBox="0 0 52 60" fill="none"><path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#1a3a8f"/><circle cx="30" cy="26" r="9" fill="none" stroke="#2ecc71" stroke-width="2.5"/><line x1="37" y1="33" x2="42" y2="38" stroke="#2ecc71" stroke-width="2.5" stroke-linecap="round"/><path d="M26 26 L29 29 L34 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <div class="font-extrabold text-primary text-base leading-none">Bima Anveshak</div>
+          <div class="text-slate-400 text-[10px] italic">Har Claim Ki Sachchi Jaanch</div>
+        </div>
+      </a>
+      <a href="index.html" class="text-sm text-slate-500 hover:text-primary font-medium transition-colors">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="flex-1 flex items-center justify-center px-4 py-16">
+    <div class="w-full max-w-5xl grid lg:grid-cols-2 gap-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
+
+      <!-- LEFT PANEL -->
+      <div class="hero-bg p-10 flex flex-col justify-between text-white hidden lg:flex">
+        <div>
+          <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
+            <svg width="28" height="33" viewBox="0 0 52 60" fill="none"><path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#2451b3"/><circle cx="30" cy="26" r="9" fill="none" stroke="#2ecc71" stroke-width="2.5"/><line x1="37" y1="33" x2="42" y2="38" stroke="#2ecc71" stroke-width="2.5" stroke-linecap="round"/><path d="M26 26 L29 29 L34 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2 class="text-3xl font-extrabold mb-3 leading-tight">Client Portal</h2>
+          <p class="text-white/60 text-sm leading-relaxed">Securely access your investigation cases, track real-time status, download final reports, and manage your account — all in one place.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center mt-0.5 shrink-0">
+              <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-semibold">Real-time case tracking</div>
+              <div class="text-white/45 text-xs mt-0.5">Monitor investigation progress at every stage</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center mt-0.5 shrink-0">
+              <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-semibold">Secure report downloads</div>
+              <div class="text-white/45 text-xs mt-0.5">Access preliminary and final reports instantly</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center mt-0.5 shrink-0">
+              <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-semibold">Bank-grade security</div>
+              <div class="text-white/45 text-xs mt-0.5">256-bit encrypted, IRDAI compliant access</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-white/10">
+          <p class="text-white/30 text-xs">Need access? Contact your account manager or email <a href="mailto:info@bimaanveshak.com" class="text-accent hover:underline">info@bimaanveshak.com</a></p>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="p-10 flex flex-col justify-center">
+        <!-- Coming Soon state -->
+        <div id="coming-soon">
+          <div class="w-16 h-16 bg-primary/8 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+
+          <h1 class="text-2xl font-extrabold text-dark mb-2">Client Portal</h1>
+          <p class="text-slate-500 text-sm mb-8 leading-relaxed">Our secure online portal is currently under development. Existing clients can track cases and access reports via email — we'll notify you as soon as the portal launches.</p>
+
+          <div class="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
+            <div class="flex items-center gap-2 mb-3">
+              <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span class="text-sm font-bold text-primary">Track your case now</span>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Use our Case Tracker on the home page to get instant status updates with your case reference number.</p>
+            <a href="index.html#tracker"
+              class="inline-flex items-center gap-2 bg-primary text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-primary-dark transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              Go to Case Tracker
+            </a>
+          </div>
+
+          <div class="space-y-3">
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Or contact us directly</p>
+            <a href="mailto:info@bimaanveshak.com"
+              class="flex items-center gap-3 border border-slate-200 hover:border-primary/40 hover:bg-primary/3 rounded-xl p-4 transition-all group">
+              <div class="w-9 h-9 bg-slate-100 group-hover:bg-primary/10 rounded-lg flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4 text-slate-500 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-slate-700">Email Support</div>
+                <div class="text-xs text-slate-400">info@bimaanveshak.com</div>
+              </div>
+              <svg class="w-4 h-4 text-slate-300 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="index.html#contact"
+              class="flex items-center gap-3 border border-slate-200 hover:border-primary/40 hover:bg-primary/3 rounded-xl p-4 transition-all group">
+              <div class="w-9 h-9 bg-slate-100 group-hover:bg-primary/10 rounded-lg flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4 text-slate-500 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-slate-700">Schedule a Callback</div>
+                <div class="text-xs text-slate-400">Mon–Sat, 9 AM – 7 PM IST</div>
+              </div>
+              <svg class="w-4 h-4 text-slate-300 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-6 text-center text-xs text-slate-400">
+    <p>© 2026 Bima Anveshak · <a href="privacy.html" class="hover:text-slate-600 transition-colors">Privacy</a> · <a href="terms.html" class="hover:text-slate-600 transition-colors">Terms</a> · <a href="disclaimer.html" class="hover:text-slate-600 transition-colors">Disclaimer</a></p>
+  </footer>
+
+</body>
+</html>
