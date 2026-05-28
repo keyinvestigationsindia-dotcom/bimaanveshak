@@ -98,19 +98,65 @@
       <p class="fade-up-3 text-white/35 text-sm mb-10">We are working hard to bring you something great. Stay tuned.</p>
 
       <!-- LIVE CLOCK -->
-      <div class="fade-up-4 mb-10">
-        <div class="glass rounded-3xl inline-block px-10 py-6 min-w-[260px]">
-          <div id="clock-time" class="font-display text-6xl sm:text-7xl font-extrabold text-white tracking-tight leading-none mb-2" style="letter-spacing:0.04em; font-variant-numeric:tabular-nums;">
+      <div class="fade-up-4 mb-10 flex flex-col items-center gap-5">
+
+        <!-- Analog Clock -->
+        <div class="glass rounded-full p-4" style="width:200px;height:200px;position:relative;">
+          <svg id="analog-clock" viewBox="0 0 200 200" width="168" height="168" style="display:block;margin:auto;">
+            <!-- Outer ring -->
+            <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+            <!-- Hour markers -->
+            <g stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round">
+              <line x1="100" y1="12" x2="100" y2="22"/>
+              <line x1="100" y1="178" x2="100" y2="188"/>
+              <line x1="12" y1="100" x2="22" y2="100"/>
+              <line x1="178" y1="100" x2="188" y2="100"/>
+            </g>
+            <!-- Minor markers -->
+            <g stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-linecap="round"
+               transform-origin="100 100">
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(30 100 100)"/>
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(60 100 100)"/>
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(120 100 100)"/>
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(150 100 100)"/>
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(210 100 100)"/>
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(240 100 100)"/>
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(300 100 100)"/>
+              <line x1="100" y1="14" x2="100" y2="19" transform="rotate(330 100 100)"/>
+            </g>
+            <!-- Hour hand -->
+            <line id="hand-h" x1="100" y1="100" x2="100" y2="44"
+              stroke="white" stroke-width="4.5" stroke-linecap="round"
+              style="transform-origin:100px 100px;"/>
+            <!-- Minute hand -->
+            <line id="hand-m" x1="100" y1="100" x2="100" y2="30"
+              stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"
+              style="transform-origin:100px 100px;"/>
+            <!-- Second hand -->
+            <line id="hand-s" x1="100" y1="112" x2="100" y2="22"
+              stroke="#2ecc71" stroke-width="1.5" stroke-linecap="round"
+              style="transform-origin:100px 100px;"/>
+            <!-- Center dot -->
+            <circle cx="100" cy="100" r="5" fill="#2ecc71"/>
+            <circle cx="100" cy="100" r="2.5" fill="white"/>
+          </svg>
+        </div>
+
+        <!-- Digital readout -->
+        <div class="text-center">
+          <div id="clock-time" class="font-display text-5xl sm:text-6xl font-extrabold text-white leading-none"
+            style="letter-spacing:0.06em;font-variant-numeric:tabular-nums;">
             00:00:00
           </div>
-          <div class="flex items-center justify-center gap-2 mt-1">
-            <span id="clock-ampm" class="text-accent font-bold text-sm tracking-widest uppercase"></span>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <span id="clock-ampm" class="text-accent font-bold text-xs tracking-widest uppercase"></span>
             <span class="text-white/20 text-xs">·</span>
-            <span id="clock-date" class="text-white/45 text-sm font-medium"></span>
+            <span id="clock-date" class="text-white/45 text-xs font-medium"></span>
             <span class="text-white/20 text-xs">·</span>
             <span class="text-white/30 text-xs font-semibold tracking-wider">IST</span>
           </div>
         </div>
+
       </div>
 
       <!-- Divider -->
@@ -181,20 +227,36 @@
     const DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-    function updateClock() {
-      // IST = UTC + 5:30
+    function getIST() {
       const now = new Date();
       const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-      const ist = new Date(utc + 5.5 * 3600000);
+      return new Date(utc + 5.5 * 3600000);
+    }
 
-      let h = ist.getHours();
-      const m  = ist.getMinutes();
-      const s  = ist.getSeconds();
-      const ampm = h >= 12 ? 'PM' : 'AM';
-      h = h % 12 || 12;
+    function updateClock() {
+      const ist = getIST();
+      const H = ist.getHours();
+      const M = ist.getMinutes();
+      const S = ist.getSeconds();
+      const ms = ist.getMilliseconds();
 
-      const pad = n => String(n).padStart(2, '0');
-      document.getElementById('clock-time').textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+      // ── Analog hands ──
+      // Second hand: smooth sweep
+      const sDeg = (S + ms / 1000) * 6;
+      // Minute hand: smooth
+      const mDeg = (M + S / 60) * 6;
+      // Hour hand: smooth
+      const hDeg = ((H % 12) + M / 60) * 30;
+
+      document.getElementById('hand-s').style.transform = `rotate(${sDeg}deg)`;
+      document.getElementById('hand-m').style.transform = `rotate(${mDeg}deg)`;
+      document.getElementById('hand-h').style.transform = `rotate(${hDeg}deg)`;
+
+      // ── Digital readout ──
+      const ampm = H >= 12 ? 'PM' : 'AM';
+      const h12  = H % 12 || 12;
+      const pad  = n => String(n).padStart(2, '0');
+      document.getElementById('clock-time').textContent = `${pad(h12)}:${pad(M)}:${pad(S)}`;
       document.getElementById('clock-ampm').textContent = ampm;
       document.getElementById('clock-date').textContent =
         `${DAYS[ist.getDay()]}, ${ist.getDate()} ${MONTHS[ist.getMonth()]} ${ist.getFullYear()}`;
