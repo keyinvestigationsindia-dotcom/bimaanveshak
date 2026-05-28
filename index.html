@@ -97,6 +97,22 @@
       <p class="fade-up-3 text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-lg mx-auto">हम जल्द ही लॉन्च होने वाले हैं। हमारी टीम कुछ बेहतरीन तैयार कर रही है — रुकिए, यह देखने लायक होगा।</p>
       <p class="fade-up-3 text-white/35 text-sm mb-10">We are working hard to bring you something great. Stay tuned.</p>
 
+      <!-- LIVE CLOCK -->
+      <div class="fade-up-4 mb-10">
+        <div class="glass rounded-3xl inline-block px-10 py-6 min-w-[260px]">
+          <div id="clock-time" class="font-display text-6xl sm:text-7xl font-extrabold text-white tracking-tight leading-none mb-2" style="letter-spacing:0.04em; font-variant-numeric:tabular-nums;">
+            00:00:00
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-1">
+            <span id="clock-ampm" class="text-accent font-bold text-sm tracking-widest uppercase"></span>
+            <span class="text-white/20 text-xs">·</span>
+            <span id="clock-date" class="text-white/45 text-sm font-medium"></span>
+            <span class="text-white/20 text-xs">·</span>
+            <span class="text-white/30 text-xs font-semibold tracking-wider">IST</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Divider -->
       <div class="fade-up-4 flex items-center gap-4 mb-8 max-w-xs mx-auto">
         <div class="flex-1 h-px bg-white/10"></div>
@@ -160,6 +176,32 @@
       document.getElementById('notifyEmail').value = '';
       document.getElementById('notifyMsg').classList.remove('hidden');
     }
+
+    // ── Live IST Clock ──
+    const DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function updateClock() {
+      // IST = UTC + 5:30
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      const ist = new Date(utc + 5.5 * 3600000);
+
+      let h = ist.getHours();
+      const m  = ist.getMinutes();
+      const s  = ist.getSeconds();
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('clock-time').textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+      document.getElementById('clock-ampm').textContent = ampm;
+      document.getElementById('clock-date').textContent =
+        `${DAYS[ist.getDay()]}, ${ist.getDate()} ${MONTHS[ist.getMonth()]} ${ist.getFullYear()}`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
