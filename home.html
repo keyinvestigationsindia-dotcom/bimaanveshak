@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bima Anveshak – Insurance Investigation Agency | Ahmedabad, Gujarat | Pan-India</title>
   <meta name="description" content="Bima Anveshak is an IRDAI-compliant insurance claims investigation agency based in Ahmedabad, Gujarat. Motor, Health, Fire &amp; Fraud investigation. Pan-India coverage across 12 states."/>
-  <meta name="keywords" content="insurance investigation agency India, insurance investigation Ahmedabad, insurance investigation Gujarat, claim investigation agency, fraud detection insurance India, motor claim investigation Gujarat, health claim investigation Ahmedabad, IRDAI compliant investigator, insurance surveyor Gujarat, claim investigation Mumbai Maharashtra, insurance fraud detection, bima investigation agency"/>
+  <meta name="keywords" content="insurance investigation agency India, insurance investigation Ahmedabad, insurance investigation Gujarat, claim investigation agency, fraud detection insurance India, motor claim investigation Gujarat, health claim investigation Ahmedabad, IRDAI compliant investigator, insurance surveyor Gujarat, bima investigation agency"/>
   <meta name="author" content="Bima Anveshak"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://bimaanveshak.com/"/>
 
-  <!-- Google Analytics GA4 – replace G-NVB9NFQ4X9 with your Measurement ID -->
+  <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVB9NFQ4X9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,11 +18,9 @@
     gtag('js', new Date());
     gtag('config', 'G-NVB9NFQ4X9');
   </script>
-  <!-- Google Search Console – replace content value with your verification token -->
-  <!-- Google Search Console: add verification meta tag here when ready -->
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Bima Anveshak – Specialist Insurance Investigation Agency | Ahmedabad"/>
+  <meta property="og:title" content="Bima Anveshak – Insurance Investigation Agency | Ahmedabad"/>
   <meta property="og:description" content="IRDAI compliant insurance investigation agency. Motor, Health, Fire, Fraud. Pan-India coverage from Ahmedabad, Gujarat."/>
   <meta property="og:url" content="https://bimaanveshak.com/"/>
   <meta property="og:type" content="website"/>
@@ -50,609 +48,658 @@
       theme: {
         extend: {
           colors: {
-            primary: { DEFAULT:'#1a3a8f', dark:'#0f2460', light:'#2451b3', pale:'#eef2fb' },
-            accent:  { DEFAULT:'#2ecc71', dark:'#27ae60' },
-            orange:  { DEFAULT:'#e67e22', light:'#f39c12' },
-            dark:    { DEFAULT:'#0d1b2a', 800:'#111f38' },
-          },
-          fontFamily: {
-            sans:    ['Inter','system-ui','sans-serif'],
-            display: ['Playfair Display','Georgia','serif'],
+            navy:  { DEFAULT:'#0a0e1a', 800:'#0d1220', 700:'#111827', 600:'#1a2235' },
+            gold:  { DEFAULT:'#c9a84c', light:'#e8c56a', dark:'#a8893a', pale:'rgba(201,168,76,0.12)' },
+            dark:  { DEFAULT:'#0a0e1a' }
           },
           animation: {
-            'float':      'float 4s ease-in-out infinite',
-            'marquee':    'marquee 28s linear infinite',
-            'ping-slow':  'ping 2.5s cubic-bezier(0,0,.2,1) infinite',
+            'marquee':    'marquee 32s linear infinite',
+            'float':      'float 5s ease-in-out infinite',
+            'pulse-gold': 'pulseGold 2s ease-in-out infinite',
+            'ticker':     'ticker 22s linear infinite',
           },
           keyframes: {
-            float:   {'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-14px)'}},
-            marquee: {'0%':{transform:'translateX(0)'},'100%':{transform:'translateX(-50%)'}},
+            marquee:    {'0%':{transform:'translateX(0)'},'100%':{transform:'translateX(-50%)'}},
+            float:      {'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-16px)'}},
+            pulseGold:  {'0%,100%':{opacity:'1'},'50%':{opacity:'0.5'}},
+            ticker:     {'0%':{transform:'translateX(0)'},'100%':{transform:'translateX(-50%)'}},
           }
         }
       }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
   <style>
     *{font-family:'Inter',system-ui,sans-serif;}
     .font-display{font-family:'Playfair Display',Georgia,serif;}
 
-    /* Hero */
-    .hero-bg{background:linear-gradient(120deg,#0d1b2a 0%,#0f2460 45%,#1a3a8f 80%,#1e4db0 100%);position:relative;overflow:hidden;}
-    .hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
-    .hero-particles span{position:absolute;border-radius:50%;background:rgba(255,255,255,0.06);}
+    /* Scrollbar */
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-track{background:#0a0e1a;}
+    ::-webkit-scrollbar-thumb{background:#c9a84c;border-radius:3px;}
 
-    /* Glass card */
-    .glass{background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);}
+    /* Reading progress */
+    #read-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#c9a84c,#e8c56a);z-index:9999;transition:width .1s;}
 
-    /* Gradient text */
-    .grad-text{background:linear-gradient(135deg,#4facfe,#2ecc71);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    /* Gold gradient text */
+    .gold-text{background:linear-gradient(135deg,#c9a84c,#e8c56a,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
-    /* Card hover */
-    .card-lift{transition:transform .25s ease,box-shadow .25s ease;}
-    .card-lift:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(26,58,143,.15);}
-
-    /* Scroll fade */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
-    .reveal.on{opacity:1;transform:translateY(0);}
-    .reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .65s ease,transform .65s ease;}
-    .reveal-left.on{opacity:1;transform:translateX(0);}
-    .reveal-right{opacity:0;transform:translateX(30px);transition:opacity .65s ease,transform .65s ease;}
-    .reveal-right.on{opacity:1;transform:translateX(0);}
-
-    /* Stat counter */
-    .counter{font-variant-numeric:tabular-nums;}
-
-    /* Section divider */
-    .wave-divider svg{display:block;}
-
-    /* Marquee track */
-    .marquee-track{display:flex;width:max-content;}
+    /* Glass card – dark */
+    .glass-dark{background:rgba(255,255,255,0.04);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(201,168,76,0.18);}
+    .glass-dark:hover{background:rgba(201,168,76,0.06);border-color:rgba(201,168,76,0.35);}
 
     /* Nav */
-    .nav-pill{transition:all .2s;}
-    .nav-pill:hover,.nav-pill.active{background:rgba(26,58,143,.08);color:#1a3a8f;}
+    .nav-link{color:rgba(255,255,255,0.65);font-weight:500;font-size:.875rem;transition:color .2s;padding:.4rem .75rem;border-radius:.5rem;}
+    .nav-link:hover,.nav-link.active{color:#c9a84c;}
 
-    /* Tabs */
-    .svc-tab-btn.active{background:#1a3a8f;color:white;}
+    /* Reveal animations */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.on{opacity:1;transform:translateY(0);}
+    .reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal-left.on{opacity:1;transform:translateX(0);}
+    .reveal-right{opacity:0;transform:translateX(32px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal-right.on{opacity:1;transform:translateX(0);}
+
+    /* Card hover lift */
+    .card-lift{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+    .card-lift:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(201,168,76,.12);border-color:rgba(201,168,76,0.4)!important;}
+
+    /* Service tabs */
+    .svc-tab-btn{border:1px solid rgba(201,168,76,0.25);color:rgba(255,255,255,0.55);background:transparent;transition:all .2s;font-size:.8rem;font-weight:600;}
+    .svc-tab-btn:hover{color:#c9a84c;border-color:rgba(201,168,76,0.5);}
+    .svc-tab-btn.active{background:#c9a84c;color:#0a0e1a;border-color:#c9a84c;}
     .svc-panel{display:none;}
     .svc-panel.active{display:grid;}
 
-    /* FAQ accordion */
+    /* FAQ */
     .faq-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
     .faq-body.open{max-height:400px;}
     .faq-icon{transition:transform .3s;}
     .faq-icon.open{transform:rotate(180deg);}
 
-    /* Chatbot */
-    #chatbot-box{position:fixed;bottom:88px;right:20px;width:320px;max-height:480px;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.25);z-index:9999;transform:scale(0);transform-origin:bottom right;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
-    #chatbot-box.open{transform:scale(1);}
-    #chat-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;}
-    .chat-msg-bot{align-self:flex-start;background:#eef2fb;color:#0d1b2a;border-radius:14px 14px 14px 2px;padding:9px 13px;font-size:13px;max-width:85%;line-height:1.5;}
-    .chat-msg-user{align-self:flex-end;background:#1a3a8f;color:white;border-radius:14px 14px 2px 14px;padding:9px 13px;font-size:13px;max-width:85%;line-height:1.5;}
-    .chat-chip{display:inline-block;border:1px solid #1a3a8f;color:#1a3a8f;border-radius:20px;padding:5px 12px;font-size:12px;cursor:pointer;margin:3px 2px;transition:all .2s;}
-    .chat-chip:hover{background:#1a3a8f;color:white;}
-
-    /* WhatsApp float */
-    .wa-pulse::before{content:'';position:absolute;inset:-6px;border-radius:50%;background:rgba(37,211,102,.3);animation:ping 1.8s ease-out infinite;}
-
-    /* Progress bar top */
-    #read-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#2ecc71,#1a3a8f);z-index:9999;transition:width .1s;}
-
-    /* Claim tracker */
+    /* Tracker step */
     .tracker-step{position:relative;}
-    .tracker-step:not(:last-child)::after{content:'';position:absolute;left:19px;top:40px;width:2px;height:calc(100% - 10px);background:#e2e8f0;}
-    .tracker-step.done::after{background:#2ecc71;}
+    .tracker-step:not(:last-child)::after{content:'';position:absolute;left:19px;top:40px;width:2px;height:calc(100% - 10px);background:rgba(201,168,76,0.2);}
+    .tracker-step.done::after{background:#c9a84c;}
 
-    ::-webkit-scrollbar{width:5px;}
-    ::-webkit-scrollbar-track{background:#f1f5f9;}
-    ::-webkit-scrollbar-thumb{background:#1a3a8f;border-radius:3px;}
+    /* Marquee */
+    .marquee-track{display:flex;width:max-content;}
+
+    /* Chatbot */
+    #chatbot-box{position:fixed;bottom:90px;right:20px;width:320px;max-height:480px;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);z-index:9999;transform:scale(0);transform-origin:bottom right;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+    #chatbot-box.open{transform:scale(1);}
+    #chat-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:#111827;}
+    .chat-msg-bot{align-self:flex-start;background:#1a2235;color:#e2e8f0;border-radius:14px 14px 14px 2px;padding:9px 13px;font-size:13px;max-width:85%;line-height:1.5;border:1px solid rgba(201,168,76,0.15);}
+    .chat-msg-user{align-self:flex-end;background:#c9a84c;color:#0a0e1a;border-radius:14px 14px 2px 14px;padding:9px 13px;font-size:13px;max-width:85%;line-height:1.5;font-weight:600;}
+    .chat-chip{display:inline-block;border:1px solid rgba(201,168,76,0.4);color:#c9a84c;border-radius:20px;padding:5px 12px;font-size:12px;cursor:pointer;margin:3px 2px;transition:all .2s;}
+    .chat-chip:hover{background:#c9a84c;color:#0a0e1a;}
+
+    /* Section labels */
+    .section-label{color:#c9a84c;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
+
+    /* Gold divider */
+    .gold-line{height:2px;width:48px;background:linear-gradient(90deg,#c9a84c,transparent);}
+
+    /* Input */
+    .form-input{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.25);color:white;border-radius:.75rem;padding:.85rem 1rem;font-size:.9rem;outline:none;transition:all .2s;width:100%;}
+    .form-input::placeholder{color:rgba(255,255,255,0.3);}
+    .form-input:focus{border-color:#c9a84c;box-shadow:0 0 0 3px rgba(201,168,76,.1);}
+
+    /* Stat pulse dot */
+    .live-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulseGold 1.8s ease-in-out infinite;}
+
+    /* Hero mesh */
+    .hero-mesh{background:
+      radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 10% 80%, rgba(201,168,76,0.05) 0%, transparent 45%),
+      linear-gradient(160deg, #0a0e1a 0%, #0d1220 40%, #111827 100%);}
+
+    /* Gold btn */
+    .btn-gold{background:linear-gradient(135deg,#c9a84c,#e8c56a);color:#0a0e1a;font-weight:700;border-radius:.75rem;transition:all .2s;box-shadow:0 6px 24px rgba(201,168,76,.3);}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,168,76,.4);}
+    .btn-outline{border:1.5px solid rgba(201,168,76,0.45);color:#c9a84c;font-weight:600;border-radius:.75rem;transition:all .2s;}
+    .btn-outline:hover{background:rgba(201,168,76,0.1);border-color:#c9a84c;}
+
+    /* Ticker */
+    .ticker-wrap{overflow:hidden;}
+    .ticker-track{display:flex;width:max-content;animation:ticker 22s linear infinite;}
   </style>
 </head>
-<body class="bg-white text-slate-700 antialiased">
+<body class="bg-navy text-white antialiased">
 
-  <!-- Reading progress -->
+  <!-- Reading progress bar -->
   <div id="read-progress" style="width:0%"></div>
 
-  <!-- TOP BAR -->
-  <div class="bg-primary-dark text-white text-xs py-2 hidden md:block">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <div class="flex items-center gap-6 text-white/70">
+  <!-- ════════════════ TOP BAR ════════════════ -->
+  <div class="bg-navy-800 border-b border-gold/10 hidden md:block">
+    <div class="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-between">
+      <div class="flex items-center gap-7 text-white/50 text-xs">
         <span class="flex items-center gap-1.5">
-          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-          <a href="mailto:info@bimaanveshak.com" class="hover:text-white transition-colors">info@bimaanveshak.com</a>
+          <svg class="w-3 h-3 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          <a href="mailto:info@bimaanveshak.com" class="hover:text-gold transition-colors">info@bimaanveshak.com</a>
         </span>
         <span class="flex items-center gap-1.5">
-          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-          Ahmedabad, Gujarat · Pan-India
+          <svg class="w-3 h-3 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+          Ahmedabad, Gujarat · Pan-India Coverage
         </span>
         <span class="flex items-center gap-1.5">
-          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
-          Mon–Sat: 9:00 AM – 7:00 PM IST
+          <svg class="w-3 h-3 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+          Mon–Sat · 9:00 AM – 7:00 PM IST
         </span>
       </div>
-      <div class="flex items-center gap-4 text-white/60">
-        <span class="bg-accent/20 text-accent px-2.5 py-0.5 rounded-full text-xs font-semibold">IRDAI Compliant Agency</span>
-        <span>Pan-India · 12 States</span>
+      <div class="flex items-center gap-5 text-xs">
+        <span class="flex items-center gap-1.5 text-emerald-400">
+          <span class="live-dot"></span>
+          Active · Accepting Mandates
+        </span>
+        <span class="text-gold/70 border border-gold/25 px-2.5 py-0.5 rounded-full font-semibold">IRDAI Compliant Agency</span>
       </div>
     </div>
   </div>
 
-  <!-- NAVBAR -->
-  <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <header id="navbar" class="sticky top-0 z-50 bg-navy/95 backdrop-blur-lg border-b border-white/6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+
       <!-- Logo -->
       <a href="#" class="flex items-center gap-3 flex-shrink-0">
-        <svg width="44" height="50" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 8px rgba(26,58,143,.25))">
-          <path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="url(#nav-sg)"/>
-          <circle cx="30" cy="27" r="10" fill="none" stroke="#2ecc71" stroke-width="2.8"/>
-          <line x1="38" y1="35" x2="44" y2="41" stroke="#2ecc71" stroke-width="2.8" stroke-linecap="round"/>
-          <path d="M26 27 L29 30 L35 23" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs><linearGradient id="nav-sg" x1="4" y1="2" x2="48" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#2451b3"/><stop offset="100%" stop-color="#0f2460"/></linearGradient></defs>
-        </svg>
+        <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center">
+          <svg width="22" height="26" viewBox="0 0 52 60" fill="none">
+            <path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#c9a84c"/>
+            <circle cx="30" cy="27" r="10" fill="none" stroke="white" stroke-width="2.5"/>
+            <line x1="38" y1="35" x2="44" y2="41" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M26 27 L29 30 L35 23" stroke="#0a0e1a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div>
-          <div class="font-extrabold text-primary text-lg leading-tight tracking-tight">Bima Anveshak</div>
-          <div class="text-slate-400 text-xs italic">Har Claim Ki Sachchi Jaanch</div>
+          <div class="font-extrabold text-white text-base leading-tight">Bima Anveshak</div>
+          <div class="text-gold/60 text-[10px] italic font-medium tracking-wide">Har Claim Ki Sachchi Jaanch</div>
         </div>
       </a>
 
       <!-- Desktop nav -->
       <nav class="hidden xl:flex items-center gap-1">
-        <a href="#home"       class="nav-pill px-3.5 py-2 rounded-lg text-slate-600 font-medium text-sm active">Home</a>
-        <a href="#services"   class="nav-pill px-3.5 py-2 rounded-lg text-slate-600 font-medium text-sm">Services</a>
-        <a href="#how-it-works" class="nav-pill px-3.5 py-2 rounded-lg text-slate-600 font-medium text-sm">Process</a>
-        <a href="#about"      class="nav-pill px-3.5 py-2 rounded-lg text-slate-600 font-medium text-sm">About</a>
-        <a href="#tracker"    class="nav-pill px-3.5 py-2 rounded-lg text-slate-600 font-medium text-sm">Track Claim</a>
-        <a href="#casestudies" class="nav-pill px-3.5 py-2 rounded-lg text-slate-600 font-medium text-sm">Case Studies</a>
-        <a href="#contact"    class="nav-pill px-3.5 py-2 rounded-lg text-slate-600 font-medium text-sm">Contact</a>
+        <a href="#home"         class="nav-link active">Home</a>
+        <a href="#services"     class="nav-link">Services</a>
+        <a href="#how-it-works" class="nav-link">Process</a>
+        <a href="#about"        class="nav-link">About</a>
+        <a href="#tracker"      class="nav-link">Track Claim</a>
+        <a href="#case-studies" class="nav-link">Case Studies</a>
+        <a href="#contact"      class="nav-link">Contact</a>
       </nav>
 
       <div class="hidden xl:flex items-center gap-3">
-        <a href="login.html" class="border border-primary text-primary hover:bg-primary hover:text-white font-semibold px-4 py-2 rounded-lg text-sm transition-all">
-          Client Login
-        </a>
-        <a href="#contact" class="bg-primary hover:bg-primary-light text-white font-bold px-5 py-2 rounded-lg text-sm transition-all shadow-md shadow-primary/20">
-          Get Started →
-        </a>
+        <a href="login.html" class="btn-outline px-4 py-2 text-sm">Client Login</a>
+        <a href="#contact"   class="btn-gold px-5 py-2 text-sm">Get Started →</a>
       </div>
 
-      <button id="menuBtn" class="xl:hidden p-2 text-primary rounded-lg hover:bg-primary/8 transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <button id="menuBtn" class="xl:hidden p-2 text-gold rounded-lg hover:bg-gold/10 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden xl:hidden bg-white border-t border-slate-100">
-      <div class="max-w-7xl mx-auto px-4 py-4 grid grid-cols-2 gap-2">
-        <a href="#home"         class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">Home</a>
-        <a href="#services"     class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">Services</a>
-        <a href="#how-it-works" class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">Process</a>
-        <a href="#about"        class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">About</a>
-        <a href="#tracker"      class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">Track Claim</a>
-        <a href="#casestudies"  class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">Case Studies</a>
-        <a href="#contact"      class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">Contact</a>
-        <a href="login.html"    class="text-slate-700 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary/8">Client Login</a>
+    <div id="mobileMenu" class="hidden xl:hidden bg-navy-800 border-t border-white/6">
+      <div class="max-w-7xl mx-auto px-4 py-4 grid grid-cols-2 gap-1">
+        <a href="#home"         class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">Home</a>
+        <a href="#services"     class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">Services</a>
+        <a href="#how-it-works" class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">Process</a>
+        <a href="#about"        class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">About</a>
+        <a href="#tracker"      class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">Track Claim</a>
+        <a href="#case-studies" class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">Case Studies</a>
+        <a href="#contact"      class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">Contact</a>
+        <a href="login.html"    class="text-white/70 hover:text-gold text-sm px-3 py-2.5 rounded-lg hover:bg-gold/8 transition-all">Client Login</a>
       </div>
       <div class="px-4 pb-4">
-        <a href="#contact" class="block w-full bg-primary text-white text-center font-bold py-3 rounded-xl text-sm">Get Started →</a>
+        <a href="#contact" class="btn-gold block w-full text-center py-3 text-sm">Get Started →</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center relative" id="home">
-    <div class="hero-particles" aria-hidden="true">
-      <span style="width:300px;height:300px;top:-80px;right:-60px;opacity:.5"></span>
-      <span style="width:200px;height:200px;bottom:60px;left:-40px;opacity:.4"></span>
-      <span style="width:120px;height:120px;top:40%;right:18%;opacity:.3"></span>
-      <span style="width:60px;height:60px;top:20%;left:30%;opacity:.25"></span>
-    </div>
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero-mesh min-h-screen flex items-center relative overflow-hidden" id="home">
 
-    <div class="max-w-7xl mx-auto px-6 w-full py-20 lg:py-0 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-      <!-- Left -->
-      <div class="reveal-left">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-7">
-          <span class="w-1.5 h-1.5 bg-accent rounded-full animate-ping-slow"></span>
-          IRDAI Compliant · Pan-India Coverage
+    <!-- Background grid pattern -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;"></div>
+
+    <!-- Glow blobs -->
+    <div class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);"></div>
+    <div class="absolute bottom-1/4 left-1/6 w-80 h-80 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(201,168,76,0.05) 0%,transparent 70%);"></div>
+
+    <div class="max-w-7xl mx-auto px-6 w-full py-24 lg:py-0 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left -->
+        <div class="reveal-left">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2.5 border border-gold/30 bg-gold/8 text-gold text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-8">
+            <span class="live-dot"></span>
+            IRDAI Compliant · Pan-India Operations
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-white leading-[1.08] mb-5">
+            Har Claim Ki<br/><span class="gold-text">Sachchi Jaanch</span>
+          </h1>
+
+          <p class="text-white/55 text-lg leading-relaxed mb-3 max-w-lg">India's specialist insurance claims investigation agency — delivering fact-based, legally-sound investigation reports across Gujarat and pan-India.</p>
+
+          <p class="text-gold/70 text-sm font-medium mb-9">Motor · Health · Fire · Fraud · Life · Liability · Surveillance</p>
+
+          <!-- Stats row -->
+          <div class="flex flex-wrap gap-3 mb-9">
+            <div class="glass-dark rounded-xl px-5 py-3.5 text-center min-w-[90px]">
+              <div class="text-gold text-2xl font-extrabold">12</div>
+              <div class="text-white/40 text-xs mt-0.5">States</div>
+            </div>
+            <div class="glass-dark rounded-xl px-5 py-3.5 text-center min-w-[90px]">
+              <div class="text-gold text-2xl font-extrabold">6+</div>
+              <div class="text-white/40 text-xs mt-0.5">Claim Types</div>
+            </div>
+            <div class="glass-dark rounded-xl px-5 py-3.5 text-center min-w-[90px]">
+              <div class="text-gold text-2xl font-extrabold">GJ</div>
+              <div class="text-white/40 text-xs mt-0.5">HQ Gujarat</div>
+            </div>
+            <div class="glass-dark rounded-xl px-5 py-3.5 text-center min-w-[90px]">
+              <div class="text-gold text-2xl font-extrabold">IRDAI</div>
+              <div class="text-white/40 text-xs mt-0.5">Compliant</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="btn-gold px-8 py-3.5 text-sm">Request Investigation</a>
+            <a href="#tracker" class="btn-outline px-8 py-3.5 text-sm">Track Your Claim →</a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex items-center gap-6 mt-9 pt-7 border-t border-white/8">
+            <div class="flex items-center gap-2 text-white/40 text-xs">
+              <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              IRDAI Compliant
+            </div>
+            <div class="flex items-center gap-2 text-white/40 text-xs">
+              <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+              DPDPA 2023 Compliant
+            </div>
+            <div class="flex items-center gap-2 text-white/40 text-xs">
+              <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+              Factual Reports
+            </div>
+          </div>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] mb-4">
-          Har Claim Ki<br/><span class="grad-text">Sachchi Jaanch</span>
-        </h1>
-        <p class="text-blue-200 text-xl font-medium mb-3">India's Specialist Insurance Investigation Agency</p>
-        <p class="text-white/55 text-base leading-relaxed mb-8 max-w-lg">We detect fraud, protect insurers, and deliver fact-based reports across Motor, Health, Fire & Liability claims — across Gujarat and pan-India.</p>
 
-        <!-- Stats -->
-        <div class="flex flex-wrap gap-3 mb-9">
-          <div class="glass rounded-xl px-5 py-3 text-center">
-            <div class="text-white text-2xl font-extrabold counter" data-target="12">0</div>
-            <div class="text-white/50 text-xs mt-0.5">States</div>
+        <!-- Right – Shield illustration -->
+        <div class="hidden lg:flex justify-center items-center reveal-right">
+          <div style="animation:float 5s ease-in-out infinite">
+            <svg width="380" height="420" viewBox="0 0 380 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sg1" x1="65" y1="20" x2="315" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#1a2235"/>
+                  <stop offset="100%" stop-color="#0a0e1a"/>
+                </linearGradient>
+                <filter id="glow2"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <!-- Outer rings -->
+              <circle cx="190" cy="210" r="170" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+              <circle cx="190" cy="210" r="150" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+              <!-- Shield -->
+              <path d="M190 35 L65 92 L65 210C65 308 122 370 190 394C258 370 315 308 315 210L315 92Z" fill="url(#sg1)" stroke="rgba(201,168,76,0.3)" stroke-width="2"/>
+              <path d="M190 62 L92 110 L92 210C92 292 138 348 190 370C242 348 288 292 288 210L288 110Z" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
+              <!-- Inner cross lines -->
+              <line x1="130" y1="210" x2="250" y2="210" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+              <line x1="190" y1="150" x2="190" y2="300" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+              <!-- Magnifying glass -->
+              <circle cx="205" cy="192" r="54" fill="none" stroke="#c9a84c" stroke-width="4.5" filter="url(#glow2)"/>
+              <line x1="248" y1="235" x2="272" y2="260" stroke="#c9a84c" stroke-width="6.5" stroke-linecap="round" filter="url(#glow2)"/>
+              <!-- Checkmark -->
+              <path d="M190 191 L202 204 L226 176" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Dots -->
+              <circle cx="130" cy="162" r="4" fill="rgba(201,168,76,0.3)"/>
+              <circle cx="252" cy="142" r="3" fill="rgba(201,168,76,0.4)"/>
+              <circle cx="148" cy="250" r="3" fill="rgba(201,168,76,0.25)"/>
+              <circle cx="238" cy="258" r="5" fill="rgba(255,255,255,0.1)"/>
+              <!-- Text -->
+              <text x="190" y="342" text-anchor="middle" fill="#c9a84c" opacity="0.7" font-size="11" font-family="Inter,sans-serif" font-weight="700" letter-spacing="5">BIMA ANVESHAK</text>
+              <text x="190" y="361" text-anchor="middle" fill="white" opacity="0.3" font-size="9.5" font-family="Inter,sans-serif" letter-spacing="2.5">INSURANCE INVESTIGATION</text>
+            </svg>
           </div>
-          <div class="glass rounded-xl px-5 py-3 text-center">
-            <div class="text-white text-2xl font-extrabold">6+</div>
-            <div class="text-white/50 text-xs mt-0.5">Claim Types</div>
-          </div>
-          <div class="glass rounded-xl px-5 py-3 text-center">
-            <div class="text-white text-2xl font-extrabold">GJ</div>
-            <div class="text-white/50 text-xs mt-0.5">HQ · Gujarat</div>
-          </div>
-          <div class="glass rounded-xl px-5 py-3 text-center">
-            <div class="text-white text-2xl font-extrabold">IRDAI</div>
-            <div class="text-white/50 text-xs mt-0.5">Compliant</div>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-3.5 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-accent/30 text-sm">
-            Request Investigation
-          </a>
-          <a href="#tracker" class="glass hover:bg-white/15 text-white font-semibold px-8 py-3.5 rounded-xl transition-all text-sm border border-white/20">
-            Track Your Claim →
-          </a>
         </div>
       </div>
-
-      <!-- Right – animated shield -->
-      <div class="hidden lg:flex justify-center items-center reveal-right">
-        <div style="animation:float 4s ease-in-out infinite">
-          <svg width="360" height="400" viewBox="0 0 360 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="h-sg" x1="60" y1="20" x2="300" y2="380" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#2451b3"/>
-                <stop offset="100%" stop-color="#0a1540"/>
-              </linearGradient>
-              <filter id="glow"><feGaussianBlur stdDeviation="6" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <!-- Outer ring -->
-            <circle cx="180" cy="200" r="160" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-            <circle cx="180" cy="200" r="140" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-            <!-- Shield -->
-            <path d="M180 30 L60 85 L60 200C60 295 115 355 180 378C245 355 300 295 300 200L300 85Z" fill="url(#h-sg)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
-            <path d="M180 55 L85 103 L85 200C85 278 130 330 180 350C230 330 275 278 275 200L275 103Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-            <!-- India outline simplified -->
-            <path d="M168 110 L172 102 L180 99 L188 102 L195 110 L197 123 L192 140 L196 154 L193 170 L184 188 L180 195 L176 188 L167 170 L164 154 L168 140 L163 123Z" fill="white" opacity="0.15" stroke="white" stroke-width="0.5" stroke-opacity="0.3"/>
-            <!-- Magnifying glass -->
-            <circle cx="200" cy="175" r="52" fill="none" stroke="#2ecc71" stroke-width="5" filter="url(#glow)"/>
-            <line x1="241" y1="216" x2="265" y2="240" stroke="#2ecc71" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
-            <!-- Checkmark -->
-            <path d="M183 174 L195 187 L218 160" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- Dots -->
-            <circle cx="120" cy="155" r="4" fill="rgba(255,255,255,0.2)"/>
-            <circle cx="240" cy="130" r="3" fill="rgba(46,204,113,0.4)"/>
-            <circle cx="145" cy="235" r="3" fill="rgba(46,204,113,0.3)"/>
-            <circle cx="220" cy="248" r="5" fill="rgba(255,255,255,0.15)"/>
-            <!-- Label -->
-            <text x="180" y="330" text-anchor="middle" fill="white" opacity="0.6" font-size="12" font-family="Inter,sans-serif" font-weight="700" letter-spacing="4">BIMA ANVESHAK</text>
-            <text x="180" y="348" text-anchor="middle" fill="white" opacity="0.35" font-size="10" font-family="Inter,sans-serif" letter-spacing="2">INSURANCE INVESTIGATION</text>
-          </svg>
-        </div>
-      </div>
     </div>
 
-    <!-- Bottom wave -->
-    <div class="absolute bottom-0 left-0 right-0 wave-divider">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="white"/>
-      </svg>
-    </div>
+    <!-- Bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-24 pointer-events-none" style="background:linear-gradient(to bottom,transparent,#0a0e1a)"></div>
   </section>
 
-  <!-- LINES OF BUSINESS MARQUEE -->
-  <section class="py-10 bg-white border-b border-slate-100">
-    <div class="max-w-7xl mx-auto px-6 mb-5">
-      <p class="text-center text-slate-400 text-xs font-semibold uppercase tracking-widest">Investigation Services Across All Lines of Business</p>
-    </div>
-    <div class="overflow-hidden relative">
-      <div class="marquee-track animate-marquee">
-        <div class="flex items-center gap-16 px-8">
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🚗 Motor OD Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🏥 Health &amp; Mediclaim</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🔥 Fire &amp; Property</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">⚖️ MACT &amp; TP Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🛡️ Fraud Detection</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">📷 Surveillance</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🚢 Marine &amp; Cargo</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">💼 Life Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🏗️ Liability Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🔍 Background Verification</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-        </div>
-        <!-- Duplicate for seamless loop -->
-        <div class="flex items-center gap-16 px-8" aria-hidden="true">
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🚗 Motor OD Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🏥 Health &amp; Mediclaim</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🔥 Fire &amp; Property</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">⚖️ MACT &amp; TP Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🛡️ Fraud Detection</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">📷 Surveillance</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🚢 Marine &amp; Cargo</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">💼 Life Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🏗️ Liability Claims</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-          <span class="text-slate-400 font-bold text-sm whitespace-nowrap">🔍 Background Verification</span>
-          <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+  <!-- ════════════════ TICKER ════════════════ -->
+  <div class="bg-navy-800 border-y border-gold/12 py-3 overflow-hidden">
+    <div class="flex items-center gap-3 mb-0">
+      <div class="shrink-0 flex items-center gap-2 bg-gold text-navy font-bold text-xs px-3 py-1 ml-4 rounded">
+        <span class="live-dot" style="background:#0a0e1a;"></span>
+        LIVE
+      </div>
+      <div class="ticker-wrap flex-1">
+        <div class="ticker-track">
+          <div class="flex items-center gap-10 pr-10">
+            <span class="text-white/50 text-xs whitespace-nowrap">🚗 Motor OD Claim Investigation · Gujarat & Rajasthan</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🏥 Health Claim Verification · Pan-India Network</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🔥 Fire & Property Investigation · Ahmedabad</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🛡️ Fraud Intelligence · 12 States Coverage</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">📷 Covert Surveillance · Nationwide Field Agents</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🔍 Background Verification · DPDPA 2023 Compliant</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">⚖️ MACT & TP Claims · Legal Documentation</span>
+            <span class="text-gold/40 text-xs">◆</span>
+          </div>
+          <div class="flex items-center gap-10 pr-10" aria-hidden="true">
+            <span class="text-white/50 text-xs whitespace-nowrap">🚗 Motor OD Claim Investigation · Gujarat & Rajasthan</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🏥 Health Claim Verification · Pan-India Network</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🔥 Fire & Property Investigation · Ahmedabad</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🛡️ Fraud Intelligence · 12 States Coverage</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">📷 Covert Surveillance · Nationwide Field Agents</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">🔍 Background Verification · DPDPA 2023 Compliant</span>
+            <span class="text-gold/40 text-xs">◆</span>
+            <span class="text-white/50 text-xs whitespace-nowrap">⚖️ MACT & TP Claims · Legal Documentation</span>
+            <span class="text-gold/40 text-xs">◆</span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- SERVICES -->
-  <section class="py-20 bg-primary-pale" id="services">
+  <!-- ════════════════ SERVICES ════════════════ -->
+  <section class="py-24 bg-navy" id="services">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12 reveal">
-        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">What We Investigate</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mt-3 mb-3">Comprehensive Investigation Services</h2>
-        <p class="text-slate-500 max-w-2xl mx-auto">End-to-end insurance investigation across every line of business — delivered fast, accurately, and legally.</p>
+      <div class="text-center mb-14 reveal">
+        <span class="section-label">What We Investigate</span>
+        <div class="gold-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-3">Comprehensive Investigation Services</h2>
+        <p class="text-white/40 max-w-2xl mx-auto text-sm leading-relaxed">End-to-end insurance investigation across every line of business — delivered accurately, promptly, and in full compliance with IRDAI regulations.</p>
       </div>
 
       <!-- Tabs -->
-      <div class="flex flex-wrap justify-center gap-2 mb-8 reveal">
-        <button onclick="switchTab('motor')"   class="svc-tab-btn active px-5 py-2.5 rounded-full text-sm font-semibold border border-primary/20 transition-all">🚗 Motor</button>
-        <button onclick="switchTab('health')"  class="svc-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-primary/20 transition-all bg-white text-slate-600">🏥 Health</button>
-        <button onclick="switchTab('fire')"    class="svc-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-primary/20 transition-all bg-white text-slate-600">🔥 Fire &amp; Property</button>
-        <button onclick="switchTab('fraud')"   class="svc-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-primary/20 transition-all bg-white text-slate-600">🛡️ Fraud</button>
-        <button onclick="switchTab('life')"    class="svc-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-primary/20 transition-all bg-white text-slate-600">🏛️ Life &amp; Liability</button>
-        <button onclick="switchTab('surv')"    class="svc-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-primary/20 transition-all bg-white text-slate-600">📷 Surveillance</button>
+      <div class="flex flex-wrap justify-center gap-2 mb-10 reveal">
+        <button onclick="switchTab('motor')"  class="svc-tab-btn active px-5 py-2.5 rounded-full">🚗 Motor</button>
+        <button onclick="switchTab('health')" class="svc-tab-btn px-5 py-2.5 rounded-full">🏥 Health</button>
+        <button onclick="switchTab('fire')"   class="svc-tab-btn px-5 py-2.5 rounded-full">🔥 Fire &amp; Property</button>
+        <button onclick="switchTab('fraud')"  class="svc-tab-btn px-5 py-2.5 rounded-full">🛡️ Fraud</button>
+        <button onclick="switchTab('life')"   class="svc-tab-btn px-5 py-2.5 rounded-full">🏛️ Life &amp; Liability</button>
+        <button onclick="switchTab('surv')"   class="svc-tab-btn px-5 py-2.5 rounded-full">📷 Surveillance</button>
       </div>
 
-      <!-- Tab panels -->
+      <!-- Tab: Motor -->
       <div id="tab-motor" class="svc-panel active grid md:grid-cols-3 gap-5">
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🚗</div>
-          <h3 class="font-bold text-dark mb-2">OD Claim Investigation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Own damage verification — accident genuineness, repair estimates, pre-accident condition and spot inspection.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🚗</div>
+          <h3 class="font-bold text-white mb-2">OD Claim Investigation</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Own damage verification — accident genuineness, repair estimates, pre-accident condition and spot inspection.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🔍</div>
-          <h3 class="font-bold text-dark mb-2">Theft Investigation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">RTO record verification, chassis/engine checks, FIR analysis, vehicle tracing and anti-theft ring detection.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🔍</div>
+          <h3 class="font-bold text-white mb-2">Theft Investigation</h3>
+          <p class="text-white/45 text-sm leading-relaxed">RTO record verification, chassis/engine checks, FIR analysis and vehicle tracing.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">⚖️</div>
-          <h3 class="font-bold text-dark mb-2">MACT &amp; TP Claims</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Third-party liability investigations, accident reconstruction, witness statements and court documentation.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">⚖️</div>
+          <h3 class="font-bold text-white mb-2">MACT &amp; TP Claims</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Third-party liability investigations, accident reconstruction, witness statements and court documentation.</p>
         </div>
       </div>
+      <!-- Tab: Health -->
       <div id="tab-health" class="svc-panel grid md:grid-cols-3 gap-5">
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🏥</div>
-          <h3 class="font-bold text-dark mb-2">Hospitalisation Verification</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Cashless and reimbursement claim verification — hospital credentialing, discharge summary checks.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🏥</div>
+          <h3 class="font-bold text-white mb-2">Hospitalisation Verification</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Cashless and reimbursement claim verification — hospital credentialing, discharge summary checks.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">📋</div>
-          <h3 class="font-bold text-dark mb-2">Pre-Existing Condition</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Medical history investigation, doctor interviews, pharmacy records and lifestyle verification.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">📋</div>
+          <h3 class="font-bold text-white mb-2">Pre-Existing Condition</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Medical history investigation, doctor interviews, pharmacy records and lifestyle verification.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🧾</div>
-          <h3 class="font-bold text-dark mb-2">Document Authenticity</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Forensic document verification — bills, prescriptions, diagnostic reports and hospital registration checks.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🧾</div>
+          <h3 class="font-bold text-white mb-2">Document Authenticity</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Forensic document verification — bills, prescriptions, diagnostic reports and hospital registration checks.</p>
         </div>
       </div>
+      <!-- Tab: Fire -->
       <div id="tab-fire" class="svc-panel grid md:grid-cols-3 gap-5">
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🔥</div>
-          <h3 class="font-bold text-dark mb-2">Origin &amp; Cause Analysis</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Fire origin determination, forensic liaison, cause analysis and arson detection with expert reports.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🔥</div>
+          <h3 class="font-bold text-white mb-2">Fire &amp; Explosion</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Origin and cause analysis, fire spread reconstruction, evidence preservation and regulatory compliance checks.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">📦</div>
-          <h3 class="font-bold text-dark mb-2">Stock Verification</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Pre-loss stock valuation, purchase records audit, supplier verification and inflated claim detection.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🏢</div>
+          <h3 class="font-bold text-white mb-2">Property &amp; Burglary</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Loss quantum assessment, stock verification, security audit and occupancy confirmation.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🏢</div>
-          <h3 class="font-bold text-dark mb-2">Occupancy Verification</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Business occupancy checks, licence verification, financial health analysis and insurable interest validation.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🌊</div>
+          <h3 class="font-bold text-white mb-2">Natural Peril Claims</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Flood, earthquake, storm damage verification with meteorological data cross-referencing.</p>
         </div>
       </div>
+      <!-- Tab: Fraud -->
       <div id="tab-fraud" class="svc-panel grid md:grid-cols-3 gap-5">
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🕸️</div>
-          <h3 class="font-bold text-dark mb-2">Network Link Analysis</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Identify connected fraud rings across multiple claims using network mapping and pattern analysis.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🛡️</div>
+          <h3 class="font-bold text-white mb-2">Fraud Detection</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Systematic identification of fraudulent claims using field investigation, data analysis and witness interviews.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">📊</div>
-          <h3 class="font-bold text-dark mb-2">Data Analytics</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Cross-claim data analysis, anomaly detection and market intelligence to flag suspicious claim patterns.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🔗</div>
+          <h3 class="font-bold text-white mb-2">Organised Fraud Networks</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Identifying linked claims, common intermediaries, and repeat-offender patterns across multiple claim files.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🚨</div>
-          <h3 class="font-bold text-dark mb-2">Organised Fraud Busting</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Coordinated investigation of organised fraud syndicates — garage, hospital, and agent-driven fraud rings.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">📑</div>
+          <h3 class="font-bold text-white mb-2">Document Forensics</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Forged document detection — IDs, medical bills, RC books, repair invoices and policy documents.</p>
         </div>
       </div>
+      <!-- Tab: Life -->
       <div id="tab-life" class="svc-panel grid md:grid-cols-3 gap-5">
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">💼</div>
-          <h3 class="font-bold text-dark mb-2">Life Claim Investigation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Death claim investigation — cause of death verification, nominee checks, policy inception fraud analysis.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">💼</div>
+          <h3 class="font-bold text-white mb-2">Life Claim Investigation</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Death claim verification — cause of death, insurable interest, beneficiary verification and NEFT checks.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🏗️</div>
-          <h3 class="font-bold text-dark mb-2">Marine &amp; Cargo</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Cargo loss investigation, transit damage verification, port records and logistics chain analysis.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🏗️</div>
+          <h3 class="font-bold text-white mb-2">Liability Claims</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Employer's liability, public liability and professional indemnity claim investigations with legal documentation.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">🛡️</div>
-          <h3 class="font-bold text-dark mb-2">Liability Investigation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Public and product liability claims — incident verification, causal chain analysis and expert opinion reports.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🔎</div>
+          <h3 class="font-bold text-white mb-2">Background Verification</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Pre-insurance and claim-stage background checks — address, employment, income and lifestyle verification.</p>
         </div>
       </div>
+      <!-- Tab: Surveillance -->
       <div id="tab-surv" class="svc-panel grid md:grid-cols-3 gap-5">
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">📷</div>
-          <h3 class="font-bold text-dark mb-2">Physical Surveillance</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Discreet, legally compliant physical surveillance with time-stamped photographic and video evidence.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">📷</div>
+          <h3 class="font-bold text-white mb-2">Covert Surveillance</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Discreet field surveillance for disability, health and lifestyle claims — video evidence, GPS tracking.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">💻</div>
-          <h3 class="font-bold text-dark mb-2">Digital &amp; Social Investigation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">OSINT, social media analysis and digital footprint investigation for claimant verification.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🌐</div>
+          <h3 class="font-bold text-white mb-2">Social Media OSINT</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Open-source intelligence gathering — social media analysis, digital footprint review and online activity verification.</p>
         </div>
-        <div class="card-lift bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-          <div class="w-12 h-12 bg-primary/8 rounded-xl flex items-center justify-center mb-4 text-2xl">📍</div>
-          <h3 class="font-bold text-dark mb-2">GPS &amp; Location Tracking</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Vehicle location verification, movement pattern analysis and geo-tagged evidence collection.</p>
+        <div class="card-lift bg-navy-800 rounded-2xl p-6 border border-white/8">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mb-4 text-2xl">🗺️</div>
+          <h3 class="font-bold text-white mb-2">Field Intelligence</h3>
+          <p class="text-white/45 text-sm leading-relaxed">Neighbourhood enquiry, employer verification, neighbour statements and community-level intelligence gathering.</p>
         </div>
-      </div>
-
-      <div class="text-center mt-10 reveal">
-        <a href="#contact" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-primary/20 text-sm">
-          Request Any Service →
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="py-20 bg-white" id="how-it-works">
+  <!-- ════════════════ HOW IT WORKS ════════════════ -->
+  <section class="py-24 bg-navy-800" id="how-it-works">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14 reveal">
-        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Our Process</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mt-3 mb-3">How We Work</h2>
-        <p class="text-slate-500 max-w-xl mx-auto">A transparent, efficient investigation process from assignment to final report delivery</p>
+        <span class="section-label">Our Process</span>
+        <div class="gold-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">How We Work</h2>
+        <p class="text-white/40 max-w-xl mx-auto text-sm">A structured, transparent investigation process from mandate receipt to final report delivery.</p>
       </div>
-      <div class="grid md:grid-cols-4 gap-6 relative">
-        <!-- Connecting line desktop -->
-        <div class="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20"></div>
-        <div class="reveal text-center relative">
-          <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-primary/30 relative z-10">
-            <span class="text-white text-3xl">📩</span>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div class="reveal text-center" style="transition-delay:.05s">
+          <div class="relative mb-6">
+            <div class="w-16 h-16 bg-gold/10 border-2 border-gold/30 rounded-2xl flex items-center justify-center mx-auto">
+              <span class="text-gold font-extrabold text-xl">01</span>
+            </div>
+            <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-gold/30 to-transparent -translate-x-4"></div>
           </div>
-          <div class="text-primary font-black text-xs uppercase tracking-widest mb-1">Step 01</div>
-          <h3 class="font-bold text-dark text-lg mb-2">Assignment</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Insurer assigns case via portal or email. We acknowledge within 2 hours.</p>
+          <h3 class="font-bold text-white mb-2 text-base">Mandate Received</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Investigation mandate assigned by insurer with full claim details, policy documents and required scope of work.</p>
         </div>
-        <div class="reveal text-center relative" style="transition-delay:.1s">
-          <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-primary/30 relative z-10">
-            <span class="text-white text-3xl">🗺️</span>
+        <!-- Step 2 -->
+        <div class="reveal text-center" style="transition-delay:.15s">
+          <div class="relative mb-6">
+            <div class="w-16 h-16 bg-gold/10 border-2 border-gold/30 rounded-2xl flex items-center justify-center mx-auto">
+              <span class="text-gold font-extrabold text-xl">02</span>
+            </div>
+            <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-gold/30 to-transparent -translate-x-4"></div>
           </div>
-          <div class="text-primary font-black text-xs uppercase tracking-widest mb-1">Step 02</div>
-          <h3 class="font-bold text-dark text-lg mb-2">Field Investigation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Trained agent deployed within 24 hours. On-ground evidence collection begins.</p>
+          <h3 class="font-bold text-white mb-2 text-base">Field Investigation</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Trained investigators deployed for spot inspection, interviews, document collection and evidence gathering.</p>
         </div>
-        <div class="reveal text-center relative" style="transition-delay:.2s">
-          <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-primary/30 relative z-10">
-            <span class="text-white text-3xl">🔬</span>
+        <!-- Step 3 -->
+        <div class="reveal text-center" style="transition-delay:.25s">
+          <div class="relative mb-6">
+            <div class="w-16 h-16 bg-gold/10 border-2 border-gold/30 rounded-2xl flex items-center justify-center mx-auto">
+              <span class="text-gold font-extrabold text-xl">03</span>
+            </div>
+            <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-gold/30 to-transparent -translate-x-4"></div>
           </div>
-          <div class="text-primary font-black text-xs uppercase tracking-widest mb-1">Step 03</div>
-          <h3 class="font-bold text-dark text-lg mb-2">Analysis</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Evidence reviewed by senior analyst. Preliminary report in 48 hours.</p>
+          <h3 class="font-bold text-white mb-2 text-base">Analysis &amp; Review</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Evidence analysis, cross-verification of findings, QC review and legal compliance check before report submission.</p>
         </div>
-        <div class="reveal text-center relative" style="transition-delay:.3s">
-          <div class="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-accent/30 relative z-10">
-            <span class="text-white text-3xl">📄</span>
+        <!-- Step 4 -->
+        <div class="reveal text-center" style="transition-delay:.35s">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gold/15 border-2 border-gold/50 rounded-2xl flex items-center justify-center mx-auto">
+              <span class="text-gold font-extrabold text-xl">04</span>
+            </div>
           </div>
-          <div class="text-accent font-black text-xs uppercase tracking-widest mb-1">Step 04</div>
-          <h3 class="font-bold text-dark text-lg mb-2">Final Report</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Court-ready final report with full evidence dossier. Delivered within 7 days.</p>
+          <h3 class="font-bold text-white mb-2 text-base">Report Delivered</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Structured, factual investigation report with photo evidence, witness statements and conclusions submitted to insurer.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CLAIM TRACKER -->
-  <section class="py-20 bg-primary" id="tracker">
+  <!-- ════════════════ WHY CHOOSE US ════════════════ -->
+  <section class="py-24 bg-navy" id="about">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Left -->
         <div class="reveal-left">
-          <span class="text-accent text-xs font-bold tracking-[0.2em] uppercase">Real-Time Updates</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-5">Track Your Claim Investigation</h2>
-          <p class="text-white/60 leading-relaxed mb-8">Enter your claim or case reference number to get instant status updates on your investigation — from assignment to report delivery.</p>
-          <!-- Tracker form -->
-          <div class="glass rounded-2xl p-6">
-            <div class="flex gap-3">
-              <input type="text" id="trackInput" placeholder="Enter Claim / Case Ref. No. (e.g. BA-2026-001)" class="flex-1 bg-white/10 border border-white/20 text-white placeholder-white/40 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"/>
-              <button onclick="trackClaim()" class="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl transition-all text-sm flex-shrink-0">
-                Track
-              </button>
+          <span class="section-label">Why Bima Anveshak</span>
+          <div class="gold-line mt-3 mb-5"></div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-5 leading-tight">Gujarat's Dedicated Insurance Investigation Specialists</h2>
+          <p class="text-white/50 text-sm leading-relaxed mb-8">Based in Ahmedabad, we understand the Gujarat insurance landscape — local networks, regional hospitals, RTO records, and vernacular communication — giving you faster, more accurate results than remote investigators.</p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <div class="font-semibold text-white text-sm mb-1">IRDAI Compliant Operations</div>
+                <div class="text-white/40 text-sm">All investigations conducted in full compliance with IRDAI investigation guidelines and DPDPA 2023.</div>
+              </div>
             </div>
-            <div id="tracker-result" class="mt-5 hidden">
-              <div class="space-y-4">
-                <div class="tracker-step done flex gap-4 pb-4">
-                  <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0 z-10">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                  </div>
-                  <div><div class="text-white font-semibold text-sm">Case Assigned</div><div class="text-white/50 text-xs mt-0.5">Received &amp; Acknowledged</div></div>
-                </div>
-                <div class="tracker-step done flex gap-4 pb-4">
-                  <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0 z-10">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                  </div>
-                  <div><div class="text-white font-semibold text-sm">Agent Deployed</div><div class="text-white/50 text-xs mt-0.5">Field investigation in progress</div></div>
-                </div>
-                <div class="tracker-step flex gap-4 pb-4">
-                  <div class="w-10 h-10 bg-white/20 border-2 border-orange-400 rounded-full flex items-center justify-center flex-shrink-0 z-10">
-                    <div class="w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
-                  </div>
-                  <div><div class="text-orange-300 font-semibold text-sm">Analysis &amp; Report Drafting</div><div class="text-white/50 text-xs mt-0.5">In progress — expected in 2 days</div></div>
-                </div>
-                <div class="tracker-step flex gap-4">
-                  <div class="w-10 h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center flex-shrink-0 z-10">
-                    <div class="w-3 h-3 bg-white/30 rounded-full"></div>
-                  </div>
-                  <div><div class="text-white/40 font-semibold text-sm">Final Report Delivered</div><div class="text-white/30 text-xs mt-0.5">Pending</div></div>
-                </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <div class="font-semibold text-white text-sm mb-1">Trained Field Investigators</div>
+                <div class="text-white/40 text-sm">Professionally trained investigators with experience across motor, health, fire and fraud domains.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <div class="font-semibold text-white text-sm mb-1">Fast Turnaround</div>
+                <div class="text-white/40 text-sm">Preliminary findings within agreed timelines. Final report with full evidence documentation — no delays.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              </div>
+              <div>
+                <div class="font-semibold text-white text-sm mb-1">Strict Confidentiality</div>
+                <div class="text-white/40 text-sm">All case data, field notes, and reports handled with complete confidentiality under signed NDAs.</div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Right: portal preview card -->
-        <div class="reveal-right hidden lg:block">
-          <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
-            <div class="bg-primary px-6 py-4 flex items-center justify-between">
-              <div class="text-white font-bold text-sm">Client Investigation Portal</div>
-              <div class="flex gap-2">
-                <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+
+        <!-- Right – coverage map card -->
+        <div class="reveal-right">
+          <div class="bg-navy-800 border border-gold/15 rounded-3xl p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <div class="text-white font-bold text-sm">Pan-India Coverage</div>
+                <div class="text-white/40 text-xs">Field investigators across 12 states</div>
               </div>
             </div>
-            <div class="p-6 space-y-4">
-              <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
-                <div>
-                  <div class="text-xs text-slate-400 mb-0.5">Case #BA-2026-312</div>
-                  <div class="font-semibold text-dark text-sm">Motor OD – Pune, MH</div>
-                </div>
-                <span class="bg-orange-100 text-orange-600 text-xs font-bold px-3 py-1 rounded-full">In Progress</span>
+
+            <!-- Coverage grid -->
+            <div class="grid grid-cols-2 gap-2 mb-7">
+              <div class="bg-navy rounded-xl p-3 border border-gold/20">
+                <div class="text-gold font-bold text-xs mb-0.5">★ Primary</div>
+                <div class="text-white text-sm font-semibold">Gujarat</div>
+                <div class="text-white/35 text-xs">HQ · Ahmedabad</div>
               </div>
-              <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
-                <div>
-                  <div class="text-xs text-slate-400 mb-0.5">Case #BA-2026-298</div>
-                  <div class="font-semibold text-dark text-sm">Health Claim – Mumbai</div>
-                </div>
-                <span class="bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full">Completed</span>
+              <div class="bg-navy rounded-xl p-3 border border-white/6">
+                <div class="text-white/40 font-bold text-xs mb-0.5">Coverage</div>
+                <div class="text-white text-sm font-semibold">Rajasthan</div>
+                <div class="text-white/35 text-xs">Jaipur · Jodhpur</div>
               </div>
-              <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
-                <div>
-                  <div class="text-xs text-slate-400 mb-0.5">Case #BA-2026-301</div>
-                  <div class="font-semibold text-dark text-sm">Fire Claim – Surat, GJ</div>
-                </div>
-                <span class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full">Report Ready</span>
+              <div class="bg-navy rounded-xl p-3 border border-white/6">
+                <div class="text-white/40 font-bold text-xs mb-0.5">Coverage</div>
+                <div class="text-white text-sm font-semibold">Maharashtra</div>
+                <div class="text-white/35 text-xs">Mumbai · Pune</div>
               </div>
-              <a href="login.html" class="block w-full text-center bg-primary text-white font-bold py-3 rounded-xl text-sm mt-2">
-                Login to View All Cases →
-              </a>
+              <div class="bg-navy rounded-xl p-3 border border-white/6">
+                <div class="text-white/40 font-bold text-xs mb-0.5">Coverage</div>
+                <div class="text-white text-sm font-semibold">Madhya Pradesh</div>
+                <div class="text-white/35 text-xs">Indore · Bhopal</div>
+              </div>
+            </div>
+
+            <div class="bg-navy rounded-xl p-4 border border-gold/15 flex items-center gap-3">
+              <div class="text-2xl font-extrabold text-gold">12</div>
+              <div>
+                <div class="text-white font-semibold text-sm">States Covered</div>
+                <div class="text-white/40 text-xs">Field network across Gujarat, Rajasthan, Maharashtra, MP, Delhi, UP, Punjab, Haryana &amp; more</div>
+              </div>
             </div>
           </div>
         </div>
@@ -660,725 +707,533 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="py-20 bg-white" id="about">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="reveal-left">
-          <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Who We Are</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mt-3 mb-5">Your Partner in Truth and Transparency</h2>
-          <p class="text-slate-600 leading-relaxed mb-4">Bima Anveshak is a specialist insurance claims investigation agency based in Ahmedabad, Gujarat. We combine legal acumen, on-ground intelligence, and thorough evidence gathering to help insurers handle claims accurately and lawfully.</p>
-          <p class="text-slate-600 leading-relaxed mb-8">Led by professionals with deep insurance domain experience, we understand the pressures on claims teams — and we deliver investigations that make decisions easier.</p>
-          <div class="grid grid-cols-2 gap-4 mb-8">
-            <div class="bg-primary-pale border border-primary/10 rounded-xl p-4">
-              <div class="text-3xl font-extrabold text-primary">Deep</div>
-              <div class="text-slate-500 text-xs mt-1">Domain Expertise</div>
-            </div>
-            <div class="bg-primary-pale border border-primary/10 rounded-xl p-4">
-              <div class="text-3xl font-extrabold text-primary">6<span class="text-accent text-2xl">+</span></div>
-              <div class="text-slate-500 text-xs mt-1">Claim Types</div>
-            </div>
-            <div class="bg-primary-pale border border-primary/10 rounded-xl p-4">
-              <div class="text-3xl font-extrabold text-primary">12</div>
-              <div class="text-slate-500 text-xs mt-1">States Coverage</div>
-            </div>
-            <div class="bg-primary-pale border border-primary/10 rounded-xl p-4">
-              <div class="text-3xl font-extrabold text-primary">Pan</div>
-              <div class="text-slate-500 text-xs mt-1">India Coverage</div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <span class="bg-accent/10 text-accent-dark border border-accent/20 px-4 py-1.5 rounded-full text-xs font-semibold">✓ IRDAI Compliant</span>
-            <span class="bg-accent/10 text-accent-dark border border-accent/20 px-4 py-1.5 rounded-full text-xs font-semibold">✓ Domain-Expert Leadership</span>
-            <span class="bg-accent/10 text-accent-dark border border-accent/20 px-4 py-1.5 rounded-full text-xs font-semibold">✓ Timely Prelim Reports</span>
-            <span class="bg-accent/10 text-accent-dark border border-accent/20 px-4 py-1.5 rounded-full text-xs font-semibold">✓ Structured Evidence Reports</span>
-          </div>
-        </div>
-        <div class="reveal-right flex justify-center">
-          <div style="animation:float 5s ease-in-out infinite 1s">
-            <svg width="300" height="330" viewBox="0 0 300 330" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="a-sg" x1="50" y1="20" x2="250" y2="310" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#2451b3"/>
-                  <stop offset="100%" stop-color="#0a1540"/>
-                </linearGradient>
-              </defs>
-              <path d="M150 22 L50 72 L50 165C50 250 95 302 150 320C205 302 250 250 250 165L250 72Z" fill="url(#a-sg)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-              <path d="M150 45 L72 88 L72 165C72 234 110 280 150 296C190 280 228 234 228 165L228 88Z" fill="rgba(255,255,255,0.06)"/>
-              <circle cx="168" cy="152" r="48" fill="none" stroke="#2ecc71" stroke-width="4.5"/>
-              <line x1="204" y1="188" x2="225" y2="210" stroke="#2ecc71" stroke-width="6.5" stroke-linecap="round"/>
-              <path d="M153 151 L163 162 L183 141" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="150" y="278" text-anchor="middle" fill="white" opacity="0.55" font-size="11" font-weight="700" letter-spacing="4" font-family="Inter,sans-serif">BIMA ANVESHAK</text>
-              <text x="150" y="294" text-anchor="middle" fill="white" opacity="0.3" font-size="9" letter-spacing="2" font-family="Inter,sans-serif">INVESTIGATION AGENCY</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASE STUDIES -->
-  <section class="py-20 bg-dark" id="casestudies">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-14 reveal">
-        <span class="text-accent text-xs font-bold tracking-[0.2em] uppercase">Illustrative Cases</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-3">Case Studies</h2>
-        <p class="text-white/40 max-w-xl mx-auto">Representative investigation scenarios across key lines of business. All details are illustrative — client identities and case specifics are anonymised.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6 mb-10">
-        <div class="card-lift glass rounded-2xl p-7 reveal" style="transition-delay:.05s">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="bg-accent/20 text-accent text-xs font-bold px-3 py-1 rounded-full uppercase">Motor · Illustrative</span>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-3">Suspected Vehicle Theft Ring</h3>
-          <p class="text-white/50 text-sm leading-relaxed mb-5">Multiple linked theft claims identified with altered chassis numbers and common registration patterns. Detailed field investigation report submitted to commissioning insurer for review and decision.</p>
-          <div class="flex items-center gap-2 text-accent text-xs font-semibold">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Comprehensive report with evidence dossier delivered
-          </div>
-        </div>
-        <div class="card-lift glass rounded-2xl p-7 reveal" style="transition-delay:.1s">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="bg-accent/20 text-accent text-xs font-bold px-3 py-1 rounded-full uppercase">Health · Illustrative</span>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-3">Suspected Hospitalisation Fraud</h3>
-          <p class="text-white/50 text-sm leading-relaxed mb-5">Multiple linked claims showing inconsistencies in discharge summaries and patient admission records. Cross-verification of medical documents and provider credentials conducted.</p>
-          <div class="flex items-center gap-2 text-accent text-xs font-semibold">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Detailed factual report submitted to insurer
-          </div>
-        </div>
-        <div class="card-lift glass rounded-2xl p-7 reveal" style="transition-delay:.15s">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="bg-accent/20 text-accent text-xs font-bold px-3 py-1 rounded-full uppercase">Fire · Illustrative</span>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-3">Fire Claim with Stock Discrepancy</h3>
-          <p class="text-white/50 text-sm leading-relaxed mb-5">Pre-loss stock valuation found inconsistent with purchase records and business financials. Origin and cause analysis conducted; full evidence report prepared for insurer's assessment.</p>
-          <div class="flex items-center gap-2 text-accent text-xs font-semibold">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Forensic evidence report with full documentation
-          </div>
-        </div>
-      </div>
-      <div class="text-center reveal">
-        <div class="inline-flex flex-wrap justify-center gap-8 glass rounded-2xl px-10 py-6">
-          <div class="text-center">
-            <div class="text-3xl font-extrabold text-white">Motor</div>
-            <div class="text-white/40 text-xs mt-1">OD · Theft · MACT · TP</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-extrabold text-white">Health</div>
-            <div class="text-white/40 text-xs mt-1">Cashless · Reimbursement · TPA</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-extrabold text-white">48<span class="text-accent">hr</span></div>
-            <div class="text-white/40 text-xs mt-1">Target Prelim Report Time*</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-extrabold text-white">IRDAI</div>
-            <div class="text-white/40 text-xs mt-1">Compliant Process</div>
-          </div>
-        </div>
-        <p class="text-white/20 text-xs mt-4">* Subject to case complexity and location. All cases are illustrative.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="py-20 bg-primary-pale" id="testimonials">
+  <!-- ════════════════ CASE TRACKER ════════════════ -->
+  <section class="py-24 bg-navy-800" id="tracker">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12 reveal">
-        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">What Clients Say</span>
-        <h2 class="text-3xl font-extrabold text-dark mt-3">Trusted by Insurance Professionals</h2>
-        <p class="text-slate-400 text-xs mt-2 italic">* Names and designations are representative. Identities withheld for confidentiality.</p>
+        <span class="section-label">Track Your Case</span>
+        <div class="gold-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl font-extrabold text-white mb-3">Case Status Tracker</h2>
+        <p class="text-white/40 text-sm max-w-xl mx-auto">Enter your case reference number to get an instant status update on your investigation.</p>
       </div>
-      <div class="relative overflow-hidden">
-        <div id="testimonial-track" class="flex gap-6 transition-transform duration-500">
-          <div class="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-            <div class="flex gap-1 mb-4">
-              <span class="text-orange-400 text-lg">★★★★★</span>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">"Bima Anveshak's fraud detection module helped us identify a 12-claim motor ring we had missed for 8 months. Their network analysis is exceptional."</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">RK</div>
-              <div>
-                <div class="font-semibold text-dark text-sm">R.K.*</div>
-                <div class="text-slate-400 text-xs">Claims Manager, General Insurance</div>
-              </div>
-            </div>
-          </div>
-          <div class="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-            <div class="flex gap-1 mb-4">
-              <span class="text-orange-400 text-lg">★★★★★</span>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">"Their health investigation team uncovered a suspected hospitalisation fraud pattern. Reports are thorough, well-structured, and very useful for our claims decisions."</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">PS</div>
-              <div>
-                <div class="font-semibold text-dark text-sm">P.S.*</div>
-                <div class="text-slate-400 text-xs">Head of Claims, TPA</div>
-              </div>
-            </div>
-          </div>
-          <div class="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-            <div class="flex gap-1 mb-4">
-              <span class="text-orange-400 text-lg">★★★★★</span>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">"Fast turnaround, professional agents, and reports that actually help us take decisions. We've reduced our loss ratio by 18% since empanelling them."</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">AM</div>
-              <div>
-                <div class="font-semibold text-dark text-sm">A.M.*</div>
-                <div class="text-slate-400 text-xs">VP Underwriting, Insurance Co.</div>
-              </div>
-            </div>
-          </div>
-          <div class="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-            <div class="flex gap-1 mb-4">
-              <span class="text-orange-400 text-lg">★★★★★</span>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">"Excellent field coverage across Maharashtra and Gujarat. The digital surveillance evidence they provided in our MACT case was decisive in court."</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">SJ</div>
-              <div>
-                <div class="font-semibold text-dark text-sm">S.J.*</div>
-                <div class="text-slate-400 text-xs">Legal Manager, Motor Insurance</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-center gap-3 mt-8">
-          <button onclick="prevTestimonial()" class="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <button onclick="nextTestimonial()" class="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="py-20 bg-white" id="faq">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12 reveal">
-        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Quick Answers</span>
-        <h2 class="text-3xl font-extrabold text-dark mt-3">Frequently Asked Questions</h2>
-      </div>
-      <div class="space-y-3 reveal">
-        <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
-          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-dark text-sm hover:bg-slate-50 transition-colors">
-            How quickly can you deploy an investigator?
-            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="faq-body bg-slate-50 border-t border-slate-100">
-            <p class="px-6 py-4 text-slate-600 text-sm leading-relaxed">We deploy field agents within 24 hours of assignment in metro cities and within 48 hours in tier-2 and tier-3 cities. For urgent cases, we offer same-day deployment in major metros.</p>
-          </div>
-        </div>
-        <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
-          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-dark text-sm hover:bg-slate-50 transition-colors">
-            Are your investigation reports IRDAI compliant?
-            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="faq-body bg-slate-50 border-t border-slate-100">
-            <p class="px-6 py-4 text-slate-600 text-sm leading-relaxed">Yes. All our investigations are conducted strictly within IRDAI guidelines on claim investigation timelines, claimant rights, and data protection norms. Our reports are structured to meet regulatory and court standards.</p>
-          </div>
-        </div>
-        <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
-          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-dark text-sm hover:bg-slate-50 transition-colors">
-            What states do you cover?
-            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="faq-body bg-slate-50 border-t border-slate-100">
-            <p class="px-6 py-4 text-slate-600 text-sm leading-relaxed">We have active field teams in Maharashtra, Gujarat, Rajasthan, Delhi NCR, Uttar Pradesh, Madhya Pradesh, Karnataka, Tamil Nadu, West Bengal, Punjab, Haryana, and Telangana. For other states, we deploy on request.</p>
-          </div>
-        </div>
-        <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
-          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-dark text-sm hover:bg-slate-50 transition-colors">
-            How do I become an empanelled insurer partner?
-            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="faq-body bg-slate-50 border-t border-slate-100">
-            <p class="px-6 py-4 text-slate-600 text-sm leading-relaxed">Simply fill out our contact form or email us at info@bimaanveshak.com. We'll schedule a call within 24 hours to discuss your investigation needs, SLA requirements, and onboarding process. Most insurers are empanelled within 5–7 working days.</p>
-          </div>
-        </div>
-        <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
-          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-dark text-sm hover:bg-slate-50 transition-colors">
-            Can I track my cases in real time?
-            <svg class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="faq-body bg-slate-50 border-t border-slate-100">
-            <p class="px-6 py-4 text-slate-600 text-sm leading-relaxed">Our online Client Investigation Portal is currently under development. In the interim, empanelled insurer partners receive regular case updates and reports directly via email. We aim to launch the portal soon — registered partners will be notified.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="py-16 bg-gradient-to-r from-primary-dark via-primary to-primary-light relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle, white 1px, transparent 1px);background-size:30px 30px;"></div>
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Ready to Protect Your Portfolio?</h2>
-      <p class="text-white/70 text-lg mb-8">Partner with Bima Anveshak for IRDAI-compliant, fact-based insurance claim investigations across India.</p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="#contact" class="bg-accent hover:bg-accent-dark text-white font-bold px-9 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-accent/30 text-sm">
-          Start Investigation Today →
-        </a>
-        <a href="login.html" class="bg-white/10 border border-white/30 hover:bg-white/20 text-white font-semibold px-9 py-4 rounded-xl transition-all text-sm">
-          Client Login
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="py-20 bg-slate-50" id="contact">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12 reveal">
-        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Get In Touch</span>
-        <h2 class="text-3xl font-extrabold text-dark mt-3">Contact Us</h2>
-        <p class="text-slate-500 mt-3 max-w-lg mx-auto">Start an investigation, explore empanelment, or just ask a question — we respond within 24 hours.</p>
-      </div>
-      <div class="grid lg:grid-cols-5 gap-12">
-        <!-- Info -->
-        <div class="lg:col-span-2 reveal-left space-y-6">
-          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <div class="flex gap-4 items-start">
-              <div class="w-11 h-11 bg-primary/8 rounded-xl flex items-center justify-center flex-shrink-0 text-xl">📍</div>
-              <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Headquarters</div>
-                <div class="text-dark font-medium">Ahmedabad, Gujarat, India</div>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <div class="flex gap-4 items-start">
-              <div class="w-11 h-11 bg-primary/8 rounded-xl flex items-center justify-center flex-shrink-0 text-xl">✉️</div>
-              <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Email Us</div>
-                <a href="mailto:info@bimaanveshak.com" class="text-dark font-medium hover:text-primary transition-colors">info@bimaanveshak.com</a>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <div class="flex gap-4 items-start">
-              <div class="w-11 h-11 bg-primary/8 rounded-xl flex items-center justify-center flex-shrink-0 text-xl">⏱️</div>
-              <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Response Time</div>
-                <div class="text-dark font-medium">Within 24 Hours</div>
-                <div class="text-slate-400 text-xs mt-0.5">Mon–Sat, 9 AM – 7 PM IST</div>
-              </div>
-            </div>
-          </div>
-          <div class="bg-primary rounded-2xl p-6 text-white">
-            <div class="text-sm font-bold mb-2">🤝 Empanelment Enquiry?</div>
-            <p class="text-white/70 text-sm leading-relaxed">Looking to empanel us as your investigation partner? Select "Panel Arrangement" in the form and we'll get back with a tailored proposal.</p>
-          </div>
-          <!-- Schedule a Call -->
-          <button onclick="document.getElementById('callModal').classList.remove('hidden')"
-            class="w-full bg-accent hover:bg-accent-dark text-white font-bold py-3.5 rounded-2xl transition-all flex items-center justify-center gap-2 text-sm shadow-md shadow-accent/20">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            Schedule a Callback
-          </button>
-          <!-- Google Maps -->
-          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-44">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.68972544!2d72.4989774!3d23.0204978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1"
-              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade" title="Bima Anveshak – Ahmedabad, Gujarat">
-            </iframe>
-          </div>
-        </div>
-
-        <!-- Form -->
-        <div class="lg:col-span-3 reveal-right">
-          <form id="contactForm" action="https://formsubmit.co/info@bimaanveshak.com" method="POST" class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm space-y-5">
-            <input type="hidden" name="_subject" value="New Enquiry – Bima Anveshak Website"/>
-            <input type="hidden" name="_captcha" value="false"/>
-            <input type="hidden" name="_next" value="https://bimaanveshak.com/#contact"/>
-            <input type="text" name="_honey" style="display:none"/>
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Full Name *</label>
-                <input type="text" name="name" required placeholder="Your full name" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
-              </div>
-              <div>
-                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Organisation</label>
-                <input type="text" name="organisation" placeholder="Insurer / TPA / Company" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
-              </div>
-            </div>
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Email Address *</label>
-                <input type="email" name="email" required placeholder="your@email.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
-              </div>
-              <div>
-                <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">City / State</label>
-                <input type="text" name="city" placeholder="e.g. Ahmedabad, Gujarat" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-slate-300 focus:outline-none focus:border-primary transition-colors"/>
-              </div>
-            </div>
-            <div>
-              <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Service Required</label>
-              <select name="service" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark focus:outline-none focus:border-primary transition-colors">
-                <option value="">Select a service...</option>
-                <option>Motor Claim Investigation</option>
-                <option>Health Claim Investigation</option>
-                <option>Fire &amp; Property Investigation</option>
-                <option>Fraud Detection &amp; Analytics</option>
-                <option>Surveillance</option>
-                <option>Background Verification</option>
-                <option>Life / Liability Investigation</option>
-                <option>Panel Arrangement / Empanelment</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">Message *</label>
-              <textarea rows="4" name="message" required placeholder="Describe your investigation requirement or case..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-dark placeholder-slate-300 focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
-            </div>
-            <button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-primary-light text-white font-bold py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-primary/20 text-sm">
-              Send Enquiry →
+      <div class="max-w-2xl mx-auto reveal">
+        <div class="bg-navy border border-gold/15 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-3">
+            <input id="trackerInput" type="text" placeholder="e.g. BA-2024-001234" class="form-input flex-1" maxlength="25"/>
+            <button onclick="trackCase()" class="btn-gold px-6 py-3 text-sm shrink-0 rounded-xl">
+              Track →
             </button>
-            <p class="text-center text-slate-400 text-xs">We respond within 24 hours. All data is kept strictly confidential.</p>
-          </form>
+          </div>
+          <p class="text-white/25 text-xs mt-3">Your case reference is in your mandate confirmation email from Bima Anveshak.</p>
+
+          <!-- Result area -->
+          <div id="tracker-result" class="mt-6 hidden">
+            <div class="border-t border-white/8 pt-6">
+              <p class="text-white/50 text-sm font-semibold mb-4">Case: <span id="tr-case-id" class="text-gold"></span></p>
+              <div class="space-y-3" id="tr-steps"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 text-center">
+          <p class="text-white/30 text-xs">Case tracking is for insurers and authorised intermediaries only. For queries email <a href="mailto:info@bimaanveshak.com" class="text-gold hover:underline">info@bimaanveshak.com</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-dark text-white pt-16 pb-8">
+  <!-- ════════════════ CASE STUDIES ════════════════ -->
+  <section class="py-24 bg-navy" id="case-studies">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-10 mb-12">
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-5">
-            <svg width="38" height="44" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#2451b3"/>
-              <circle cx="30" cy="26" r="9" fill="none" stroke="#2ecc71" stroke-width="2.5"/>
-              <line x1="37" y1="33" x2="42" y2="38" stroke="#2ecc71" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M26 26 L29 29 L34 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <div>
-              <div class="font-extrabold text-white text-lg">Bima Anveshak</div>
-              <div class="text-white/40 text-xs italic">Har Claim Ki Sachchi Jaanch</div>
+      <div class="text-center mb-14 reveal">
+        <span class="section-label">Case Studies</span>
+        <div class="gold-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Investigation Insights</h2>
+        <p class="text-white/40 max-w-2xl mx-auto text-sm leading-relaxed">Anonymised examples of investigation scenarios — illustrating our methodology and approach. All identifiers have been changed.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Case 1 -->
+        <div class="card-lift bg-navy-800 rounded-2xl p-7 border border-white/8 reveal" style="transition-delay:.05s">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="text-xs font-bold bg-gold/15 text-gold px-3 py-1 rounded-full border border-gold/25">Motor OD</span>
+            <span class="text-xs text-white/30">Gujarat</span>
+          </div>
+          <h3 class="font-bold text-white mb-3 leading-snug">Staged Accident — Vehicle Swap Detected</h3>
+          <p class="text-white/45 text-sm leading-relaxed mb-4">A high-value OD claim was filed for a vehicle allegedly totalled in an accident. Field investigation identified inconsistencies in the FIR timeline, CCTV blind spot, and engine number mismatch with service records.</p>
+          <div class="pt-4 border-t border-white/8">
+            <div class="text-xs text-white/30 font-semibold uppercase tracking-wider mb-2">Methodology</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">RTO Records</span>
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">Spot Inspection</span>
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">CCTV Review</span>
             </div>
           </div>
-          <p class="text-white/40 text-sm leading-relaxed max-w-xs mb-6">Specialist insurance claims investigation agency based in Ahmedabad, Gujarat. IRDAI compliant. Pan-India coverage.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-white/8 border border-white/10 text-white/60 text-xs px-3 py-1 rounded-full">IRDAI Compliant</span>
-            <span class="bg-white/8 border border-white/10 text-white/60 text-xs px-3 py-1 rounded-full">Pan-India</span>
-            <span class="bg-white/8 border border-white/10 text-white/60 text-xs px-3 py-1 rounded-full">Ahmedabad, GJ</span>
-            <span class="bg-white/8 border border-white/10 text-white/60 text-xs px-3 py-1 rounded-full">12 States</span>
+        </div>
+        <!-- Case 2 -->
+        <div class="card-lift bg-navy-800 rounded-2xl p-7 border border-white/8 reveal" style="transition-delay:.15s">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="text-xs font-bold bg-gold/15 text-gold px-3 py-1 rounded-full border border-gold/25">Health</span>
+            <span class="text-xs text-white/30">Ahmedabad</span>
+          </div>
+          <h3 class="font-bold text-white mb-3 leading-snug">Fabricated Hospitalisation Claim</h3>
+          <p class="text-white/45 text-sm leading-relaxed mb-4">A hospitalisation claim was submitted for a 10-day inpatient stay. Field verification found the claimant had been working during the alleged admission period; hospital records showed irregularities in billing dates.</p>
+          <div class="pt-4 border-t border-white/8">
+            <div class="text-xs text-white/30 font-semibold uppercase tracking-wider mb-2">Methodology</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">Hospital Verify</span>
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">Employer Check</span>
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">Bill Forensics</span>
+            </div>
           </div>
         </div>
-        <div>
-          <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
-          <ul class="space-y-3">
-            <li><a href="#home"         class="text-white/45 hover:text-white text-sm transition-colors">Home</a></li>
-            <li><a href="#services"     class="text-white/45 hover:text-white text-sm transition-colors">Our Services</a></li>
-            <li><a href="#how-it-works" class="text-white/45 hover:text-white text-sm transition-colors">How It Works</a></li>
-            <li><a href="#about"        class="text-white/45 hover:text-white text-sm transition-colors">About Us</a></li>
-            <li><a href="#tracker"      class="text-white/45 hover:text-white text-sm transition-colors">Track Claim</a></li>
-            <li><a href="#casestudies"  class="text-white/45 hover:text-white text-sm transition-colors">Case Studies</a></li>
-            <li><a href="login.html"    class="text-white/45 hover:text-white text-sm transition-colors">Client Login</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Services</h4>
-          <ul class="space-y-3">
-            <li><a href="#services" class="text-white/45 hover:text-white text-sm transition-colors">Motor Investigation</a></li>
-            <li><a href="#services" class="text-white/45 hover:text-white text-sm transition-colors">Health Investigation</a></li>
-            <li><a href="#services" class="text-white/45 hover:text-white text-sm transition-colors">Fire &amp; Property</a></li>
-            <li><a href="#services" class="text-white/45 hover:text-white text-sm transition-colors">Fraud Detection</a></li>
-            <li><a href="#services" class="text-white/45 hover:text-white text-sm transition-colors">Surveillance</a></li>
-            <li><a href="#services" class="text-white/45 hover:text-white text-sm transition-colors">Background Check</a></li>
-            <li><a href="#contact"  class="text-white/45 hover:text-white text-sm transition-colors">Empanelment</a></li>
-          </ul>
+        <!-- Case 3 -->
+        <div class="card-lift bg-navy-800 rounded-2xl p-7 border border-white/8 reveal" style="transition-delay:.25s">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="text-xs font-bold bg-gold/15 text-gold px-3 py-1 rounded-full border border-gold/25">Fire</span>
+            <span class="text-xs text-white/30">Surat</span>
+          </div>
+          <h3 class="font-bold text-white mb-3 leading-snug">Stock Loss — Pre-Declaration Discrepancy</h3>
+          <p class="text-white/45 text-sm leading-relaxed mb-4">A commercial fire claim declared significantly inflated stock values. Cross-referencing GST returns, purchase invoices and third-party supplier data revealed material over-declaration of insured stock.</p>
+          <div class="pt-4 border-t border-white/8">
+            <div class="text-xs text-white/30 font-semibold uppercase tracking-wider mb-2">Methodology</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">GST Verification</span>
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">Supplier Check</span>
+              <span class="bg-navy text-white/50 text-xs px-2.5 py-1 rounded-lg border border-white/8">Stock Audit</span>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Legal Disclaimer -->
-      <div class="border-t border-white/8 pt-8 mb-6 space-y-3">
-        <!-- Important notice box -->
-        <div class="bg-yellow-400/10 border border-yellow-400/25 rounded-xl px-5 py-3 flex gap-3 items-start">
-          <svg class="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-          <p class="text-yellow-200/80 text-xs leading-relaxed">
-            <strong class="text-yellow-300">निजी एजेंसी (Private Agency):</strong> Bima Anveshak एक स्वतंत्र निजी इन्वेस्टिगेशन एजेंसी है। इसका IRDAI, भारत सरकार, बीमा लोकपाल या किसी सरकारी / अर्ध-सरकारी संस्था से कोई संबंध नहीं है।
-            &nbsp;|&nbsp;
-            <strong class="text-yellow-300">Private Entity:</strong> Bima Anveshak is an independent private investigation agency. We are NOT affiliated with IRDAI, Government of India, Insurance Ombudsman, or any regulatory body.
-            &nbsp;<a href="disclaimer.html" class="text-yellow-300 underline hover:text-yellow-100">Full Disclaimer →</a>
-          </p>
-        </div>
-        <p class="text-white/25 text-xs leading-relaxed">
-          <strong class="text-white/40">Disclaimer:</strong> Bima Anveshak is an independent private investigation &amp; consultancy agency. All investigations are conducted within the limits of applicable Indian law, the Information Technology Act 2000, and the Digital Personal Data Protection Act 2023. Reports are prepared exclusively for the commissioning party and do not constitute a legal judgment or guarantee of any outcome. We do not exercise judicial, statutory, or regulatory powers. <a href="disclaimer.html" class="text-white/40 underline hover:text-white/60 transition-colors">Read full disclaimer</a>.
-        </p>
+
+      <p class="text-center text-white/25 text-xs mt-8">All case summaries are anonymised and illustrative only. Actual outcomes may vary.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════ FAQ ════════════════ -->
+  <section class="py-24 bg-navy-800" id="faq">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="section-label">FAQ</span>
+        <div class="gold-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl font-extrabold text-white mb-3">Frequently Asked Questions</h2>
       </div>
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/25">
-        <p>© 2026 Bima Anveshak. All rights reserved. | Ahmedabad, Gujarat, India</p>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="privacy.html" class="hover:text-white/50 transition-colors">Privacy Policy</a>
-          <a href="terms.html" class="hover:text-white/50 transition-colors">Terms of Service</a>
-          <a href="disclaimer.html" class="hover:text-white/50 transition-colors">Disclaimer</a>
-          <a href="mailto:info@bimaanveshak.com" class="hover:text-white/50 transition-colors">info@bimaanveshak.com</a>
+
+      <div class="space-y-3 reveal">
+        <!-- Q1 -->
+        <div class="bg-navy border border-white/8 rounded-xl overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between px-6 py-4 text-left">
+            <span class="font-semibold text-white text-sm">Who can hire Bima Anveshak?</span>
+            <svg class="faq-icon w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">We work exclusively with licensed insurance companies, TPAs (Third Party Administrators), and authorised intermediaries. We do not accept direct mandates from individual policyholders or claimants.</p>
+          </div>
         </div>
+        <!-- Q2 -->
+        <div class="bg-navy border border-white/8 rounded-xl overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between px-6 py-4 text-left">
+            <span class="font-semibold text-white text-sm">How do I submit an investigation mandate?</span>
+            <svg class="faq-icon w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">Use the contact form below or email us at info@bimaanveshak.com with the claim details, policy number, and scope of investigation required. Our team will respond within one business day.</p>
+          </div>
+        </div>
+        <!-- Q3 -->
+        <div class="bg-navy border border-white/8 rounded-xl overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between px-6 py-4 text-left">
+            <span class="font-semibold text-white text-sm">Which states do you cover?</span>
+            <svg class="faq-icon w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">Our primary coverage is Gujarat with headquarters in Ahmedabad. We currently cover 12 states across India including Rajasthan, Maharashtra, Madhya Pradesh, Delhi NCR, Uttar Pradesh, Punjab, Haryana and more. Contact us for specific location enquiries.</p>
+          </div>
+        </div>
+        <!-- Q4 -->
+        <div class="bg-navy border border-white/8 rounded-xl overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between px-6 py-4 text-left">
+            <span class="font-semibold text-white text-sm">Is Bima Anveshak IRDAI approved?</span>
+            <svg class="faq-icon w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">Bima Anveshak is an independent investigation agency operating in compliance with IRDAI's guidelines for insurance investigation. All investigations are conducted according to IRDAI regulations and the DPDPA 2023 data protection framework.</p>
+          </div>
+        </div>
+        <!-- Q5 -->
+        <div class="bg-navy border border-white/8 rounded-xl overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between px-6 py-4 text-left">
+            <span class="font-semibold text-white text-sm">How long does an investigation take?</span>
+            <svg class="faq-icon w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">Timelines vary by claim type and complexity. Standard investigations are completed and reported within the agreed turnaround time specified in the service agreement with each insurer. Complex or multi-location cases may require additional time.</p>
+          </div>
+        </div>
+        <!-- Q6 -->
+        <div class="bg-navy border border-white/8 rounded-xl overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between px-6 py-4 text-left">
+            <span class="font-semibold text-white text-sm">How is data privacy handled?</span>
+            <svg class="faq-icon w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">All personal data is handled strictly in accordance with the Digital Personal Data Protection Act 2023 (DPDPA). Investigation reports are shared only with the commissioning insurer. We maintain strict confidentiality across all case files. See our <a href="privacy.html" class="text-gold hover:underline">Privacy Policy</a> for full details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section class="py-24 bg-navy" id="contact">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <span class="section-label">Get In Touch</span>
+        <div class="gold-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Start an Enquiry</h2>
+        <p class="text-white/40 text-sm max-w-xl mx-auto">For B2B insurers and intermediaries. Fill in your details and our team will respond within one business day.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-10">
+        <!-- Info panel -->
+        <div class="lg:col-span-2 space-y-5 reveal-left">
+          <div class="bg-navy-800 border border-gold/15 rounded-2xl p-6">
+            <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="text-white font-semibold text-sm mb-1">Email</div>
+            <a href="mailto:info@bimaanveshak.com" class="text-gold hover:underline text-sm">info@bimaanveshak.com</a>
+          </div>
+          <div class="bg-navy-800 border border-gold/15 rounded-2xl p-6">
+            <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="text-white font-semibold text-sm mb-1">Headquarters</div>
+            <div class="text-white/50 text-sm">Ahmedabad, Gujarat – 380001<br/>India</div>
+          </div>
+          <div class="bg-navy-800 border border-gold/15 rounded-2xl p-6">
+            <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="text-white font-semibold text-sm mb-1">Working Hours</div>
+            <div class="text-white/50 text-sm">Mon – Sat<br/>9:00 AM – 7:00 PM IST</div>
+          </div>
+          <div class="bg-navy-800 border border-gold/12 rounded-2xl p-5">
+            <p class="text-white/25 text-xs leading-relaxed">Investigation services provided exclusively to licensed insurance companies, TPAs and authorised intermediaries. Not available to individual policyholders.</p>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="lg:col-span-3 reveal-right">
+          <div class="bg-navy-800 border border-gold/15 rounded-2xl p-8">
+            <form action="https://formsubmit.co/info@bimaanveshak.com" method="POST" id="contactForm">
+              <input type="hidden" name="_subject" value="New Enquiry – Bima Anveshak Website"/>
+              <input type="hidden" name="_captcha" value="true"/>
+              <input type="hidden" name="_template" value="table"/>
+              <input type="text" name="_honey" style="display:none"/>
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5 block">Full Name *</label>
+                  <input type="text" name="name" required placeholder="Your name" class="form-input"/>
+                </div>
+                <div>
+                  <label class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5 block">Company / Insurer *</label>
+                  <input type="text" name="company" required placeholder="Company name" class="form-input"/>
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5 block">Email *</label>
+                  <input type="email" name="email" required placeholder="work@company.com" class="form-input"/>
+                </div>
+                <div>
+                  <label class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5 block">Phone</label>
+                  <input type="tel" name="phone" placeholder="+91 98765 43210" class="form-input"/>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5 block">Service Required</label>
+                <select name="service" class="form-input">
+                  <option value="" style="background:#0d1220">Select service type</option>
+                  <option value="Motor Investigation" style="background:#0d1220">Motor Claim Investigation</option>
+                  <option value="Health Investigation" style="background:#0d1220">Health Claim Investigation</option>
+                  <option value="Fire & Property" style="background:#0d1220">Fire &amp; Property Investigation</option>
+                  <option value="Fraud Detection" style="background:#0d1220">Fraud Detection</option>
+                  <option value="Surveillance" style="background:#0d1220">Surveillance</option>
+                  <option value="Life & Liability" style="background:#0d1220">Life &amp; Liability Claims</option>
+                  <option value="Empanelment" style="background:#0d1220">Empanelment Enquiry</option>
+                  <option value="Other" style="background:#0d1220">Other</option>
+                </select>
+              </div>
+              <div class="mb-6">
+                <label class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5 block">Message</label>
+                <textarea name="message" rows="4" placeholder="Brief description of the claim / investigation requirement..." class="form-input resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="btn-gold w-full py-4 text-sm font-bold rounded-xl">
+                Send Enquiry →
+              </button>
+              <p class="text-white/20 text-xs mt-3 text-center">By submitting you agree to our <a href="privacy.html" class="text-gold/60 hover:underline">Privacy Policy</a> and <a href="terms.html" class="text-gold/60 hover:underline">Terms of Service</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="bg-navy-800 border-t border-white/6">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-gold/10 border border-gold/25 rounded-xl flex items-center justify-center">
+              <svg width="22" height="26" viewBox="0 0 52 60" fill="none">
+                <path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#c9a84c"/>
+                <circle cx="30" cy="27" r="10" fill="none" stroke="white" stroke-width="2.5"/>
+                <line x1="38" y1="35" x2="44" y2="41" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M26 27 L29 30 L35 23" stroke="#0a0e1a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-white font-extrabold text-base">Bima Anveshak</div>
+              <div class="text-gold/50 text-xs italic">Har Claim Ki Sachchi Jaanch</div>
+            </div>
+          </div>
+          <p class="text-white/35 text-sm leading-relaxed max-w-sm mb-5">Independent insurance claims investigation agency based in Ahmedabad, Gujarat. IRDAI compliant. Pan-India coverage across 12 states.</p>
+          <div class="flex items-center gap-3">
+            <span class="text-xs border border-gold/25 text-gold/70 px-2.5 py-1 rounded-full">IRDAI Compliant</span>
+            <span class="text-xs border border-white/12 text-white/30 px-2.5 py-1 rounded-full">Ahmedabad, GJ</span>
+            <span class="text-xs border border-white/12 text-white/30 px-2.5 py-1 rounded-full">12 States</span>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <div class="text-white/70 font-bold text-xs uppercase tracking-wider mb-4">Services</div>
+          <ul class="space-y-2.5">
+            <li><a href="#services" class="text-white/35 hover:text-gold text-sm transition-colors">Motor Investigation</a></li>
+            <li><a href="#services" class="text-white/35 hover:text-gold text-sm transition-colors">Health Claims</a></li>
+            <li><a href="#services" class="text-white/35 hover:text-gold text-sm transition-colors">Fire &amp; Property</a></li>
+            <li><a href="#services" class="text-white/35 hover:text-gold text-sm transition-colors">Fraud Detection</a></li>
+            <li><a href="#services" class="text-white/35 hover:text-gold text-sm transition-colors">Surveillance</a></li>
+            <li><a href="#services" class="text-white/35 hover:text-gold text-sm transition-colors">Life &amp; Liability</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Contact -->
+        <div>
+          <div class="text-white/70 font-bold text-xs uppercase tracking-wider mb-4">Legal &amp; Contact</div>
+          <ul class="space-y-2.5 mb-6">
+            <li><a href="privacy.html"    class="text-white/35 hover:text-gold text-sm transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html"      class="text-white/35 hover:text-gold text-sm transition-colors">Terms of Service</a></li>
+            <li><a href="disclaimer.html" class="text-white/35 hover:text-gold text-sm transition-colors">Disclaimer</a></li>
+            <li><a href="login.html"      class="text-white/35 hover:text-gold text-sm transition-colors">Client Login</a></li>
+          </ul>
+          <div class="text-white/70 font-bold text-xs uppercase tracking-wider mb-3">Contact</div>
+          <a href="mailto:info@bimaanveshak.com" class="text-gold/70 hover:text-gold text-sm transition-colors">info@bimaanveshak.com</a>
+          <div class="text-white/30 text-xs mt-1">Ahmedabad, Gujarat 380001</div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-white/6 pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-white/25 text-xs">© 2026 Bima Anveshak. All rights reserved. | Ahmedabad, Gujarat, India</p>
+        <p class="text-white/20 text-xs max-w-md text-center sm:text-right">This website is for informational purposes. Investigation services provided exclusively to licensed insurance companies and authorised intermediaries. <a href="disclaimer.html" class="text-gold/40 hover:text-gold transition-colors">Full Disclaimer →</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- SCHEDULE A CALLBACK MODAL -->
-  <div id="callModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="document.getElementById('callModal').classList.add('hidden')"></div>
-    <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 z-10">
-      <button onclick="document.getElementById('callModal').classList.add('hidden')"
-        class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center">
-          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        </div>
-        <div>
-          <h3 class="text-lg font-bold text-dark">Schedule a Callback</h3>
-          <p class="text-slate-500 text-xs">We'll call you within 2 business hours</p>
-        </div>
-      </div>
-      <form action="https://formsubmit.co/info@bimaanveshak.com" method="POST" class="space-y-4">
-        <input type="hidden" name="_subject" value="Callback Request – Bima Anveshak"/>
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_next" value="https://bimaanveshak.com/?callback=1"/>
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
-          <input type="text" name="name" required placeholder="Your name"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"/>
-        </div>
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1.5">Mobile Number <span class="text-red-500">*</span></label>
-          <input type="tel" name="mobile" required placeholder="+91 98765 43210" pattern="[0-9+\s\-]{7,15}"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"/>
-        </div>
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1.5">Preferred Time</label>
-          <select name="preferred_time" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all bg-white">
-            <option value="">Select a time slot</option>
-            <option>Morning: 9 AM – 12 PM</option>
-            <option>Afternoon: 12 PM – 3 PM</option>
-            <option>Evening: 3 PM – 7 PM</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1.5">Brief Requirement</label>
-          <textarea name="requirement" rows="2" placeholder="e.g. Motor OD investigation, empanelment query…"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all resize-none"></textarea>
-        </div>
-        <button type="submit"
-          class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3.5 rounded-xl transition-all text-sm shadow-md shadow-primary/20">
-          Request Callback
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- BACK TO TOP -->
-  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
-    class="fixed bottom-24 right-4 w-10 h-10 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transition-opacity z-40 hover:bg-primary-light"
-    aria-label="Back to top">
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+  <!-- ════════════════ CHATBOT ════════════════ -->
+  <!-- Toggle button -->
+  <button id="chatToggle" onclick="toggleChat()" class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8c56a);box-shadow:0 8px 28px rgba(201,168,76,0.45);">
+    <svg id="chat-icon-open" class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <svg id="chat-icon-close" class="w-5 h-5 text-navy hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
   </button>
-
-  <!-- WhatsApp button removed until number is confirmed -->
-
-  <!-- CHATBOT -->
-  <button id="chatToggle" onclick="toggleChat()"
-    class="fixed bottom-6 right-4 w-14 h-14 bg-primary hover:bg-primary-light text-white rounded-full shadow-xl flex items-center justify-center z-50 transition-all hover:-translate-y-1"
-    aria-label="Open chat">
-    <svg id="chatIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
-    <svg id="chatClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-  </button>
-
+  <!-- Chat box -->
   <div id="chatbot-box">
-    <div class="bg-primary px-4 py-3 flex items-center gap-3">
-      <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm">🤖</div>
+    <div class="bg-navy-600 px-4 py-3 flex items-center gap-3 border-b border-gold/20" style="background:#0d1220">
+      <div class="w-8 h-8 bg-gold/15 rounded-lg flex items-center justify-center">
+        <svg width="16" height="19" viewBox="0 0 52 60" fill="none"><path d="M26 2L4 12V28C4 41 14 52 26 58C38 52 48 41 48 28V12L26 2Z" fill="#c9a84c"/></svg>
+      </div>
       <div>
-        <div class="text-white font-bold text-sm">Bima Anveshak Bot</div>
-        <div class="text-white/60 text-xs">Typically replies instantly</div>
+        <div class="text-white font-bold text-sm">Bima Anveshak</div>
+        <div class="text-gold/60 text-xs">Investigation Enquiries</div>
       </div>
-      <div class="ml-auto w-2 h-2 bg-accent rounded-full"></div>
     </div>
-    <div id="chat-messages" class="bg-white">
-      <div class="chat-msg-bot">👋 Namaste! I'm here to help. What can I assist you with?</div>
-      <div class="flex flex-wrap gap-1.5 mt-1">
+    <div id="chat-messages">
+      <div class="chat-msg-bot">👋 Namaste! I'm the Bima Anveshak virtual assistant.<br/><br/>I can help with information about our investigation services. What would you like to know?</div>
+      <div class="flex flex-wrap gap-1 mt-1">
         <span class="chat-chip" onclick="chatReply('services')">Our Services</span>
-        <span class="chat-chip" onclick="chatReply('track')">Track Claim</span>
+        <span class="chat-chip" onclick="chatReply('coverage')">Coverage Area</span>
+        <span class="chat-chip" onclick="chatReply('contact')">Contact Us</span>
         <span class="chat-chip" onclick="chatReply('empanel')">Empanelment</span>
-        <span class="chat-chip" onclick="chatReply('contact')">Contact Info</span>
-        <span class="chat-chip" onclick="chatReply('turnaround')">Report Time</span>
       </div>
     </div>
-    <div class="bg-white border-t border-slate-100 px-3 py-2 flex gap-2">
-      <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()"
-        class="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-primary"/>
-      <button onclick="sendChat()" class="bg-primary text-white rounded-lg px-3 py-2 text-xs font-bold hover:bg-primary-light transition-colors">Send</button>
+    <div class="p-3 flex gap-2 border-t border-white/8" style="background:#0d1220">
+      <input id="chatInput" type="text" placeholder="Type a message…" class="flex-1 bg-white/6 border border-white/10 rounded-lg px-3 py-2 text-white text-xs outline-none focus:border-gold/40"/>
+      <button onclick="chatSend()" class="bg-gold text-navy font-bold px-3 py-2 rounded-lg text-xs">Send</button>
     </div>
   </div>
 
+  <!-- ════════════════ JAVASCRIPT ════════════════ -->
   <script>
-  // ── Reading progress ──
-  window.addEventListener('scroll', () => {
-    const el = document.documentElement;
-    const p = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
-    document.getElementById('read-progress').style.width = p + '%';
-    document.getElementById('backToTop').style.opacity = el.scrollTop > 400 ? '1' : '0';
-  });
+    // ─── Reading progress ───
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      document.getElementById('read-progress').style.width = pct + '%';
+    });
 
-  // ── Mobile menu ──
-  document.getElementById('menuBtn').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-  });
-  document.querySelectorAll('#mobileMenu a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
-  });
+    // ─── Mobile menu ───
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
 
-  // ── Scroll reveal ──
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => observer.observe(el));
+    // ─── Scroll reveal ───
+    const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => ro.observe(el));
 
-  // ── Counter animation ──
-  function animateCounter(el) {
-    if (el._animated) return;
-    el._animated = true;
-    const target = +el.dataset.target;
-    let current = 0;
-    const steps = 60;
-    const step = target / steps;
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = Math.floor(current).toLocaleString('en-IN');
-      if (current >= target) { el.textContent = target.toLocaleString('en-IN'); clearInterval(timer); }
-    }, 1800 / steps);
-  }
-  const countObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); countObserver.unobserve(e.target); } });
-  }, { threshold: 0 });
-  // Run on full page load so layout is complete and hero is painted
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.counter').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        setTimeout(() => animateCounter(el), 600);
-      } else {
-        countObserver.observe(el);
+    // ─── Navbar scroll style ───
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,0.5)' : '';
+    });
+
+    // ─── Active nav link ───
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+      document.querySelectorAll('.nav-link').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+      });
+    });
+
+    // ─── Service tabs ───
+    function switchTab(tab) {
+      document.querySelectorAll('.svc-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    }
+
+    // ─── FAQ accordion ───
+    function toggleFAQ(btn) {
+      const body = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+      if (!isOpen) { body.classList.add('open'); icon.classList.add('open'); }
+    }
+
+    // ─── Case tracker ───
+    const DEMO_CASES = {
+      'BA-2024-001': { steps: [
+        { label: 'Mandate Received',   done: true,  date: '12 Jan 2024' },
+        { label: 'Field Investigation',done: true,  date: '15 Jan 2024' },
+        { label: 'Analysis & QC',      done: true,  date: '18 Jan 2024' },
+        { label: 'Report Delivered',   done: true,  date: '19 Jan 2024' },
+      ]},
+      'BA-2024-002': { steps: [
+        { label: 'Mandate Received',   done: true,  date: '20 Jan 2024' },
+        { label: 'Field Investigation',done: true,  date: '24 Jan 2024' },
+        { label: 'Analysis & QC',      done: false, date: 'In Progress' },
+        { label: 'Report Delivered',   done: false, date: 'Pending' },
+      ]},
+    };
+    function trackCase() {
+      const ref = document.getElementById('trackerInput').value.trim().toUpperCase();
+      const resultDiv = document.getElementById('tracker-result');
+      const stepsDiv  = document.getElementById('tr-steps');
+      const caseId    = document.getElementById('tr-case-id');
+      if (!ref) return;
+      const data = DEMO_CASES[ref];
+      resultDiv.classList.remove('hidden');
+      caseId.textContent = ref;
+      if (!data) {
+        stepsDiv.innerHTML = '<p class="text-white/40 text-sm">No case found for this reference. Please verify the case ID or contact <a href="mailto:info@bimaanveshak.com" class="text-gold hover:underline">info@bimaanveshak.com</a>.</p>';
+        return;
       }
-    });
-  });
+      stepsDiv.innerHTML = data.steps.map(s => `
+        <div class="tracker-step ${s.done ? 'done' : ''} flex items-start gap-3 pb-4">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${s.done ? 'bg-gold/20 border-2 border-gold' : 'bg-white/5 border-2 border-white/15'}">
+            ${s.done ? '<svg class="w-3.5 h-3.5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>' : '<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>'}
+          </div>
+          <div>
+            <div class="font-semibold text-sm ${s.done ? 'text-white' : 'text-white/40'}">${s.label}</div>
+            <div class="text-xs ${s.done ? 'text-gold/70' : 'text-white/25'} mt-0.5">${s.date}</div>
+          </div>
+        </div>`).join('');
+    }
+    document.getElementById('trackerInput').addEventListener('keyup', e => { if (e.key === 'Enter') trackCase(); });
 
-  // ── Services tabs ──
-  function switchTab(tab) {
-    document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.svc-tab-btn').forEach(b => {
-      b.classList.remove('active');
-      b.classList.add('bg-white','text-slate-600');
-    });
-    document.getElementById('tab-' + tab).classList.add('active');
-    event.currentTarget.classList.add('active');
-    event.currentTarget.classList.remove('bg-white','text-slate-600');
-  }
-
-  // ── FAQ accordion ──
-  function toggleFaq(btn) {
-    const body = btn.nextElementSibling;
-    const icon = btn.querySelector('.faq-icon');
-    const isOpen = body.classList.contains('open');
-    document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
-    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
-    if (!isOpen) { body.classList.add('open'); icon.classList.add('open'); }
-  }
-
-  // ── Claim tracker demo ──
-  function trackClaim() {
-    const val = document.getElementById('trackInput').value.trim();
-    if (!val) { alert('Please enter a case reference number.'); return; }
-    document.getElementById('tracker-result').classList.remove('hidden');
-    document.getElementById('tracker-result').scrollIntoView({ behavior:'smooth', block:'nearest' });
-  }
-
-  // ── Testimonials slider ──
-  let tIdx = 0;
-  const tTrack = document.getElementById('testimonial-track');
-  const tCards = tTrack.children.length;
-  function getVisible() { return window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1; }
-  function updateTestimonial() {
-    const visible = getVisible();
-    const maxIdx = tCards - visible;
-    tIdx = Math.max(0, Math.min(tIdx, maxIdx));
-    const w = tTrack.parentElement.offsetWidth;
-    const cardW = (w - (visible - 1) * 24) / visible;
-    tTrack.style.transform = `translateX(-${tIdx * (cardW + 24)}px)`;
-  }
-  function nextTestimonial() { tIdx++; updateTestimonial(); }
-  function prevTestimonial() { tIdx--; updateTestimonial(); }
-  window.addEventListener('resize', updateTestimonial);
-  setInterval(() => { tIdx = (tIdx + 1) % Math.max(1, tCards - getVisible() + 1); updateTestimonial(); }, 5000);
-
-  // ── Contact form (submits to formsubmit.co → real email delivery) ──
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    const btn = document.getElementById('submitBtn');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    // Allow native form POST to proceed — formsubmit.co handles delivery
-  });
-
-  // ── Chatbot ──
-  const chatAnswers = {
-    services: 'We offer: 🚗 Motor Claims, 🏥 Health Claims, 🔥 Fire & Property, 🛡️ Fraud Detection, 📷 Surveillance, and 📋 Background Verification. Which service interests you?',
-    track: 'To track your claim, scroll up to the "Track Your Claim" section and enter your Case Reference Number (e.g. BA-2026-001). Or login to the Client Portal for full details.',
-    empanel: 'To empanel as an insurer partner, please fill our contact form or email info@bimaanveshak.com. We onboard new partners within 5–7 working days.',
-    contact: 'You can reach us at: ✉️ info@bimaanveshak.com\n📍 Ahmedabad, Gujarat\n⏱️ Mon–Sat, 9 AM – 7 PM IST',
-    turnaround: '⏱️ Our SLAs:\n• Agent deployment: 24–48 hours\n• Preliminary report: 48 hours\n• Final report: 7 working days\n• Urgent cases: same-day deployment available.',
-  };
-  let chatOpen = false;
-
-  function toggleChat() {
-    chatOpen = !chatOpen;
-    document.getElementById('chatbot-box').classList.toggle('open', chatOpen);
-    document.getElementById('chatIcon').classList.toggle('hidden', chatOpen);
-    document.getElementById('chatClose').classList.toggle('hidden', !chatOpen);
-  }
-
-  function chatReply(key) {
-    addChatMsg('user', document.querySelector(`.chat-chip[onclick="chatReply('${key}')"]`)?.textContent || key);
-    setTimeout(() => addChatMsg('bot', chatAnswers[key] || "Please contact us at info@bimaanveshak.com for more details."), 500);
-  }
-
-  function sendChat() {
-    const inp = document.getElementById('chatInput');
-    const msg = inp.value.trim();
-    if (!msg) return;
-    addChatMsg('user', msg);
-    inp.value = '';
-    setTimeout(() => {
-      const lower = msg.toLowerCase();
-      let reply = "Thanks for your message! Please email us at info@bimaanveshak.com or fill the contact form below and we'll respond within 24 hours. 🙏";
-      if (lower.includes('motor') || lower.includes('car') || lower.includes('vehicle')) reply = chatAnswers.services;
-      else if (lower.includes('track') || lower.includes('status') || lower.includes('case')) reply = chatAnswers.track;
-      else if (lower.includes('empanel') || lower.includes('partner') || lower.includes('panel')) reply = chatAnswers.empanel;
-      else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('address')) reply = chatAnswers.contact;
-      else if (lower.includes('time') || lower.includes('fast') || lower.includes('quick') || lower.includes('report') || lower.includes('days')) reply = chatAnswers.turnaround;
-      addChatMsg('bot', reply);
-    }, 700);
-  }
-
-  function addChatMsg(type, text) {
-    const msgs = document.getElementById('chat-messages');
-    const div = document.createElement('div');
-    div.className = type === 'bot' ? 'chat-msg-bot' : 'chat-msg-user';
-    div.style.whiteSpace = 'pre-line';
-    div.textContent = text;
-    msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
-  }
+    // ─── Chatbot ───
+    const chatAnswers = {
+      services: 'We investigate Motor (OD, Theft, MACT), Health (hospitalisation, pre-existing), Fire & Property, Fraud detection, Surveillance, and Life & Liability claims — all across Gujarat and pan-India.',
+      coverage: 'We are headquartered in Ahmedabad, Gujarat with field coverage across 12 states including Rajasthan, Maharashtra, MP, Delhi, UP, Punjab and more.',
+      contact:  'Email us at info@bimaanveshak.com · Mon–Sat 9AM–7PM IST. You can also use the contact form on this page.',
+      empanel:  'We work exclusively with licensed insurance companies and TPAs. To discuss empanelment, email info@bimaanveshak.com with your company details and we will be in touch.',
+    };
+    function toggleChat() {
+      const box  = document.getElementById('chatbot-box');
+      const ico1 = document.getElementById('chat-icon-open');
+      const ico2 = document.getElementById('chat-icon-close');
+      box.classList.toggle('open');
+      ico1.classList.toggle('hidden');
+      ico2.classList.toggle('hidden');
+    }
+    function chatReply(key) {
+      const msgs = document.getElementById('chat-messages');
+      const ans  = chatAnswers[key] || 'Please email info@bimaanveshak.com for more information.';
+      const div  = document.createElement('div');
+      div.className = 'chat-msg-bot';
+      div.textContent = ans;
+      msgs.appendChild(div);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+    function chatSend() {
+      const inp = document.getElementById('chatInput');
+      const val = inp.value.trim();
+      if (!val) return;
+      const msgs  = document.getElementById('chat-messages');
+      const uMsg  = document.createElement('div');
+      uMsg.className = 'chat-msg-user';
+      uMsg.textContent = val;
+      msgs.appendChild(uMsg);
+      inp.value = '';
+      const lower = val.toLowerCase();
+      let reply = 'For detailed information, please email info@bimaanveshak.com or use the contact form on this page.';
+      if (lower.includes('motor') || lower.includes('vehicle') || lower.includes('car'))
+        reply = chatAnswers.services;
+      else if (lower.includes('health') || lower.includes('medical') || lower.includes('hospital'))
+        reply = 'We conduct health claim investigations including hospitalisation verification, pre-existing condition checks, and document forensics. Email us for a mandate.';
+      else if (lower.includes('cover') || lower.includes('state') || lower.includes('location') || lower.includes('city'))
+        reply = chatAnswers.coverage;
+      else if (lower.includes('contact') || lower.includes('email') || lower.includes('call'))
+        reply = chatAnswers.contact;
+      else if (lower.includes('empanel') || lower.includes('partner') || lower.includes('tie'))
+        reply = chatAnswers.empanel;
+      else if (lower.includes('fraud') || lower.includes('detect'))
+        reply = 'We specialise in insurance fraud detection — staged accidents, fabricated hospitalisation, document forgery and organised fraud networks. Contact us for a mandate.';
+      setTimeout(() => {
+        const bMsg = document.createElement('div');
+        bMsg.className = 'chat-msg-bot';
+        bMsg.textContent = reply;
+        msgs.appendChild(bMsg);
+        msgs.scrollTop = msgs.scrollHeight;
+      }, 500);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+    document.getElementById('chatInput').addEventListener('keyup', e => { if (e.key === 'Enter') chatSend(); });
   </script>
+
 </body>
 </html>
