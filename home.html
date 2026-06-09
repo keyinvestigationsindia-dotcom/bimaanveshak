@@ -1174,7 +1174,13 @@
     document.getElementById('chatInput').addEventListener('keyup', e => { if (e.key==='Enter') chatSend(); });
 
     // ─── INDIA MAP (Leaflet.js) ───
-    document.addEventListener('DOMContentLoaded', function() {
+    (function initIndiaMap() {
+      const mapEl = document.getElementById('india-map');
+      if (!mapEl || typeof L === 'undefined') {
+        setTimeout(initIndiaMap, 200);
+        return;
+      }
+
       const map = L.map('india-map', {
         center: [22.5, 80.5],
         zoom: 5,
@@ -1182,111 +1188,110 @@
         maxZoom: 17,
         scrollWheelZoom: false,
         zoomControl: true,
+        preferCanvas: true,
       });
 
-      // OpenStreetMap tiles — shows state/district/sub-district as you zoom
+      // OpenStreetMap tiles (state/district/sub-district visible on zoom)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         maxZoom: 19,
       }).addTo(map);
 
-      // Coverage states – GeoJSON from public CDN
-      const COVERED_STATES = [
+      map.fitBounds([[6.5, 68], [37.5, 97.5]]);
+
+      const COVERED = [
         'Gujarat','Rajasthan','Maharashtra','Madhya Pradesh',
         'Delhi','Uttar Pradesh','Punjab','Haryana',
         'Tamil Nadu','Karnataka','Andhra Pradesh','Goa'
       ];
 
-      fetch('https://raw.githubusercontent.com/geohacker/india/master/state/india_state.geojson')
-        .then(r => r.json())
+      function isCovered(name) {
+        const n = (name||'').toLowerCase();
+        return COVERED.some(s => n.includes(s.toLowerCase()) || s.toLowerCase().includes(n));
+      }
+
+      // Load local simplified GeoJSON (76 KB)
+      fetch('india_states.geojson')
+        .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
         .then(data => {
-          L.geoJSON(data, {
-            style: feature => {
-              const name = feature.properties.NAME_1 || feature.properties.ST_NM || feature.properties.name || '';
-              const covered = COVERED_STATES.some(s => name.toLowerCase().includes(s.toLowerCase()) || s.toLowerCase().includes(name.toLowerCase()));
+          const geoLayer = L.geoJSON(data, {
+            style: feat => {
+              const name = feat.properties.NAME_1 || '';
+              const covered = isCovered(name);
               return {
                 fillColor:   covered ? '#2ecc71' : '#1a3a8f',
-                fillOpacity: covered ? 0.28 : 0.08,
+                fillOpacity: covered ? 0.30 : 0.10,
                 color:       covered ? '#2ecc71' : '#2451b3',
                 weight:      covered ? 1.5 : 0.8,
-                opacity:     covered ? 0.7 : 0.3,
+                opacity:     covered ? 0.75 : 0.35,
               };
             },
-            onEachFeature: (feature, layer) => {
-              const name = feature.properties.NAME_1 || feature.properties.ST_NM || feature.properties.name || '';
+            onEachFeature: (feat, layer) => {
+              const name = feat.properties.NAME_1 || '';
               if (!name) return;
-              const covered = COVERED_STATES.some(s => name.toLowerCase().includes(s.toLowerCase()) || s.toLowerCase().includes(name.toLowerCase()));
+              const covered = isCovered(name);
               layer.bindPopup(`
                 <div style="text-align:center;padding:4px 8px;">
-                  <div style="font-weight:700;font-size:13px;color:white;">${name}</div>
-                  <div style="font-size:11px;margin-top:4px;color:${covered?'#2ecc71':'rgba(255,255,255,0.4)'};">
-                    ${covered ? '✓ Active Coverage' : 'Enquire for coverage'}
-                  </div>
+                  <strong style="color:white;font-size:13px;">${name}</strong><br/>
+                  <span style="font-size:11px;color:${covered?'#2ecc71':'rgba(255,255,255,0.45)'};">
+                    ${covered ? '✓ Active Coverage' : 'Contact us for coverage'}
+                  </span>
                 </div>`);
-              layer.on('mouseover', function() {
-                this.setStyle({ fillOpacity: covered ? 0.45 : 0.18, weight: covered ? 2.5 : 1.2 });
-              });
-              layer.on('mouseout', function() {
-                this.setStyle({
-                  fillOpacity: covered ? 0.28 : 0.08,
-                  weight: covered ? 1.5 : 0.8
-                });
+              layer.on({
+                mouseover: function(){ this.setStyle({ fillOpacity: covered?0.5:0.2, weight: covered?2.5:1.2 }); },
+                mouseout:  function(){ geoLayer.resetStyle(this); },
               });
             }
           }).addTo(map);
         })
-        .catch(() => {
-          // Fallback: just show the map with markers if GeoJSON fails
+        .catch(err => {
+          console.warn('GeoJSON load failed, map still works with markers:', err);
         });
 
       // City markers
       const cities = [
-        { name:'Ahmedabad (HQ)', lat:23.022505, lng:72.571365, primary:true,  state:'Gujarat' },
-        { name:'Surat',          lat:21.170240, lng:72.831062, primary:false, state:'Gujarat' },
-        { name:'Vadodara',       lat:22.307159, lng:73.181220, primary:false, state:'Gujarat' },
-        { name:'Rajkot',         lat:22.308156, lng:70.800705, primary:false, state:'Gujarat' },
-        { name:'Jaipur',         lat:26.912434, lng:75.787270, primary:false, state:'Rajasthan' },
-        { name:'Jodhpur',        lat:26.255464, lng:73.024309, primary:false, state:'Rajasthan' },
-        { name:'Mumbai',         lat:19.076090, lng:72.877426, primary:false, state:'Maharashtra' },
-        { name:'Pune',           lat:18.520430, lng:73.856743, primary:false, state:'Maharashtra' },
-        { name:'Indore',         lat:22.719568, lng:75.857727, primary:false, state:'Madhya Pradesh' },
-        { name:'Bhopal',         lat:23.259933, lng:77.412615, primary:false, state:'Madhya Pradesh' },
-        { name:'New Delhi',      lat:28.613939, lng:77.209021, primary:false, state:'Delhi' },
-        { name:'Lucknow',        lat:26.846694, lng:80.946166, primary:false, state:'Uttar Pradesh' },
-        { name:'Chandigarh',     lat:30.733315, lng:76.779418, primary:false, state:'Punjab/Haryana' },
-        { name:'Chennai',        lat:13.082680, lng:80.270718, primary:false, state:'Tamil Nadu' },
-        { name:'Bengaluru',      lat:12.971599, lng:77.594566, primary:false, state:'Karnataka' },
-        { name:'Hyderabad',      lat:17.385044, lng:78.486671, primary:false, state:'Andhra Pradesh' },
-        { name:'Panaji',         lat:15.499028, lng:73.826546, primary:false, state:'Goa' },
+        { name:'Ahmedabad (HQ)', lat:23.0225, lng:72.5714, primary:true,  state:'Gujarat' },
+        { name:'Surat',          lat:21.1702, lng:72.8311, primary:false, state:'Gujarat' },
+        { name:'Vadodara',       lat:22.3072, lng:73.1812, primary:false, state:'Gujarat' },
+        { name:'Rajkot',         lat:22.3082, lng:70.8007, primary:false, state:'Gujarat' },
+        { name:'Jaipur',         lat:26.9124, lng:75.7873, primary:false, state:'Rajasthan' },
+        { name:'Jodhpur',        lat:26.2554, lng:73.0243, primary:false, state:'Rajasthan' },
+        { name:'Mumbai',         lat:19.0761, lng:72.8775, primary:false, state:'Maharashtra' },
+        { name:'Pune',           lat:18.5204, lng:73.8567, primary:false, state:'Maharashtra' },
+        { name:'Indore',         lat:22.7196, lng:75.8577, primary:false, state:'Madhya Pradesh' },
+        { name:'Bhopal',         lat:23.2599, lng:77.4126, primary:false, state:'Madhya Pradesh' },
+        { name:'New Delhi',      lat:28.6139, lng:77.2090, primary:false, state:'Delhi' },
+        { name:'Lucknow',        lat:26.8467, lng:80.9462, primary:false, state:'Uttar Pradesh' },
+        { name:'Chandigarh',     lat:30.7333, lng:76.7794, primary:false, state:'Punjab / Haryana' },
+        { name:'Chennai',        lat:13.0827, lng:80.2707, primary:false, state:'Tamil Nadu' },
+        { name:'Bengaluru',      lat:12.9716, lng:77.5946, primary:false, state:'Karnataka' },
+        { name:'Hyderabad',      lat:17.3850, lng:78.4867, primary:false, state:'Andhra Pradesh' },
+        { name:'Panaji',         lat:15.4990, lng:73.8265, primary:false, state:'Goa' },
       ];
 
       cities.forEach(city => {
+        const sz = city.primary ? 16 : 10;
         const icon = L.divIcon({
           html: `<div style="
-            width:${city.primary?14:10}px;
-            height:${city.primary?14:10}px;
-            background:${city.primary?'#2ecc71':'#1a3a8f'};
-            border:${city.primary?'2.5px solid white':'1.5px solid rgba(46,204,113,0.6)'};
+            width:${sz}px;height:${sz}px;
+            background:${city.primary ? '#2ecc71' : '#2451b3'};
+            border:${city.primary ? '2.5px solid white' : '1.5px solid rgba(46,204,113,0.5)'};
             border-radius:50%;
-            box-shadow:0 0 ${city.primary?'10px 3px rgba(46,204,113,0.7)':'6px 1px rgba(26,58,143,0.6)'};
+            box-shadow:0 0 ${city.primary ? '12px 4px rgba(46,204,113,0.8)' : '6px 2px rgba(36,81,179,0.6)'};
           "></div>`,
           className: '',
-          iconSize:   [city.primary?14:10, city.primary?14:10],
-          iconAnchor: [city.primary?7:5,   city.primary?7:5],
+          iconSize: [sz, sz],
+          iconAnchor: [sz/2, sz/2],
         });
-        L.marker([city.lat, city.lng], { icon })
-          .addTo(map)
+        L.marker([city.lat, city.lng], { icon }).addTo(map)
           .bindPopup(`
             <div style="text-align:center;padding:4px 8px;">
-              <div style="font-weight:700;font-size:13px;color:white;">${city.name}${city.primary?' ⭐':''}</div>
-              <div style="font-size:11px;color:rgba(46,204,113,0.8);margin-top:3px;">${city.state}</div>
-              ${city.primary?'<div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;">Headquarters</div>':''}
+              <strong style="color:white;font-size:13px;">${city.name}${city.primary?' ⭐':''}</strong><br/>
+              <span style="font-size:11px;color:rgba(46,204,113,0.8);">${city.state}</span>
+              ${city.primary ? '<br/><span style="font-size:11px;color:rgba(255,255,255,0.45);">Headquarters</span>' : ''}
             </div>`);
       });
-
-      // Fit India bounds
-      map.fitBounds([[8, 68], [37, 97]], { padding: [20, 20] });
-    });
+    })();
   </script>
 
 </body>
