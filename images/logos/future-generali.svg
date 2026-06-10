@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#E31F26" rx="4"/><text x="60" y="21" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Future Generali</text><text x="60" y="37" font-family="Arial,sans-serif" font-size="7.5" fill="#FFD0D0" text-anchor="middle">INDIA INSURANCE</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white" rx="6"/>
+  <rect x="0" y="0" width="12" height="80" fill="#E31F26"/>
+  <text x="25" y="34" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="#E31F26">Future</text>
+  <text x="25" y="56" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="#F7941D">Generali</text>
+</svg>

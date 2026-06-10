@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#8B0000" rx="4"/><text x="60" y="21" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">Royal Sundaram</text><text x="60" y="37" font-family="Arial,sans-serif" font-size="7.5" fill="#FFAAAA" text-anchor="middle">General Insurance</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white" rx="6"/>
+  <rect x="0" y="60" width="200" height="20" fill="#8B0000" rx="3"/>
+  <text x="100" y="28" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#8B0000" text-anchor="middle">Royal Sundaram</text>
+  <text x="100" y="46" font-family="Arial,sans-serif" font-size="10" fill="#555" text-anchor="middle">Alliance Insurance Co. Ltd.</text>
+  <text x="100" y="74" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle" letter-spacing="1">GENERAL INSURANCE</text>
+</svg>

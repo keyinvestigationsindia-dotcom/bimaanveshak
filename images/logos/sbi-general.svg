@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#003087" rx="4"/><text x="60" y="22" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">SBI General</text><text x="60" y="40" font-family="Arial,sans-serif" font-size="7.5" fill="#6699DD" text-anchor="middle">INSURANCE</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white" rx="6"/>
+  <circle cx="28" cy="40" r="22" fill="#003087"/>
+  <text x="28" y="44" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle">SBI</text>
+  <text x="100" y="32" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="#003087" text-anchor="middle">SBI General</text>
+  <text x="100" y="52" font-family="Arial,sans-serif" font-size="9" fill="#666" text-anchor="middle" letter-spacing="1">INSURANCE CO. LTD.</text>
+</svg>

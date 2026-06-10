@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#ED1C24" rx="4"/><text x="60" y="22" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Kotak General</text><text x="60" y="40" font-family="Arial,sans-serif" font-size="7.5" fill="#FFAAAA" text-anchor="middle">INSURANCE</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white" rx="6"/>
+  <rect x="0" y="0" width="60" height="80" fill="#ED1C24" rx="3"/>
+  <text x="30" y="36" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="white" text-anchor="middle">ZK</text>
+  <text x="30" y="52" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,0.8)" text-anchor="middle">ZURICH</text>
+  <text x="132" y="32" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="#333" text-anchor="middle">Kotak</text>
+  <text x="132" y="50" font-family="Arial,sans-serif" font-size="11" fill="#ED1C24" text-anchor="middle">General Ins.</text>
+</svg>

@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#004B8D" rx="4"/><text x="60" y="22" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">HDFC ERGO</text><text x="60" y="40" font-family="Arial,sans-serif" font-size="7.5" fill="#7EB8E8" text-anchor="middle">GENERAL INSURANCE</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white" rx="6"/>
+  <rect x="0" y="0" width="200" height="10" fill="#004C97" rx="3"/>
+  <text x="100" y="44" font-family="Arial Black,sans-serif" font-size="20" font-weight="900" fill="#004C97" text-anchor="middle">HDFC ERGO</text>
+  <text x="100" y="62" font-family="Arial,sans-serif" font-size="9" fill="#666" text-anchor="middle" letter-spacing="1.5">GENERAL INSURANCE</text>
+</svg>

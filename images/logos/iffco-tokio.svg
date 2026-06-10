@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#003087" rx="4"/><text x="60" y="21" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">IFFCO-Tokio</text><text x="60" y="37" font-family="Arial,sans-serif" font-size="7.5" fill="#F47920" text-anchor="middle">GENERAL INSURANCE</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white" rx="6"/>
+  <rect x="0" y="0" width="200" height="6" fill="#003087"/>
+  <rect x="0" y="74" width="200" height="6" fill="#F47920"/>
+  <text x="100" y="35" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="#003087" text-anchor="middle">IFFCO-Tokio</text>
+  <text x="100" y="55" font-family="Arial,sans-serif" font-size="10" fill="#F47920" text-anchor="middle">General Insurance</text>
+</svg>
