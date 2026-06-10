@@ -152,8 +152,9 @@
     .ticker-track{display:flex;width:max-content;animation:ticker 22s linear infinite;}
 
     /* Leaflet map */
-    #india-map{height:520px;width:100%;border-radius:16px;z-index:1;}
-    @media(max-width:640px){#india-map{height:380px;}}
+    #india-map{height:580px;width:100%;border-radius:16px;z-index:1;}
+    @media(max-width:768px){#india-map{height:420px;}}
+    @media(max-width:480px){#india-map{height:340px;}}
     .leaflet-container{background:#111f38 !important;}
     .leaflet-popup-content-wrapper{background:#111f38;color:white;border:1px solid rgba(46,204,113,0.3);border-radius:12px;}
     .leaflet-popup-tip{background:#111f38;}
@@ -1175,22 +1176,28 @@
 
     // ─── INDIA MAP ───
     window.addEventListener('load', function() {
+      // Center of India — show full country at zoom 4
       var map = L.map('india-map', {
+        center: [22.5, 83.0],
+        zoom: 4,
         scrollWheelZoom: false,
         zoomControl: true,
-        minZoom: 4,
+        minZoom: 3,
         maxZoom: 17
       });
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      // CartoDB Dark Matter — dark theme, clear boundaries, India-friendly
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
         maxZoom: 19
       }).addTo(map);
 
+      // After layout settles, re-fit to show all of India
       setTimeout(function(){
         map.invalidateSize();
-        map.fitBounds([[6.4, 67.5], [37.6, 97.6]], {padding:[30,30], maxZoom:5});
-      }, 400);
+        map.fitBounds([[6.0, 67.5], [37.1, 97.5]], { padding: [24, 24] });
+      }, 500);
 
       var COVERED = ['Gujarat','Rajasthan','Maharashtra','Madhya Pradesh',
         'Delhi','Uttar Pradesh','Punjab','Haryana','Tamil Nadu','Karnataka',
