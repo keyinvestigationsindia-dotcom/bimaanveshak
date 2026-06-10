@@ -152,7 +152,8 @@
     .ticker-track{display:flex;width:max-content;animation:ticker 22s linear infinite;}
 
     /* Leaflet map */
-    #india-map{height:420px;width:100%;border-radius:16px;z-index:1;}
+    #india-map{height:520px;width:100%;border-radius:16px;z-index:1;}
+    @media(max-width:640px){#india-map{height:380px;}}
     .leaflet-container{background:#111f38 !important;}
     .leaflet-popup-content-wrapper{background:#111f38;color:white;border:1px solid rgba(46,204,113,0.3);border-radius:12px;}
     .leaflet-popup-tip{background:#111f38;}
@@ -1186,8 +1187,10 @@
         maxZoom: 19
       }).addTo(map);
 
-      map.fitBounds([[6.5, 68], [37.5, 97.5]]);
-      setTimeout(function(){ map.invalidateSize(); }, 300);
+      setTimeout(function(){
+        map.invalidateSize();
+        map.fitBounds([[6.4, 67.5], [37.6, 97.6]], {padding:[30,30], maxZoom:5});
+      }, 400);
 
       var COVERED = ['Gujarat','Rajasthan','Maharashtra','Madhya Pradesh',
         'Delhi','Uttar Pradesh','Punjab','Haryana','Tamil Nadu','Karnataka',
