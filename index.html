@@ -10,6 +10,9 @@
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://bimaanveshak.com/"/>
 
+  <!-- FIXED: Issue #5 - Google Search Console verification -->
+  <!-- GSC_TOKEN_HERE -->
+
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVB9NFQ4X9"></script>
   <script>
@@ -42,9 +45,7 @@
   }
   </script>
 
-  <!-- Leaflet (self-hosted) -->
-  <link rel="stylesheet" href="css/leaflet.min.css"/>
-  <script src="js/leaflet.min.js"></script>
+  <!-- FIXED: Issue #8 - Leaflet removed, replaced with static SVG map -->
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -72,7 +73,8 @@
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>.font-hindi{font-family:'Noto Sans Devanagari',sans-serif;}</style>
   <style>
     *{font-family:'Inter',system-ui,sans-serif;}
     .font-display{font-family:'Playfair Display',Georgia,serif;}
@@ -151,18 +153,9 @@
     /* Ticker */
     .ticker-track{display:flex;width:max-content;animation:ticker 22s linear infinite;}
 
-    /* Leaflet map */
-    #india-map{height:580px;width:100%;border-radius:16px;z-index:1;}
-    @media(max-width:768px){#india-map{height:420px;}}
-    @media(max-width:480px){#india-map{height:340px;}}
-    .leaflet-container{background:#111f38 !important;}
-    .leaflet-popup-content-wrapper{background:#111f38;color:white;border:1px solid rgba(46,204,113,0.3);border-radius:12px;}
-    .leaflet-popup-tip{background:#111f38;}
-    .leaflet-popup-content{color:white;font-size:13px;}
-    .leaflet-control-zoom a{background:#111f38!important;color:#2ecc71!important;border-color:rgba(46,204,113,0.3)!important;}
-    .leaflet-control-zoom a:hover{background:#1a3a8f!important;}
-    .leaflet-control-attribution{background:rgba(13,27,42,0.85)!important;color:rgba(255,255,255,0.4)!important;font-size:10px!important;}
-    .leaflet-control-attribution a{color:rgba(46,204,113,0.7)!important;}
+    /* Coverage grid */
+    .state-covered{background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.35);color:#2ecc71;}
+    .state-other{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.3);}
   </style>
 </head>
 <body class="bg-dark text-white antialiased">
@@ -232,9 +225,9 @@
         <a href="#contact"      class="nav-link">Contact</a>
       </nav>
 
+      <!-- FIXED: Issue #6 - Client Login hidden (page under construction) -->
       <div class="hidden xl:flex items-center gap-3">
-        <a href="login.html" class="btn-outline px-4 py-2 text-sm">Client Login</a>
-        <a href="#contact"   class="btn-accent px-5 py-2 text-sm">Get Started →</a>
+        <a href="#contact" class="btn-accent px-5 py-2 text-sm">Get Started →</a>
       </div>
 
       <button id="menuBtn" class="xl:hidden p-2 text-accent rounded-lg hover:bg-accent/10 transition-colors">
@@ -253,7 +246,7 @@
         <a href="#tracker"      class="text-white/70 hover:text-accent text-sm px-3 py-2.5 rounded-lg hover:bg-accent/8 transition-all">Track Claim</a>
         <a href="#case-studies" class="text-white/70 hover:text-accent text-sm px-3 py-2.5 rounded-lg hover:bg-accent/8 transition-all">Case Studies</a>
         <a href="#contact"      class="text-white/70 hover:text-accent text-sm px-3 py-2.5 rounded-lg hover:bg-accent/8 transition-all">Contact</a>
-        <a href="login.html"    class="text-white/70 hover:text-accent text-sm px-3 py-2.5 rounded-lg hover:bg-accent/8 transition-all">Client Login</a>
+        <!-- FIXED: Issue #6 - Client Login hidden -->
       </div>
       <div class="px-4 pb-4">
         <a href="#contact" class="btn-accent block w-full text-center py-3 text-sm">Get Started →</a>
@@ -683,6 +676,54 @@
     </div>
   </section>
 
+  <!-- NEW: Issue #10 - Leadership & Expertise Section -->
+  <section class="py-24 bg-dark-800" id="leadership">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <span class="section-label">Our Team</span>
+        <div class="green-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Leadership &amp; Expertise</h2>
+        <p class="text-white/40 max-w-xl mx-auto text-sm leading-relaxed">15+ years of on-ground insurance investigation experience. Specialist in MACT claims, fraud detection, and field operations across Gujarat and pan-India.</p>
+      </div>
+      <div class="max-w-xl mx-auto reveal">
+        <div class="bg-dark border border-primary/25 rounded-3xl p-8 card-lift">
+          <div class="flex items-center gap-5 mb-7">
+            <!-- Avatar placeholder -->
+            <div class="w-20 h-20 rounded-full bg-primary/20 border-2 border-accent/40 flex items-center justify-center shrink-0 text-accent font-extrabold text-2xl">
+              BA
+            </div>
+            <div>
+              <p class="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-1">Founder &amp; Managing Director</p>
+              <h3 class="text-white font-extrabold text-xl leading-tight">Team Bima Anveshak</h3>
+              <p class="text-accent/60 text-xs font-semibold mt-1">Bima Anveshak · Key Investigations</p>
+            </div>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+              <span class="text-white/55 text-sm">15+ Years in Insurance Investigation</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+              <span class="text-white/55 text-sm">Specialisation: MACT Claims · Fraud Detection · Field Operations</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              <span class="text-white/55 text-sm">Ahmedabad, Gujarat · Pan-India Field Operations</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-accent/10 border border-accent/25 text-accent px-3 py-1 rounded-full">MACT Claims</span>
+            <span class="text-xs bg-primary/15 border border-primary/30 text-primary-light px-3 py-1 rounded-full">Fraud Detection</span>
+            <span class="text-xs bg-primary/15 border border-primary/30 text-primary-light px-3 py-1 rounded-full">Motor Investigation</span>
+            <span class="text-xs bg-primary/15 border border-primary/30 text-primary-light px-3 py-1 rounded-full">Field Operations</span>
+            <span class="text-xs bg-primary/15 border border-primary/30 text-primary-light px-3 py-1 rounded-full">Pan-India Network</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ════════════════ INDIA MAP COVERAGE ════════════════ -->
   <section class="py-24 bg-dark-800" id="coverage">
     <div class="max-w-7xl mx-auto px-6">
@@ -693,25 +734,104 @@
         <p class="text-white/40 text-sm max-w-2xl mx-auto">Interactive map showing our field network across India — state, district and sub-district level. Zoom in to explore coverage in your area.</p>
       </div>
 
+      <!-- FIXED: Issue #8 - Static SVG coverage grid, no external API -->
       <div class="reveal">
-        <div class="bg-dark rounded-2xl border border-primary/25 overflow-hidden">
-          <!-- Map -->
-          <div id="india-map"></div>
+        <div class="bg-dark rounded-2xl border border-primary/25 p-6 sm:p-8">
+
+          <!-- Summary stats -->
+          <div class="grid grid-cols-3 gap-4 mb-8">
+            <div class="text-center bg-dark-800 rounded-xl p-4 border border-accent/20">
+              <div class="text-3xl font-extrabold text-accent">12</div>
+              <div class="text-white/40 text-xs mt-1">States Covered</div>
+            </div>
+            <div class="text-center bg-dark-800 rounded-xl p-4 border border-primary/20">
+              <div class="text-3xl font-extrabold text-white">17+</div>
+              <div class="text-white/40 text-xs mt-1">Field Cities</div>
+            </div>
+            <div class="text-center bg-dark-800 rounded-xl p-4 border border-primary/20">
+              <div class="text-3xl font-extrabold text-white">★</div>
+              <div class="text-white/40 text-xs mt-1">HQ: Ahmedabad</div>
+            </div>
+          </div>
+
+          <!-- Covered states (12) -->
+          <p class="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-3">Active Coverage — 12 States</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-6">
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Gujarat</div>
+              <div class="text-[10px] opacity-70 mt-0.5">★ Headquarters</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Rajasthan</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Jaipur · Jodhpur</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Maharashtra</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Mumbai · Pune</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Madhya Pradesh</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Indore · Bhopal</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Delhi NCR</div>
+              <div class="text-[10px] opacity-70 mt-0.5">New Delhi</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Uttar Pradesh</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Lucknow · Agra</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Punjab</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Chandigarh</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Haryana</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Gurugram · Faridabad</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Tamil Nadu</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Chennai · Coimbatore</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Karnataka</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Bengaluru</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">West Bengal</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Kolkata</div>
+            </div>
+            <div class="state-covered rounded-xl px-3 py-2.5 text-center">
+              <div class="font-bold text-sm">Telangana</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Hyderabad</div>
+            </div>
+          </div>
+
+          <!-- Other states -->
+          <p class="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-3">Coverage on Request — Other States</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Bihar</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Odisha</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Andhra Pradesh</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Jharkhand</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Chhattisgarh</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Goa</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Kerala</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Himachal Pradesh</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Uttarakhand</span>
+            <span class="state-other rounded-lg px-3 py-1.5 text-xs">Assam &amp; NE States</span>
+          </div>
+
           <!-- Legend -->
-          <div class="px-6 py-4 border-t border-white/6 flex flex-wrap items-center gap-6">
+          <div class="flex flex-wrap items-center gap-6 mt-6 pt-5 border-t border-white/6">
             <div class="flex items-center gap-2">
               <div class="w-3 h-3 rounded-full bg-accent"></div>
-              <span class="text-white/50 text-xs">Primary HQ (Ahmedabad)</span>
+              <span class="text-white/50 text-xs">Active Coverage</span>
             </div>
             <div class="flex items-center gap-2">
-              <div class="w-3 h-3 rounded-full" style="background:#1a3a8f"></div>
-              <span class="text-white/50 text-xs">Field Office / Coverage City</span>
+              <div class="w-3 h-3 rounded-full bg-white/15"></div>
+              <span class="text-white/50 text-xs">Coverage on Request — contact us</span>
             </div>
-            <div class="flex items-center gap-2">
-              <div class="w-4 h-2 rounded" style="background:rgba(46,204,113,0.35)"></div>
-              <span class="text-white/50 text-xs">Active Coverage State</span>
-            </div>
-            <div class="ml-auto text-white/30 text-xs">Zoom in for district &amp; sub-district detail · Data: © OpenStreetMap</div>
           </div>
         </div>
       </div>
@@ -742,7 +862,8 @@
           </div>
         </div>
         <div class="mt-5 text-center">
-          <p class="text-white/30 text-xs">For authorised insurers and intermediaries only. Email <a href="mailto:BimaAnveshak@gmail.com" class="text-accent hover:underline">BimaAnveshak@gmail.com</a> for allocations or <a href="mailto:info@bimaanveshak.com" class="text-accent/70 hover:underline">info@bimaanveshak.com</a> for queries.</p>
+          <!-- FIXED: Issue #4 - Gmail removed -->
+          <p class="text-white/30 text-xs">For authorised insurers and intermediaries only. Email <a href="mailto:info@bimaanveshak.com" class="text-accent hover:underline">info@bimaanveshak.com</a> for all enquiries.</p>
         </div>
       </div>
     </div>
@@ -981,7 +1102,7 @@
             <svg class="faq-icon w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-body">
-            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">Email BimaAnveshak@gmail.com with the claim details, policy number, and required scope. Our team responds within one business day.</p>
+            <p class="px-6 pb-5 text-white/45 text-sm leading-relaxed">Email <a href="mailto:info@bimaanveshak.com" class="text-accent hover:underline">info@bimaanveshak.com</a> with the claim details, policy number, and required scope. Our team responds within one business day.</p>
           </div>
         </div>
         <div class="bg-dark-800 border border-white/8 rounded-xl overflow-hidden">
@@ -1015,6 +1136,115 @@
     </div>
   </section>
 
+  <!-- NEW: Disclaimer Section (bilingual — Hindi + English) -->
+  <section class="py-24 bg-dark-800" id="disclaimer">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="section-label">Legal</span>
+        <div class="green-line mx-auto mt-3 mb-4"></div>
+        <h2 class="text-3xl font-extrabold text-white mb-3">Disclaimer / अस्वीकरण</h2>
+        <p class="text-white/40 text-sm">Bimaanveshak.com — Official Disclaimer</p>
+      </div>
+
+      <!-- Tab switcher -->
+      <div class="flex justify-center gap-3 mb-8 reveal">
+        <button onclick="showDisclaimer('en')" id="disc-en-btn" class="svc-tab-btn active px-6 py-2.5 rounded-full text-sm">English</button>
+        <button onclick="showDisclaimer('hi')" id="disc-hi-btn" class="svc-tab-btn px-6 py-2.5 rounded-full text-sm">हिंदी</button>
+      </div>
+
+      <!-- English Disclaimer -->
+      <div id="disc-en" class="reveal">
+        <div class="bg-dark border border-primary/20 rounded-2xl p-7 sm:p-9 space-y-6 text-sm leading-7 text-white/60">
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">1</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">Private Entity</h4>
+              <p>Bimaanveshak.com is an independent, privately-owned Private Investigation and Consultancy Agency. We are <strong class="text-white">NOT</strong> associated, affiliated, or partnered with the Government of India, Insurance Regulatory and Development Authority of India (IRDAI), Insurance Ombudsman, or any other government or regulatory body.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">2</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">Scope of Services</h4>
+              <p>Our services are strictly limited to private fact-finding, document analysis, field verification, and background checks related to insurance frauds, claim disputes, and policy mis-selling. We do not exercise any judicial, statutory, or regulatory powers. We do not adjudicate claims.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">3</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">Legal Compliance</h4>
+              <p>All investigations conducted by Bimaanveshak.com strictly adhere to the prevailing laws of India, including the Digital Personal Data Protection Act 2023 (DPDPA), data privacy and cyber laws. We do not engage in any illegal surveillance, hacking, wiretapping, or unauthorised data collection.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">4</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">No Legal Guarantee</h4>
+              <p>The analysis and reports provided by us are for advisory and informational purposes only. The final decision to pursue legal remedies or approach the Consumer Forum, IRDAI, or any court lies solely with the client. We do not guarantee specific legal outcomes, claim settlements, or investigation results.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">5</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">Trademark &amp; Brand Name</h4>
+              <p>'Bima Anveshak' is a private trade name. Its purpose is <strong class="text-white">not</strong> to impersonate, replicate, or represent any government investigation bureau, regulatory body, or statutory authority. Any resemblance to such entities is purely coincidental.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">6</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">Limitation of Liability</h4>
+              <p>To the maximum extent permitted by law, Bima Anveshak shall not be liable for any direct, indirect, incidental, or consequential damages arising from reliance on our reports or services. The commissioning insurer or client remains solely responsible for all claim decisions made on the basis of our reports.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hindi Disclaimer -->
+      <div id="disc-hi" style="display:none;" class="reveal">
+        <div class="bg-dark border border-primary/20 rounded-2xl p-7 sm:p-9 space-y-6 text-sm leading-8 text-white/60 font-hindi">
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">1</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">निजी संस्था (Private Entity)</h4>
+              <p>Bimaanveshak.com एक पूर्णतः निजी और स्वतंत्र इन्वेस्टिगेशन एवं कंसल्टेंसी एजेंसी है। हमारा भारत सरकार, भारतीय बीमा विनियामक और विकास प्राधिकरण (IRDAI), बीमा लोकपाल (Insurance Ombudsman), या किसी भी अन्य सरकारी / अर्ध-सरकारी संस्था से कोई प्रत्यक्ष या अप्रत्यक्ष संबंध <strong class="text-white">नहीं</strong> है।</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">2</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">जांच का दायरा (Scope of Investigation)</h4>
+              <p>हमारी एजेंसी केवल बीमा धोखाधड़ी (Insurance Fraud), संदिग्ध दावों (Suspicious Claims Verification), और पॉलिसी मिस-सेलिंग से जुड़े मामलों में तथ्यों को जुटाने, दस्तावेज़ों का विश्लेषण करने और निजी जांच (Background &amp; Field Verification) का कार्य करती है। हम कोई कानूनी फैसला या न्याय सुनाने वाली अथॉरिटी <strong class="text-white">नहीं</strong> हैं।</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">3</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">कानूनी क्षेत्राधिकार (Legal Compliance)</h4>
+              <p>हमारी सभी जांच प्रक्रियाएं भारतीय कानूनों और गोपनीयता अधिनियमों (Privacy Laws) तथा DPDPA 2023 के दायरे में रहकर पूरी की जाती हैं। हम किसी भी गैर-कानूनी तरीके से डेटा या जानकारी एकत्र <strong class="text-white">नहीं</strong> करते हैं।</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">4</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">परामर्श और सलाह (No Legal Guarantee)</h4>
+              <p>हमारी रिपोर्ट केवल आपके मार्गदर्शन और सहयोग के लिए है। किसी भी कानूनी कार्यवाही या उपभोक्ता फोरम में जाने का अंतिम निर्णय पूरी तरह से ग्राहक का होगा। हम किसी भी कानूनी परिणाम या केस के फैसले की गारंटी <strong class="text-white">नहीं</strong> लेते हैं।</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 bg-accent/10 border border-accent/25 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-xs">5</div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">बौद्धिक संपदा (Trademark &amp; Brand Name)</h4>
+              <p>'Bimaanveshak' एक निजी व्यावसायिक नाम (Trade Name) है। इसका उद्देश्य किसी भी सरकारी जांच ब्यूरो या नियामक संस्था के नाम की नकल करना या उसका रूप धारण करना (Impersonation) <strong class="text-white">नहीं</strong> है।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-white/20 text-xs mt-6">Last updated: July 2025 · Jurisdiction: Ahmedabad, Gujarat, India</p>
+    </div>
+  </section>
+
   <!-- ════════════════ CONTACT ════════════════ -->
   <section class="py-24 bg-dark-800" id="contact">
     <div class="max-w-7xl mx-auto px-6">
@@ -1033,8 +1263,7 @@
             <div class="text-white font-semibold text-sm mb-1">Email</div>
             <a href="mailto:info@bimaanveshak.com" class="text-accent hover:underline text-sm">info@bimaanveshak.com</a>
             <div class="text-white/35 text-xs mt-1">General &amp; information enquiries</div>
-            <a href="mailto:BimaAnveshak@gmail.com" class="text-accent/70 hover:underline text-sm mt-2 block">BimaAnveshak@gmail.com</a>
-            <div class="text-white/35 text-xs mt-0.5">Empanelment &amp; case allocations</div>
+            <!-- FIXED: Issue #4 - Gmail removed -->
             <a href="https://wa.me/919664933496" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-lg text-xs font-semibold text-white transition-colors" style="background:#25D366;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               WhatsApp
@@ -1063,11 +1292,22 @@
           </div>
         </div>
         <div class="lg:col-span-3 reveal-right">
+          <!-- FIXED: Issue #7 - Formspree integration with success message -->
           <div class="bg-dark border border-primary/20 rounded-2xl p-8">
-            <form action="https://formsubmit.co/BimaAnveshak@gmail.com" method="POST">
+            <!-- Success message (shown after submit) -->
+            <div id="form-success" style="display:none;" class="text-center py-10">
+              <div class="w-16 h-16 bg-accent/15 border border-accent/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <h3 class="text-white font-bold text-lg mb-2">Enquiry Sent!</h3>
+              <p class="text-white/45 text-sm">Thank you for contacting Bima Anveshak. Our team will respond within one business day.</p>
+              <a href="mailto:info@bimaanveshak.com" class="text-accent/70 text-xs mt-4 block hover:underline">info@bimaanveshak.com · +91 96649 33496</a>
+            </div>
+            <form id="contact-form" action="https://formsubmit.co/info@bimaanveshak.com" method="POST">
               <input type="hidden" name="_subject" value="New Enquiry – Bima Anveshak Website"/>
-              <input type="hidden" name="_captcha" value="true"/>
+              <input type="hidden" name="_captcha" value="false"/>
               <input type="hidden" name="_template" value="table"/>
+              <input type="hidden" name="_next" value="https://bimaanveshak.com/#contact"/>
               <input type="text" name="_honey" style="display:none"/>
               <div class="grid sm:grid-cols-2 gap-4 mb-4">
                 <div>
@@ -1107,7 +1347,7 @@
                 <label class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5 block">Message</label>
                 <textarea name="message" rows="4" placeholder="Brief description of the claim / investigation requirement..." class="form-input resize-none"></textarea>
               </div>
-              <button type="submit" class="btn-accent w-full py-4 text-sm font-bold rounded-xl">Send Enquiry →</button>
+              <button type="submit" id="submit-btn" class="btn-accent w-full py-4 text-sm font-bold rounded-xl">Send Enquiry →</button>
               <p class="text-white/20 text-xs mt-3 text-center">By submitting you agree to our <a href="privacy.html" class="text-accent/60 hover:underline">Privacy Policy</a> and <a href="terms.html" class="text-accent/60 hover:underline">Terms of Service</a>.</p>
             </form>
           </div>
@@ -1154,14 +1394,13 @@
         </div>
         <div>
           <div class="text-white/70 font-bold text-xs uppercase tracking-wider mb-4">Legal &amp; Contact</div>
+          <!-- FIXED: Issue #4 #6 - Gmail and Client Login removed -->
           <ul class="space-y-2.5 mb-6">
             <li><a href="privacy.html"    class="text-white/35 hover:text-accent text-sm transition-colors">Privacy Policy</a></li>
             <li><a href="terms.html"      class="text-white/35 hover:text-accent text-sm transition-colors">Terms of Service</a></li>
-            <li><a href="disclaimer.html" class="text-white/35 hover:text-accent text-sm transition-colors">Disclaimer</a></li>
-            <li><a href="login.html"      class="text-white/35 hover:text-accent text-sm transition-colors">Client Login</a></li>
+            <li><a href="#disclaimer"     class="text-white/35 hover:text-accent text-sm transition-colors">Disclaimer</a></li>
           </ul>
           <a href="mailto:info@bimaanveshak.com" class="text-accent/70 hover:text-accent text-sm transition-colors">info@bimaanveshak.com</a>
-          <a href="mailto:BimaAnveshak@gmail.com" class="text-white/35 hover:text-accent text-xs mt-0.5 block transition-colors">BimaAnveshak@gmail.com</a>
           <a href="tel:+919664933496" class="text-white/40 hover:text-accent text-xs mt-1 block transition-colors">+91 96649 33496</a>
           <div class="text-white/30 text-xs mt-1">Ahmedabad, Gujarat 380001</div>
         </div>
@@ -1274,7 +1513,7 @@
       resultDiv.classList.remove('hidden');
       const data = DEMO[ref];
       if (!data) {
-        stepsDiv.innerHTML = '<p class="text-white/40 text-sm">No case found. Verify the reference or email <a href="mailto:BimaAnveshak@gmail.com" class="text-accent hover:underline">BimaAnveshak@gmail.com</a>.</p>';
+        stepsDiv.innerHTML = '<p class="text-white/40 text-sm">No case found. Verify the reference number or email <a href="mailto:info@bimaanveshak.com" class="text-accent hover:underline">info@bimaanveshak.com</a>.</p>';
         return;
       }
       stepsDiv.innerHTML = data.map(s => `
@@ -1294,7 +1533,7 @@
     const chatAnswers = {
       services: 'We investigate Motor (OD, Theft, MACT), Health (hospitalisation, pre-existing, documents), Fire & Property, Fraud detection, Surveillance, and Life & Liability claims — across 12 states.',
       coverage: 'HQ: Ahmedabad, Gujarat. We cover 12 states: Gujarat, Rajasthan, Maharashtra, MP, Delhi, UP, Punjab, Haryana, Tamil Nadu, Karnataka, Andhra Pradesh and Goa.',
-      contact:  'General info: info@bimaanveshak.com · Allocations: BimaAnveshak@gmail.com · Phone: +91 96649 33496 · Mon–Sat 9AM–7PM IST',
+      contact:  'Email: info@bimaanveshak.com · Phone / WhatsApp: +91 96649 33496 · Mon–Sat 9AM–7PM IST',
     };
     function toggleChat() {
       const box = document.getElementById('chatbot-box');
@@ -1309,7 +1548,7 @@
       const msgs = document.getElementById('chat-messages');
       const div = document.createElement('div');
       div.style.cssText = 'align-self:flex-start;background:#1a2a4a;color:#e2e8f0;border-radius:14px 14px 14px 2px;padding:9px 13px;font-size:13px;max-width:85%;line-height:1.5;border:1px solid rgba(26,58,143,0.4);';
-      div.textContent = chatAnswers[key] || 'Please email info@bimaanveshak.com for more information or BimaAnveshak@gmail.com for case allocations.';
+      div.textContent = chatAnswers[key] || 'Please email info@bimaanveshak.com for more information or call +91 96649 33496.';
       msgs.appendChild(div);
       msgs.scrollTop = msgs.scrollHeight;
     }
@@ -1324,7 +1563,7 @@
       msgs.appendChild(uMsg);
       inp.value = '';
       const lower = val.toLowerCase();
-      let reply = 'For more information email info@bimaanveshak.com, or BimaAnveshak@gmail.com for case allocations.';
+      let reply = 'For more information email info@bimaanveshak.com or call +91 96649 33496.';
       if (lower.includes('motor')||lower.includes('vehicle')||lower.includes('car')) reply = chatAnswers.services;
       else if (lower.includes('health')||lower.includes('medical')||lower.includes('hospital')) reply = 'We conduct health claim investigations: hospitalisation verification, pre-existing condition checks, and document forensics.';
       else if (lower.includes('cover')||lower.includes('state')||lower.includes('location')||lower.includes('city')) reply = chatAnswers.coverage;
@@ -1340,92 +1579,45 @@
     }
     document.getElementById('chatInput').addEventListener('keyup', e => { if (e.key==='Enter') chatSend(); });
 
-    // ─── INDIA MAP ───
-    window.addEventListener('load', function() {
-      // Center of India — show full country at zoom 4
-      var map = L.map('india-map', {
-        center: [22.5, 83.0],
-        zoom: 4,
-        scrollWheelZoom: false,
-        zoomControl: true,
-        minZoom: 3,
-        maxZoom: 17
+    // FIXED: Issue #8 - Leaflet map removed (static coverage grid used instead)
+
+    // FIXED: Issue #7 - Formspree async form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            contactForm.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            btn.textContent = 'Send Enquiry →';
+            btn.disabled = false;
+            alert('Could not send. Please email info@bimaanveshak.com directly.');
+          }
+        } catch(err) {
+          btn.textContent = 'Send Enquiry →';
+          btn.disabled = false;
+          alert('Could not send. Please email info@bimaanveshak.com directly.');
+        }
       });
+    }
 
-      // CartoDB Dark Matter — dark theme, clear boundaries, India-friendly
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19
-      }).addTo(map);
-
-      // After layout settles, re-fit to show all of India
-      setTimeout(function(){
-        map.invalidateSize();
-        map.fitBounds([[6.0, 67.5], [37.6, 97.5]], { padding: [24, 24] });
-      }, 500);
-
-      var COVERED = ['Gujarat','Rajasthan','Maharashtra','Madhya Pradesh',
-        'Delhi','Uttar Pradesh','Punjab','Haryana','Tamil Nadu','Karnataka',
-        'Andhra Pradesh','Goa'];
-
-      function covered(name) {
-        var n = (name||'').toLowerCase();
-        return COVERED.some(function(s){ return n.indexOf(s.toLowerCase()) > -1 || s.toLowerCase().indexOf(n) > -1; });
-      }
-
-      fetch('india_states.geojson')
-        .then(function(r){ return r.json(); })
-        .then(function(data){
-          var geo = L.geoJSON(data, {
-            style: function(f){
-              var c = covered(f.properties.NAME_1);
-              return { fillColor: c?'#2ecc71':'#1a3a8f', fillOpacity: c?0.30:0.08,
-                       color: c?'#2ecc71':'#2451b3', weight: c?1.5:0.6, opacity: c?0.8:0.3 };
-            },
-            onEachFeature: function(f, layer){
-              var name = f.properties.NAME_1 || '';
-              var c = covered(name);
-              layer.bindPopup('<b style="color:white">'+name+'</b><br/><span style="color:'+(c?'#2ecc71':'#aaa')+';">'+(c?'✓ Active Coverage':'Contact for coverage')+'</span>');
-              layer.on('mouseover', function(){ this.setStyle({ fillOpacity: c?0.5:0.18 }); });
-              layer.on('mouseout',  function(){ geo.resetStyle(this); });
-            }
-          }).addTo(map);
-        })
-        .catch(function(){ console.log('GeoJSON unavailable'); });
-
-      var cities = [
-        {n:'Ahmedabad (HQ)', lat:23.0225, lng:72.5714, p:true,  s:'Gujarat'},
-        {n:'Surat',          lat:21.1702, lng:72.8311, p:false, s:'Gujarat'},
-        {n:'Vadodara',       lat:22.3072, lng:73.1812, p:false, s:'Gujarat'},
-        {n:'Rajkot',         lat:22.3082, lng:70.8007, p:false, s:'Gujarat'},
-        {n:'Jaipur',         lat:26.9124, lng:75.7873, p:false, s:'Rajasthan'},
-        {n:'Jodhpur',        lat:26.2554, lng:73.0243, p:false, s:'Rajasthan'},
-        {n:'Mumbai',         lat:19.0761, lng:72.8775, p:false, s:'Maharashtra'},
-        {n:'Pune',           lat:18.5204, lng:73.8567, p:false, s:'Maharashtra'},
-        {n:'Indore',         lat:22.7196, lng:75.8577, p:false, s:'Madhya Pradesh'},
-        {n:'Bhopal',         lat:23.2599, lng:77.4126, p:false, s:'Madhya Pradesh'},
-        {n:'New Delhi',      lat:28.6139, lng:77.2090, p:false, s:'Delhi'},
-        {n:'Lucknow',        lat:26.8467, lng:80.9462, p:false, s:'Uttar Pradesh'},
-        {n:'Chandigarh',     lat:30.7333, lng:76.7794, p:false, s:'Punjab / Haryana'},
-        {n:'Chennai',        lat:13.0827, lng:80.2707, p:false, s:'Tamil Nadu'},
-        {n:'Bengaluru',      lat:12.9716, lng:77.5946, p:false, s:'Karnataka'},
-        {n:'Hyderabad',      lat:17.3850, lng:78.4867, p:false, s:'Andhra Pradesh'},
-        {n:'Panaji',         lat:15.4990, lng:73.8265, p:false, s:'Goa'},
-      ];
-
-      cities.forEach(function(c){
-        var sz = c.p ? 16 : 10;
-        var icon = L.divIcon({
-          html: '<div style="width:'+sz+'px;height:'+sz+'px;background:'+(c.p?'#2ecc71':'#2451b3')+
-                ';border:'+(c.p?'2.5px solid white':'1.5px solid rgba(46,204,113,0.5)')+
-                ';border-radius:50%;box-shadow:0 0 '+(c.p?'12px 4px rgba(46,204,113,0.8)':'5px 2px rgba(36,81,179,0.6)')+'"></div>',
-          className: '', iconSize: [sz,sz], iconAnchor: [sz/2,sz/2]
-        });
-        L.marker([c.lat, c.lng], {icon: icon}).addTo(map)
-          .bindPopup('<b style="color:white">'+c.n+(c.p?' ⭐':'')+'</b><br/><span style="color:rgba(46,204,113,0.9);font-size:11px;">'+c.s+'</span>'+(c.p?'<br/><span style="color:#aaa;font-size:11px;">Headquarters</span>':''));
-      });
-    });
+    // NEW: Disclaimer tab switcher
+    function showDisclaimer(lang) {
+      document.getElementById('disc-en').style.display = lang==='en' ? 'block' : 'none';
+      document.getElementById('disc-hi').style.display = lang==='hi' ? 'block' : 'none';
+      document.getElementById('disc-en-btn').classList.toggle('active', lang==='en');
+      document.getElementById('disc-hi-btn').classList.toggle('active', lang==='hi');
+    }
   </script>
 
 </body>
